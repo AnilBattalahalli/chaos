@@ -7,5 +7,40 @@
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
     <atom:link href="https://chaos-bjqzf.ondigitalocean.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bayesian</title>
+      <link>https://chaos-bjqzf.ondigitalocean.app/tags/bayesian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chaos-bjqzf.ondigitalocean.app/tags/bayesian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Analysis</title>
+      <link>https://chaos-bjqzf.ondigitalocean.app/tags/data-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chaos-bjqzf.ondigitalocean.app/tags/data-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kannada</title>
+      <link>https://chaos-bjqzf.ondigitalocean.app/tags/kannada/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chaos-bjqzf.ondigitalocean.app/tags/kannada/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sampling</title>
+      <link>https://chaos-bjqzf.ondigitalocean.app/tags/sampling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chaos-bjqzf.ondigitalocean.app/tags/sampling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stats</title>
+      <link>https://chaos-bjqzf.ondigitalocean.app/tags/stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chaos-bjqzf.ondigitalocean.app/tags/stats/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
