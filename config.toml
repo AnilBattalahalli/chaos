@@ -9,7 +9,7 @@ unsafe = true
 [params.profileMode]
 enabled = true
 title = "Anil Battalahalli"
-subtitle = "My name is Anil Battalahalli ([**ಅನಿಲ ಬಟ್ಟಲಹಳ್ಳಿ**](https://en.wikipedia.org/wiki/Kannada)) and this is the stuff that I do to amount to entropy. [More about me **here**](/about)."
+subtitle = "My name is Anil Battalahalli ([**ಅನಿಲ ಬಟ್ಟಲಹಳ್ಳಿ**](https://en.wikipedia.org/wiki/Kannada)) and this is the stuff that I do to amount to entropy. [More about me **here**](/about/)."
 imageUrl = "home/chaotic_swirls.gif"
 imageWidth = 220
 imageHeight = 220
