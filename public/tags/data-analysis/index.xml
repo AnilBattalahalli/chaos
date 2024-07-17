@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Data Analysis on Chaos</title>
+    <link>http://localhost:1313/tags/data-analysis/</link>
+    <description>Recent content in Data Analysis on Chaos</description>
+    <generator>Hugo -- 0.127.0</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is the Dirichlet Function Riemann-Darboux Integrable?</title>
+      <link>http://localhost:1313/statistics/dirichlet_distribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistics/dirichlet_distribution/</guid>
+      <description>This is not really stats project but it is pretty cool $$ \gdef{\boldphi}{\boldsymbol{\phi}} $$
+The Dirichlet Function The Dirichlet function is one of the easiest functions to define. It&amp;rsquo;s literally,
+$$ \begin{aligned} f(x)&amp;=\left\{ \begin{array}{ll} 1, &amp; \text{if } x \text{ is rational} \\ 0, &amp; \text{if } x \text{ is not rational} \end{array} \right. \end{aligned} $$ or using the symbols from number theory/set theory that almost no one remembers,</description>
+    </item>
+    <item>
+      <title>Bayesian Methods for the Estimation of Infection and Recovery Rates of an Epidemic from Stochastic SIR Data</title>
+      <link>http://localhost:1313/statistics/bayesian_sir/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistics/bayesian_sir/</guid>
+      <description>This project was co-authored by Heather Johnston and Youngwoo Kwon $$ \gdef{\boldphi}{\boldsymbol{\phi}} $$
+Introduction COVID-19, or Coronavirus Disease 2019, was declared a pandemic by the World Health Organization on March 11, 2020. The disease originated in December 2019 in China and quickly spread around the world. Compared with the previous epidemics like Ebola and SARS, COVID-19 has a relatively low mortality rate, but spreads faster with numerous mildly symptomatic cases.</description>
+    </item>
+    <item>
+      <title>Analysis of Prevalence of Mental Illnesses and Suicide in Different Countries</title>
+      <link>http://localhost:1313/statistics/analysis_of_mental_illness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistics/analysis_of_mental_illness/</guid>
+      <description>Photograph credits: Vulkan Olmez Introduction In the last two decades, there have been significant developments in understanding the anatomy of the brain for mental illnesses like Major Depressive Disorder, Anxiety Disorder, Bipolar Disorder, Schizophrenia, Personality Disorder, etc. Most of these disorders, along with alcohol and drug abuse are studied together to analyze the possible coexistence and the quantification of the correlation. One such study by Muester, et. al[1], estimates high rates of co-occurring mental illnesses and substance use disorders at around 50%.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Analysis of Prevalence of Mental Illnesses and Suicide in Different Countries | Chaos</title>
+<meta name="keywords" content="stats, data analysis">
+<meta name="description" content="Photograph credits: Vulkan Olmez Introduction In the last two decades, there have been significant developments in understanding the anatomy of the brain for mental illnesses like Major Depressive Disorder, Anxiety Disorder, Bipolar Disorder, Schizophrenia, Personality Disorder, etc. Most of these disorders, along with alcohol and drug abuse are studied together to analyze the possible coexistence and the quantification of the correlation. One such study by Muester, et. al[1], estimates high rates of co-occurring mental illnesses and substance use disorders at around 50%.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/analysis_of_mental_illness/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.92dc23d8af79eff8bbcfd1625357bb6b3a7e040c4c88d71244074f1141cfb71b.css" integrity="sha256-ktwj2K957/i7z9FiU1e7azp&#43;BAxMiNcSRAdPEUHPtxs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/analysis_of_mental_illness/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chaos (Alt + H)">Chaos</a>
+                    <div class="logo-switches">
+                        <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/statistics/" title="Statistics">
+                    <span>Statistics</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/kannada/" title="Kannada">
+                    <span>Kannada</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+</header><main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Analysis of Prevalence of Mental Illnesses and Suicide in Different Countries
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="eager" src="http://localhost:1313/stats/mental_illness/mental_illness.jpg" alt="">
+        
+</figure>
+  <div class="post-content"><p style="text-align: center; font-style: italic; color: #808080;">
+  <small>Photograph credits: Vulkan Olmez</small>
+</p>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>In the last two decades, there have been significant developments in understanding the anatomy of the brain for mental illnesses like Major Depressive Disorder, Anxiety Disorder, Bipolar Disorder, Schizophrenia, Personality Disorder, etc. Most of these disorders, along with alcohol and drug abuse are studied together to analyze the possible coexistence and the quantification of the correlation. One such study by Muester, et. al[1], estimates high rates of co-occurring mental illnesses and substance use disorders at around 50%. While studying the psychiatric and pharmacological aspects of such disorders is very important for treating, studying the environmental and genetic predispositions of a mental illness can help regulate and mitigate its effect at an early stage.</p>
+<p>Even though it&rsquo;s estimated that 10% of the world population suffers from some psychiatric illness, as pointed out by WHO, one of the most common barriers for the countries to provide healthcare to the citizens with mental health disorders is the cultural and social stigma against mental illnesses. In addition to this, there are problems concerning lack of education, limited availability of mental health professionals, and limited affordability (poverty)[2]. Also, systematic repression, starvation, human rights abuse can contribute to mental illnesses like PTSD, anxiety, and depression, as pointed out in a study by Riadh T. Abed[3].</p>
+<p>Studies involving socio-economic triggers like income, history of abuse, genetic history, employment status, etc can never be causal, as the random assignments of the test subjects to study the causation of the aforementioned parameters are unethical[4]. Instead, the associative studies for the same can give us valuable insights regarding the parameters involved.</p>
+<p>In this research, I analyze the association of schizophrenia, depression, anxiety, bipolar disorder, alcohol abuse, drug abuse, and suicide, with the GDP per capita, Human Development Index (HDI), unemployment rate, and population. The analysis employs clustering to stratify the samples into developed and underdeveloped countries. </p>
+<p>The illness rates are then compared with bootstrapped hypothesis tests and the inferences are thus drawn. The following report contains five sections: Data, Methodology, Simulation, Analysis, and Discussion.</p>
+<h2 id="data">Data<a hidden class="anchor" aria-hidden="true" href="#data">#</a></h2>
+<p>The dataset regarding the prevalence of mental illnesses was obtained by the Institute for Health Metrics and Evaluation[5] which contains the percentage of people in a country suffering from a particular mental illness from 1990 to 2017. I also obtained multiple Human Development Report records from the United Nations Development Programme[6] containing GDP per capita, population, suicide rate, unemployment rate, and Human Development Index (HDI) for different countries from 1991 to 2017. These records were merged using pandas for python by handling exceptions and missing values. The data was then cleaned up to avoid redundancies and rows with missing values were eliminated.</p>
+<p>In addition to these, I added a few ‘flag’ variables that can be used for manual stratification for further analysis. The basis for the stratification is to differentiate developed and underdeveloped countries, to analyze the mental health landscape in a paired fashion. These flags are boolean features that are obtained by implementing a cutoff for the variables HDI, GDP Per capita, and Unemployment Rates. Along with the same, we also cut off the year in which the data was recorded. The cutoff value of 2010 was chosen for the same as 90% of the countries in the world had access to the internet connection. This would serve as an indicator to see if the development of technology impacts the variables of interest. Similarly, a cutoff of 6% for the unemployment rate and $3,000[7] for GDP per capita was chosen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;GGally&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggplot2)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(dplyr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(boot)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(gridExtra)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(parallel)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(vegan)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(cluster)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(coin)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">options</span>(warn<span style="color:#f92672">=</span><span style="color:#ae81ff">-1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">84884</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cl <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">makeCluster</span>(<span style="color:#a6e22e">detectCores</span>())
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#39;absolute_grand_final.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>unef <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(df<span style="color:#f92672">$</span>unemp <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">6</span>, <span style="color:#66d9ef">TRUE</span>, <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>hdif <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(df<span style="color:#f92672">$</span>HDI <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.55</span>, <span style="color:#66d9ef">TRUE</span>, <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>intf <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(df<span style="color:#f92672">$</span>Year <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2010</span>, <span style="color:#66d9ef">TRUE</span>, <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>gdppcf <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(df<span style="color:#f92672">$</span>GDP <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">3000</span>, <span style="color:#66d9ef">TRUE</span>, <span style="color:#66d9ef">FALSE</span>)
+</span></span></code></pre></div><p>The dataset thus obtained has 17 variables and 3749 observations. The curated list of variables are as follows:
+Name of the Country (Country)</p>
+<ol>
+<li>Year of recording (Year)</li>
+<li>Percentage of the population with Schizophrenia (schiz_perc)</li>
+<li>Percentage of the population with Bipolar Disorder (bipolar _perc)</li>
+<li>Percentage of the population with Anxiety (anxiety_perc)</li>
+<li>Percentage of the population with Depression (depr_perc)</li>
+<li>Percentage of the population with Drug Abuse (drug_perc)</li>
+<li>Percentage of the population with Alcohol Abuse (alc_perc)</li>
+<li>Unemployment rate (unemp)</li>
+<li>Number of suicide per 100,000 people (suicide_tt)</li>
+<li>The population of the country (pop)</li>
+<li>GDP per capita of the country (GDP)</li>
+<li>Human Development Index (HDI)</li>
+<li>Flag for unemployment. (&gt;6 is recorded as underdeveloped) (unef)</li>
+<li>Flag for HDI. (&lt;0.55 is recorded as underdeveloped) (hdif)</li>
+<li>Flag for the internet. (&lt;2010 is recorded as underdeveloped) (intf)</li>
+<li>Flag for GDP (&lt; 3000 is considered as underdeveloped) (gdppcf)</li>
+</ol>
+<p><img loading="lazy" src="/stats/mental_illness/correlation_heatmap.png#center" alt="heatmap"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Correlation of all numerical variables</small></p>
+<p>For inspection, we can plot the correlation plot between the numerical variables. The method uses Pearson’s correlation method internally. Since this is not stratified, the global inference for correlation may suffer a high bias[8].</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>df_num <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">subset</span>(df, select <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">c</span>(Country, unef, hdif, intf, gdppcf))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggcorr</span>(
+</span></span><span style="display:flex;"><span>  df_num,
+</span></span><span style="display:flex;"><span>  geom <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tile&#34;</span>,
+</span></span><span style="display:flex;"><span>  max_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+</span></span><span style="display:flex;"><span>  size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.5</span>,
+</span></span><span style="display:flex;"><span>  hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.75</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#angle = -45, </span>
+</span></span><span style="display:flex;"><span>  color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>  label <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+</span></span><span style="display:flex;"><span>  label_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, 
+</span></span><span style="display:flex;"><span>  label_round <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, 
+</span></span><span style="display:flex;"><span>  label_alpha <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+</span></span><span style="display:flex;"><span>  palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>To see if our manual stratification method shows any significant boundary between the developed and underdeveloped countries, we can plot densities using the stratification flag as a label. If we use the GDP flag to check the growth metrics of a country, we get the following plot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> HDI, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;HDI&#34;</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> GDP, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">20000</span>))<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;GDP Per Capita&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> pop, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000000</span>))<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Population&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> unemp, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Unemployment Rate&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/hdi_cluster.png" alt="hdicluster"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of developed and undeveloped countries using HDI based clustering</small></p>
+<h2 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h2>
+<p>My first aim is to find out if the mental illnesses rates are mutually independent of one another. For example, mental illnesses like bipolar disorder and anxiety disorders are found to be highly correlated[9]. Before we employ a method to compare independence, we need to see if the data follows a normal distribution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> bipolar_perc)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Bipolar Disorder&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Density&#34;</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> anxiety_perc)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Anxiety&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Density&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> schiz_perc)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Schizophrenia&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Density&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> depr_perc)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Depression&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;Density&#34;</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/mental_illness_density.png" alt="mentalillnessdensity"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of different mental illnesses</small></p>
+<p>The data looks like it deviates from the normal distribution quite a bit. To quantify the normality, we can use the Shapiro-Wilk test, with the test statistic given by,</p>
+<p>$$
+W = \frac{\left( \sum_{i=1}^n a_i x_{(i)}\right)^2}{\sum_{i=1}^n (x_i-\bar{x})^2}
+$$</p>
+<p>where \( x_{(i)} \) is the order statistic and x is the mean of the sample.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>dis <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;schiz_perc&#34;</span>, <span style="color:#e6db74">&#34;bipolar_perc&#34;</span>, <span style="color:#e6db74">&#34;anxiety_perc&#34;</span>, <span style="color:#e6db74">&#34;depr_perc&#34;</span>)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t</span>(<span style="color:#a6e22e">combn</span>(dis,<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> dis){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shapiro.test</span>(<span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">unlist</span>(df[i])))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The Shapiro-Wilk tests evaluated on all of the illnesses have the \( p &lt; 2.2e-16 \) which implies that we reject the hypothesis that the variables are normally distributed. Since we know that the variables are not normally distributed, we can use a non-parametric, distribution-free test for independence like a permutation test.</p>
+<p>In this research, I have employed a two-sided permutation test for independence, and we can also quantify the association by bootstrapped analysis of the correlation. Here, I use the Pearson’s correlation given by,</p>
+<p>$$
+r =
+\frac{ \sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{%
+\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
+$$</p>
+<p>The corresponding hypothesis test is given by,</p>
+<p>$$
+H_0:r_{xy} = 0 \\
+H_A:r_{xy} \ne  0
+$$</p>
+<p>The second aim of the research is to analyze the mean difference in the rate of mental illnesses between the developed and underdeveloped countries. Now the criteria for classifying the countries into developed and underdeveloped are not well defined. According to the United Nations’ M49 standards for classification[14][15], “The designations “developed” and “developing” are intended for statistical convenience and do not necessarily express a judgment about the stage reached by a particular country or area in the development process.”</p>
+<p>To analyze the effect of a country on the prevalence of a mental illness, we can differentiate the developed countries from underdeveloped countries concerning a cutoff like GDP Per Capita and then analyze the paired mean tests. But in doing so, we would be ignoring the other metrics which may contain useful information for the cut-off. We need a better way of clustering the variables[10].</p>
+<p>In this research, I employ two methods for the stratification of the countries into the aforementioned classes:</p>
+<ol>
+<li>HDI based stratification</li>
+<li>Clustering-based stratification</li>
+</ol>
+<p>In the HDI-based stratification, we employ a cut-off value for the HDI, and we classify the countries into one of the two classes depending on their HDI being higher or lower than the cutoff. In the clustering-based stratification, we use clustering methods for all the growth parameters, and we interpret the clusters qualitatively to see if they form a well-defined boundary concerning the individual growth parameters.</p>
+<p>In the research by Elizabeth Tipton[11], the method discussed employs dividing the population samples into strata using unsupervised clustering for estimating boundary conditions concerning multiple variables. One of the proposed methods employs k-means clusters to stratify the samples. As opposed to euclidean distance, which is commonly used for the k-means clustering, we use the Gower distance metric. This is a general coefficient of similarity, which was proposed by Gower[12] in 1971, given by,</p>
+<p>$$
+d_{ii}^g = \frac{\sum_{h=1}^p w_{ii&rsquo;h} h_{ii&rsquo;h}}{\sum{h=1}^p w_{ii&rsquo;h}}
+$$</p>
+<p>For the two methods of stratification, I perform the bootstrap simulations to test for the difference in means for each mental illness and suicide rate. For each simulation, I generate the 95% confidence interval to test the hypothesis. If the interval at 95% confidence contains the null value (0), I do not reject the null hypothesis.</p>
+<h2 id="simulations">Simulations<a hidden class="anchor" aria-hidden="true" href="#simulations">#</a></h2>
+<p>In this research, I implement the two-sided permutation test for independence with 10000 Monte-Carlo samples and approximate density estimation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>dis <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;schiz_perc&#34;</span>, <span style="color:#e6db74">&#34;bipolar_perc&#34;</span>, <span style="color:#e6db74">&#34;anxiety_perc&#34;</span>, <span style="color:#e6db74">&#34;depr_perc&#34;</span>)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t</span>(<span style="color:#a6e22e">combn</span>(dis,<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">dim</span>(c)[1]){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">independence_test</span>(<span style="color:#a6e22e">as.formula</span>(<span style="color:#a6e22e">paste</span>(c[i,<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;~&#39;</span> , c[i,<span style="color:#ae81ff">2</span>])), df, distribution <span style="color:#f92672">=</span> <span style="color:#a6e22e">approximate</span>(<span style="color:#ae81ff">10000</span>)))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The results are as follows:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Schizophrenia</td>
+<td>Bipolar Disorder</td>
+<td>Anxiety Disorder</td>
+<td>Depression</td>
+</tr>
+<tr>
+<td>Schizophrenia</td>
+<td>-</td>
+<td>&lt; 1e-04</td>
+<td>&lt; 1e-04</td>
+<td>&lt; 1e-04</td>
+</tr>
+<tr>
+<td>Bipolar Disorder</td>
+<td>&lt; 1e-04</td>
+<td></td>
+<td>-</td>
+<td>&lt; 1e-04</td>
+</tr>
+<tr>
+<td>Anxiety Disorder</td>
+<td>&lt; 1e-04</td>
+<td></td>
+<td>&lt; 1e-04</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Depression</td>
+<td>&lt; 1e-04</td>
+<td></td>
+<td>&lt; 1e-04</td>
+<td>&lt; 1e-04</td>
+</tr>
+</tbody>
+</table>
+<p>This shows that we can reject the null hypothesis that the variables are independent. The problem boils down to finding the 95% confidence interval for the correlation coefficient to see if it contains 0, which is the null value. As mentioned before, we use bootstrapping with 1000 bootstrap replications. Bootstrapping is implemented with parallelization for the effective utilization of the CPU cycles. If we use bootstrapping for every pair of mental illnesses and suicide rates, we get the following confidence intervals.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>get_corr <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, index){
+</span></span><span style="display:flex;"><span>  a <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(x)[1]
+</span></span><span style="display:flex;"><span>  b <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(x)[2]
+</span></span><span style="display:flex;"><span>  x_sample <span style="color:#f92672">&lt;-</span> x[index,]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(<span style="color:#a6e22e">cor</span>(x_sample[a],x_sample[b]))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>do_boot <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">names</span>(x))
+</span></span><span style="display:flex;"><span>  boot_corr <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">boot</span>(x, statistic <span style="color:#f92672">=</span> get_corr, R <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>, parallel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snow&#39;</span>, cl<span style="color:#f92672">=</span>cl)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">boot.ci</span>(boot_corr, type <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;basic&#34;</span>), conf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.95</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">dim</span>(c)[1]){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">do_boot</span>(df[c[i,]])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Schizophrenia</td>
+<td>Bipolar Disorder</td>
+<td>Anxiety Disorder</td>
+<td>Depression</td>
+<td>Suicide</td>
+</tr>
+<tr>
+<td>Schizophrenia</td>
+<td>1</td>
+<td>(0.3392,0.4170)</td>
+<td>(0.4686,0.5265)</td>
+<td>(0.0657,0.1354)</td>
+<td>(-0.1433, -0.1025)</td>
+</tr>
+<tr>
+<td>Bipolar Disorder</td>
+<td>(0.3392,0.4170)</td>
+<td>1</td>
+<td>(0.6775,0.7106)</td>
+<td>(0.1433,0.2009)</td>
+<td>(-0.2320, -0.1834)</td>
+</tr>
+<tr>
+<td>Anxiety Disorder</td>
+<td>(0.4686,0.5265)</td>
+<td>(0.6775,0.7106)</td>
+<td>1</td>
+<td>(0.2911,0.3418)</td>
+<td>(-0.2036, -0.1571)</td>
+</tr>
+<tr>
+<td>Depression</td>
+<td>(0.0657,0.1354)</td>
+<td>(0.1433,0.2009)</td>
+<td>(0.2911,0.3418)</td>
+<td>1</td>
+<td>(0.3294,0.3828)</td>
+</tr>
+<tr>
+<td>Suicide</td>
+<td>(-0.1433, -0.1025)</td>
+<td>(-0.2320, -0.1834)</td>
+<td>(-0.2036, -0.1571)</td>
+<td>(0.3294,0.3828)</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>While we see that mental illnesses are mutually positively correlated, we can also see that illnesses like bipolar disorder, schizophrenia, and anxiety disorders are strongly negatively correlated with the suicide rate. Furthermore, all the variables are mutually correlated to each other, hence we reject the hypothesis that the variables are uncorrelated. When the same test for correlation is repeated for the growth metrics, we get the following confidence intervals.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>dis <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;pop&#34;</span>, <span style="color:#e6db74">&#34;GDP&#34;</span>, <span style="color:#e6db74">&#34;HDI&#34;</span>)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t</span>(<span style="color:#a6e22e">combn</span>(dis,<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>get_corr <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, index){
+</span></span><span style="display:flex;"><span>  a <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(x)[1]
+</span></span><span style="display:flex;"><span>  b <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(x)[2]
+</span></span><span style="display:flex;"><span>  x_sample <span style="color:#f92672">&lt;-</span> x[index,]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(<span style="color:#a6e22e">cor</span>(x_sample[a],x_sample[b]))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>do_boot <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">names</span>(x))
+</span></span><span style="display:flex;"><span>  boot_corr <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">boot</span>(x, statistic <span style="color:#f92672">=</span> get_corr, R <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>, parallel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snow&#39;</span>, cl<span style="color:#f92672">=</span>cl)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">boot.ci</span>(boot_corr, type <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;basic&#34;</span>), conf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.95</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">dim</span>(c)[1]){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">do_boot</span>(df[c[i,]])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Population</strong></td>
+<td><strong>HDI</strong></td>
+<td><strong>GDP Per Capita</strong></td>
+</tr>
+<tr>
+<td><strong>Population</strong></td>
+<td>1</td>
+<td>(-0.0573, -0.0214)</td>
+<td>(-0.0921, -0.0700)</td>
+</tr>
+<tr>
+<td><strong>HDI</strong></td>
+<td>(-0.0573, -0.0214)</td>
+<td>1</td>
+<td>( 0.6749, 0.7057)</td>
+</tr>
+<tr>
+<td><strong>GDP Per Capita</strong></td>
+<td>(-0.0921, -0.0700)</td>
+<td>( 0.6749, 0.7057)</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The simulation result shows that the population is negatively correlated with HDI and GDP Per Capita. HDI and GDP Per Capita are positively correlated. We reject the null for the same aforementioned reasons. Now for the difference in mean hypothesis, as mentioned before, I use two methods of stratification. Firstly for the HDI-based stratification, I employed the flags that I set previously. We can plot the strata for the year 2000 to understand the clustering.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>valcol <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;schiz_perc&#34;</span>,<span style="color:#e6db74">&#34;bipolar_perc&#34;</span>,<span style="color:#e6db74">&#34;anxiety_perc&#34;</span>,<span style="color:#e6db74">&#34;drug_perc&#34;</span>,<span style="color:#e6db74">&#34;depr_perc&#34;</span>,<span style="color:#e6db74">&#34;alc_perc&#34;</span>,<span style="color:#e6db74">&#34;suicide_tt&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(df[df<span style="color:#f92672">$</span>Year <span style="color:#f92672">==</span> <span style="color:#ae81ff">2000</span>,], <span style="color:#a6e22e">aes</span>(GDP,HDI,color<span style="color:#f92672">=</span>hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_point</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>, stroke <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(label<span style="color:#f92672">=</span>Country), size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_minimal</span>()
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/scatterplot.png" alt="scatterplot"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Scatter plot of the stratification using a cutoff on HDI</small></p>
+<p>We can plot the density for the illnesses and the growth parameters based on this criterion.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> HDI, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> GDP, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">20000</span>))<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> pop, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000000</span>))
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> unemp, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/growth_metrics_hdi.png" alt="growthmetricshdi"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of the growth metrics using HDI based clustering</small></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> bipolar_perc, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> schiz_perc, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> anxiety_perc, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> depr_perc, color <span style="color:#f92672">=</span> hdif, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/mental_illness_hdi.png" alt="mentalillnesshdi"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of the mental illnesses using HDI based clustering</small></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> suicide_tt, fill <span style="color:#f92672">=</span> hdif)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/suicide_hdi.png" alt="suicidehdi"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of the suicide rates using HDI based clustering</small></p>
+<p>Now we perform clustering-based stratification. The growth metrics, along with the flags are used as inputs for clustering. The numerical values are normalized to satisfy the equal variance condition required by the k-means algorithm. Gower metric works for both categorical and numerical variables[13] and hence my binary flag variables don’t have to be numerical and scaled. We can plot the strata for the year 2000 to understand the clustering.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>u <span style="color:#f92672">&lt;-</span> df <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">select</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Year&#34;</span>,<span style="color:#e6db74">&#34;GDP&#34;</span>,<span style="color:#e6db74">&#34;HDI&#34;</span>,<span style="color:#e6db74">&#34;unef&#34;</span>,<span style="color:#e6db74">&#34;hdif&#34;</span>,<span style="color:#e6db74">&#34;intf&#34;</span>,<span style="color:#e6db74">&#34;gdppcf&#34;</span>,<span style="color:#e6db74">&#34;pop&#34;</span>)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">mutate_if</span>(is.numeric, scale) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">vegdist</span>(method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gower&#34;</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">pam</span>(k<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, diss<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>strata <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(u<span style="color:#f92672">$</span>clustering <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>, yes<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, no<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(df[df<span style="color:#f92672">$</span>Year <span style="color:#f92672">==</span> <span style="color:#ae81ff">2000</span>,], <span style="color:#a6e22e">aes</span>(GDP,HDI,color<span style="color:#f92672">=</span>strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_point</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>, stroke <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(label<span style="color:#f92672">=</span>Country), size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/scatter_gower.png" alt="scattergower"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Scatter plot of the stratification using Gower clustering</small></p>
+<p>Clustered variables are used as stratification labels and we can plot the densities of the growth metrics with the stratification label fills.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> HDI, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> GDP, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">20000</span>))<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> pop, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()<span style="color:#f92672">+</span><span style="color:#a6e22e">xlim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000000</span>))
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> unemp, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/growthgower.png" alt="growthgower"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of growth metrics using Gower clustering</small></p>
+<p>We can see that the red density curve represents higher GDP and higher HDI and hence, generally covers the developed countries. Now we can also plot the densities of the illness according to this strata.</p>
+<p><img loading="lazy" src="/stats/mental_illness/mentalillnessgower.png" alt="mentalillnessgower"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of mental illnesses using Gower clustering</small></p>
+<p>The density plot shows some distinctions in the distributions of mental illnesses. To obtain quantified differences and the respective confidence intervals for the paired means, we can perform a simulation using bootstrapping.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> bipolar_perc, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> schiz_perc, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> anxiety_perc, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> depr_perc, color <span style="color:#f92672">=</span> strata, fill <span style="color:#f92672">=</span> strata)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">theme_classic</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(a, b, c, d, nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p><img loading="lazy" src="/stats/mental_illness/suicidegower.png" alt="suicidegower"  />
+</p>
+<p style="text-align: center; font-style: italic; color: #808080;"><small>Density plot of the suicide rates using Gower clustering</small></p>
+<p>We can see that the two clustering methods perform similarly. But, using a cluster that is representative of multiple variables seems to be more intuitive. Hence, I proceed with Gower clustering for bootstrapped hypothesis testing of paired means.</p>
+<p>We use the statistic \( T = x_u-x_d \) where \( x_u \) is the sample mean of the underdeveloped countries and \( x_d \) is the sample mean of the developed countries. We perform bootstrapping with 1000 bootstrap replicates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>get_meandiff <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, index, a){
+</span></span><span style="display:flex;"><span>  x_sample <span style="color:#f92672">&lt;-</span> x[index,]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(<span style="color:#a6e22e">mean</span>(<span style="color:#a6e22e">as.matrix</span>(x_sample[<span style="color:#f92672">!</span>x_sample<span style="color:#f92672">$</span>strata,][a]))<span style="color:#f92672">-</span><span style="color:#a6e22e">mean</span>(<span style="color:#a6e22e">as.matrix</span>(x_sample[x_sample<span style="color:#f92672">$</span>strata,][a])))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>valcol <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;schiz_perc&#34;</span>,<span style="color:#e6db74">&#34;bipolar_perc&#34;</span>,<span style="color:#e6db74">&#34;anxiety_perc&#34;</span>,<span style="color:#e6db74">&#34;drug_perc&#34;</span>,<span style="color:#e6db74">&#34;depr_perc&#34;</span>,<span style="color:#e6db74">&#34;alc_perc&#34;</span>,<span style="color:#e6db74">&#34;suicide_tt&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> valcol){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(i)
+</span></span><span style="display:flex;"><span>  boot_corr <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">boot</span>(df, statistic <span style="color:#f92672">=</span> get_meandiff, a <span style="color:#f92672">=</span> i, R <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>, parallel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snow&#39;</span>, cl<span style="color:#f92672">=</span>cl)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">boot.ci</span>(boot_corr, type <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;basic&#34;</span>), conf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.95</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The result of the bootstrap analysis with a 95% confidence interval for the difference of mean between the underdeveloped and the developed countries for the variables of interest are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Variable of Interest</th>
+<th>Confidence Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schizophrenia</td>
+<td>( 0.0381,  0.0428 )</td>
+</tr>
+<tr>
+<td>Bipolar Disorder</td>
+<td>( 0.1572,  0.1721 )</td>
+</tr>
+<tr>
+<td>Anxiety Disorder</td>
+<td>( 0.8179,  0.9341 )</td>
+</tr>
+<tr>
+<td>Depression</td>
+<td>(-0.1927, -0.1093 )</td>
+</tr>
+<tr>
+<td>Suicide</td>
+<td>(-2.097, -1.166 )</td>
+</tr>
+</tbody>
+</table>
+<h2 id="analysis">Analysis<a hidden class="anchor" aria-hidden="true" href="#analysis">#</a></h2>
+<p>The outcome of the permutation test for independence suggests that the prevalence of mental illnesses suggests that there is evidence to show that the existence of mental illnesses is mutually correlated. This is pointed out in the research by Elliott, Marta, et al.[16] which shows that there are many common explanatory factors for mental illnesses. In the quantification of the dependence using correlation, we obtain the following result at a 95% confidence interval.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Schizophrenia</td>
+<td>Bipolar Disorder</td>
+<td>Anxiety Disorder</td>
+<td>Depression</td>
+<td>Suicide</td>
+</tr>
+<tr>
+<td>Schizophrenia</td>
+<td>1</td>
+<td>(0.3392,0.4170)</td>
+<td>(0.4686,0.5265)</td>
+<td>(0.0657,0.1354)</td>
+<td>(-0.1433, -0.1025)</td>
+</tr>
+<tr>
+<td>Bipolar Disorder</td>
+<td>(0.3392,0.4170)</td>
+<td>1</td>
+<td>(0.6775,0.7106)</td>
+<td>(0.1433,0.2009)</td>
+<td>(-0.2320, -0.1834)</td>
+</tr>
+<tr>
+<td>Anxiety Disorder</td>
+<td>(0.4686,0.5265)</td>
+<td>(0.6775,0.7106)</td>
+<td>1</td>
+<td>(0.2911,0.3418)</td>
+<td>(-0.2036, -0.1571)</td>
+</tr>
+<tr>
+<td>Depression</td>
+<td>(0.0657,0.1354)</td>
+<td>(0.1433,0.2009)</td>
+<td>(0.2911,0.3418)</td>
+<td>1</td>
+<td>(0.3294,0.3828)</td>
+</tr>
+<tr>
+<td>Suicide</td>
+<td>(-0.1433, -0.1025)</td>
+<td>(-0.2320, -0.1834)</td>
+<td>(-0.2036, -0.1571)</td>
+<td>(0.3294,0.3828)</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>While it’s evident that mental illnesses are mutually positively correlated, Bipolar Disorder, Anxiety Disorders, and Schizophrenia seem to be negatively correlated with suicide. This is contradictory to the study by Novick, Danielle M, et al.[17] which suggests that around  32.4% of the population with Bipolar II and 36.3% of the population with Bipolar I attempt suicide and between 4% and 19% of the people suffering from the illness complete suicide. A similar study estimates a rate of 4.9% for schizophrenia[18] and 3.4% for anxiety disorders[19].</p>
+<p>In fact, a study by Arsenault-Lapierre, Geneviève et al.[20] suggests that 90% of the deaths by suicide have had a history of mental illness. In my analysis, I have a strong negative correlation between mental illnesses and suicide rates which contradicts the previous studies.</p>
+<p>Coming to the hypothesis testing for the difference in paired means (u-d) of the mental illnesses and the suicide rates results in the following confidence intervals:</p>
+<table>
+<thead>
+<tr>
+<th>Variable of Interest</th>
+<th>Confidence Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schizophrenia</td>
+<td>( 0.0381,  0.0428 )</td>
+</tr>
+<tr>
+<td>Bipolar Disorder</td>
+<td>( 0.1572,  0.1721 )</td>
+</tr>
+<tr>
+<td>Anxiety Disorder</td>
+<td>( 0.8179,  0.9341 )</td>
+</tr>
+<tr>
+<td>Depression</td>
+<td>(-0.1927, -0.1093 )</td>
+</tr>
+<tr>
+<td>Suicide</td>
+<td>(-2.097, -1.166 )</td>
+</tr>
+</tbody>
+</table>
+<p>This implies that, for mental illnesses like Schizophrenia, Bipolar Disorder, and Anxiety disorder, the difference between the average population suffering from illnesses in underdeveloped countries with the ones in developed countries is positive.</p>
+<p>In other words, the percentage of the population suffering from these illnesses is greater in the developed countries. But, the rates of depression and suicide are higher in underdeveloped countries. We need to analyze this disparity further.</p>
+<p>In the research by Kopinak, et al.[21], the problems that the developing and underdeveloped countries face in the mental health sector on diagnosis, treatment, affordability, and education are discussed. In addition to this, it’s found that in many countries, Diagnostic Statistical Manual (DSM) which provides guidelines for mental illnesses is considered flawed which results in the under-diagnosis of the illnesses. When it comes to depression disorders, most of them are diagnosed by a primary care physician[22]. Disorders like schizophrenia, bipolar disorder, anxiety disorders, personality disorders, etc are diagnosed by a specialist (typically a psychiatrist). Hence, the poor diagnosis and an inaccurate representation of the proportion of people suffering from these disorders can be attributed to the lack of availability, development, and research in the mental health landscape in those countries.</p>
+<p>While there are strict guidelines to report suicide to the United Nations by its member countries[23], the same does not exist for mental illnesses as the diagnosis requires human resources specializing in the same[24]. It’s estimated that in underdeveloped and developing countries, around 76% of people with mental illnesses receive no treatment for their disorder.</p>
+<h2 id="discussion">Discussion<a hidden class="anchor" aria-hidden="true" href="#discussion">#</a></h2>
+<p>In this literature, I have addressed the following research questions –</p>
+<ol>
+<li>Is there any evidence that the mental illness rates for different illnesses are correlated?</li>
+<li>What is the mean difference in mental illnesses and suicide rates in developed and underdeveloped countries?</li>
+</ol>
+<p>The data was obtained from Human Development Report records from the United Nations Development Programme. The data was cleaned up and variables of interest were retained and additional flag variables were created. To analyze the normality condition, the Shapiro-Wilk test was performed on each variable of the dataset. Following the non-normality of the dataset, a permutation test – a non-parametric distribution-free method was proposed to assess the independence of the variables (first research question). To assess the difference of paired means (second research question) the data were clustered to reduce the dimensionality of the growth factors followed by a bootstrap-based hypothesis testing.</p>
+<p>In summary, we can attribute the lower percentages of mental illnesses like bipolar disorder, anxiety disorders, schizophrenia, etc, to the poor quality of data arising from the inadequate diagnostic systems. And more accurate data for suicides and depression owing to the feasibility in diagnosing and reporting in underdeveloped countries.</p>
+<p>One of the assumptions made in the following analysis was that the samples are independent. But, the countries evolving over time can be considered a stochastic process and we need time-series methods for clustering the data. We can also employ hypothesis testing and parameter estimation for the time-series features to project the development of a country pertaining to the mental health landscape.</p>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>1. Drake, Robert E et al. “Management of persons with co-occurring severe mental illness and substance use disorder: program implications.”
+</span></span><span style="display:flex;"><span>2. World psychiatry : official journal of the World Psychiatric Association (WPA) vol. 6,3 (2007): 131-6.
+</span></span><span style="display:flex;"><span>3. Kohrt, Brandon A et al. “The Role of Communities in Mental Health Care in Low- and Middle-Income Countries: A Meta-Review of Components and
+</span></span><span style="display:flex;"><span>4. Competencies.” International journal of environmental research and public health vol. 15,6 1279. 16 Jun. 2018, doi:10.3390/ijerph15061279
+</span></span><span style="display:flex;"><span>5. Abed, Riadh T. “Tyranny and Mental Health.” British Medical Bulletin, vol. 72, no. 1, Oxford University Press (OUP), Jan. 2004, pp. 1–13. Crossref, doi:10.1093/bmb/ldh037.
+</span></span><span style="display:flex;"><span>6. Jain, Shobhit et al. “Ethics in Psychiatric Research: Issues and Recommendations.” Indian journal of psychological medicine vol. 39,5 (2017): 558-565. doi:10.4103/IJPSYM.IJPSYM_131_17
+</span></span><span style="display:flex;"><span>7. Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018.
+</span></span><span style="display:flex;"><span>8. HDRO calculations based on data from UNDESA (2019a), UNESCO Institute for Statistics (2020), United Nations Statistics Division (2020b), World Bank (2020a), Barro and Lee (2018) and IMF (2020)
+</span></span><span style="display:flex;"><span>9. World Bank, Constant GDP per capita for Low Income Countries [NYGDPPCAPKDLIC], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/NYGDPPCAPKDLIC, March 21, 2021.
+</span></span><span style="display:flex;"><span>10. Kaplan, Robert M et al. “Big data and large sample size: a cautionary note on the potential for bias.” Clinical and translational science vol. 7,4 (2014): 342-6. doi:10.1111/cts.12178
+</span></span><span style="display:flex;"><span>11. Simon, Naomi M et al. “Anxiety disorder comorbidity in bipolar disorder patients: data from the first 500 participants in the Systematic Treatment Enhancement Program for Bipolar Disorder (STEP-BD).” The American journal of psychiatry vol. 161,12 (2004): 2222-9. doi:10.1176/appi.ajp.161.12.2222
+</span></span><span style="display:flex;"><span>12. Elliott, Michael R. “A simple method to generate equal-sized homogenous strata or clusters for population-based sampling.” Annals of epidemiology vol. 21,4 (2011): 290-6. doi:10.1016/j.annepidem.2010.11.016
+</span></span><span style="display:flex;"><span>13. Tipton, Elizabeth. “Stratified Sampling Using Cluster Analysis: A Sample Selection Strategy for Improved Generalizations From Experiments.” Evaluation Review, vol. 37, no. 2, Apr. 2013, pp. 109–139, doi:10.1177/0193841X13516324.
+</span></span><span style="display:flex;"><span>14. Gower, J. C. “A General Coefficient of Similarity and Some of Its Properties.” Biometrics, vol. 27, no. 4, 1971, pp. 857–871. JSTOR, www.jstor.org/stable/2528823. Accessed 21 Mar. 2021.
+</span></span><span style="display:flex;"><span>15. Hummel, Manuela et al. “Clustering of samples and variables with mixed-type data.” PloS one vol. 12,11 e0188274. 28 Nov. 2017, doi:10.1371/journal.pone.0188274
+</span></span><span style="display:flex;"><span>16. “Standard Country and Area Codes Classifications (M49): Developed Regions”. United Nations Statistics Division. Archived from the original on 11 July 2017. Retrieved 13 May 2017.
+</span></span><span style="display:flex;"><span>17. “United Nations Statistics Division- Standard Country and Area Codes Classifications (M49)”. Unstats.un.org. Retrieved 15 January 2014.
+</span></span><span style="display:flex;"><span>18. Elliott, Marta, et al. “Subjective Accounts of the Causes of Mental Illness in the USA.” International Journal of Social Psychiatry, vol. 58, no. 6, Nov. 2012, pp. 562–567, doi:10.1177/0020764011415207.
+</span></span><span style="display:flex;"><span>19. Novick, Danielle M et al. “Suicide attempts in bipolar I and bipolar II disorder: a review and meta-analysis of the evidence.” Bipolar disorders vol. 12,1 (2010): 1-9. doi:10.1111/j.1399-5618.2009.00786.x
+</span></span><span style="display:flex;"><span>20. Hor, Kahyee, and Mark Taylor. “Suicide and schizophrenia: a systematic review of rates and risk factors.” Journal of psychopharmacology (Oxford, England) vol. 24,4 Suppl (2010): 81-90. doi:10.1177/1359786810385490
+</span></span><span style="display:flex;"><span>21. Nepon, Josh et al. “The relationship between anxiety disorders and suicide attempts: findings from the National Epidemiologic Survey on
+</span></span><span style="display:flex;"><span>22. Alcohol and Related Conditions.” Depression and anxiety vol. 27,9 (2010): 791-8. doi:10.1002/da.20674\
+</span></span><span style="display:flex;"><span>23. Arsenault-Lapierre, Geneviève et al. “Psychiatric diagnoses in 3275 suicides: a meta-analysis.” BMC psychiatry vol. 4 37. 4 Nov. 2004, doi:10.1186/1471-244X-4-37
+</span></span><span style="display:flex;"><span>24. Kopinak, Janice Katherine. “Mental Health in Developing Countries: Challenges and Opportunities in Introducing Western Mental Health System in Uganda.” International journal of MCH and AIDS vol. 3,1 (2015): 22-30.
+</span></span><span style="display:flex;"><span>25. Ng, Chung Wai Mark et al. “Major depression in primary care: making the diagnosis.” Singapore medical journal vol. 57,11 (2016): 591-597. doi:10.11622/smedj.2016174
+</span></span><span style="display:flex;"><span>26. “Suicide – Challenges and Obstacles.” World Health Organization, World Health Organization, www.who.int/news-room/fact-sheets/detail/suicide. 
+</span></span><span style="display:flex;"><span>27. Who.int. 2021. Mental disorders. [online] Available at: &lt;https://www.who.int/news-room/fact-sheets/detail/mental-disorders&gt; [Accessed 23 April 2021].
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/stats/">Stats</a></li>
+      <li><a href="http://localhost:1313/tags/data-analysis/">Data Analysis</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Chaos</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
