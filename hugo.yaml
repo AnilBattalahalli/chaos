@@ -39,5 +39,5 @@ menu:
       url: "/kannada/"
       weight: 20
     - name: "Film Photography"
-      url: https://www.lomography.com/homes/anilbattalahalli/photos?order=trending
+      url: https://www.lomography.com/homes/anilbattalahalli
       weight: 15
