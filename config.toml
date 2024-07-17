@@ -36,10 +36,10 @@ name = "Statistics"
 url = "/statistics/"
 weight = 10
 
-[[menu.main]]
-name = "Self Study"
-url = "/selfstudy/"
-weight = 12
+# [[menu.main]]
+# name = "Self Study"
+# url = "/selfstudy/"
+# weight = 12
 
 [[menu.main]]
 name = "Kannada"
