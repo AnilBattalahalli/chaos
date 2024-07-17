@@ -33,7 +33,7 @@ weight = 30
 
 [[menu.main]]
 name = "Statistics"
-url = "/statistics/"
+url = "/posts/statistics/"
 weight = 10
 
 [[menu.main]]
@@ -43,7 +43,7 @@ weight = 12
 
 [[menu.main]]
 name = "Kannada"
-url = "/kannada/"
+url = "/posts/kannada/"
 weight = 20
 
 [[menu.main]]
