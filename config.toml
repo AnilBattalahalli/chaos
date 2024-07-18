@@ -6,6 +6,9 @@ theme = [ "PaperMod" ]
 [markup.goldmark.renderer]
 unsafe = true
 
+[params]
+defaultTheme: light
+
 [params.profileMode]
 enabled = true
 title = "Anil Battalahalli"
