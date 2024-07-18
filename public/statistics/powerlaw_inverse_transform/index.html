@@ -12,16 +12,16 @@ $$f(x\ | \ x_m,\alpha) = \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alph
 We can find the cumulative density function by,
 $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &amp;= \int_{-\infty}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} I(x&gt;x_m) \ dx \\ &amp;= \int_{x_m}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m} \frac{1}{x_m^{-\alpha}} \int_{x_m}^x x^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m^{-\alpha&#43;1}} \left[\frac{x^{-\alpha&#43;1}}{-\alpha&#43;1} \right]_{x_m}^x \\ F(x) &amp;= 1- \left( \frac{x}{x_m} \right)^{-\alpha&#43;1}\\ \end{aligned} $$">
 <meta name="author" content="">
-<link rel="canonical" href="https://chaos-bjqzf.ondigitalocean.app/statistics/powerlaw_inverse_transform/">
+<link rel="canonical" href="https://anilbs.me/statistics/powerlaw_inverse_transform/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.92140747afc33ea259162bd479a28d4b589b890876b5d9c2796ab48f6ca68c2e.css" integrity="sha256-khQHR6/DPqJZFivUeaKNS1ibiQh2tdnCeWq0j2ymjC4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://chaos-bjqzf.ondigitalocean.app/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://chaos-bjqzf.ondigitalocean.app/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://chaos-bjqzf.ondigitalocean.app/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://chaos-bjqzf.ondigitalocean.app/apple-touch-icon.png">
-<link rel="mask-icon" href="https://chaos-bjqzf.ondigitalocean.app/safari-pinned-tab.svg">
+<link rel="icon" href="https://anilbs.me/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://anilbs.me/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://anilbs.me/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://anilbs.me/apple-touch-icon.png">
+<link rel="mask-icon" href="https://anilbs.me/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://chaos-bjqzf.ondigitalocean.app/statistics/powerlaw_inverse_transform/">
+<link rel="alternate" hreflang="en" href="https://anilbs.me/statistics/powerlaw_inverse_transform/">
 <noscript>
     <style>
         #theme-toggle,
@@ -81,7 +81,7 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://chaos-bjqzf.ondigitalocean.app/" accesskey="h" title="Chaos (Alt + H)">Chaos</a>
+            <a href="https://anilbs.me/" accesskey="h" title="Chaos (Alt + H)">Chaos</a>
                     <div class="logo-switches">
                         <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                             <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -115,13 +115,8 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
             </button>
         <ul class="menu hidden">
             <li>
-                <a href="https://chaos-bjqzf.ondigitalocean.app/statistics/" title="Statistics">
+                <a href="https://anilbs.me/statistics/" title="Statistics">
                     <span>Statistics</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://chaos-bjqzf.ondigitalocean.app/selfstudy/" title="Self Study">
-                    <span>Self Study</span>
                 </a>
             </li>
             <li>
@@ -136,12 +131,12 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
                 </a>
             </li>
             <li>
-                <a href="https://chaos-bjqzf.ondigitalocean.app/kannada/" title="Kannada">
+                <a href="https://anilbs.me/kannada/" title="Kannada">
                     <span>Kannada</span>
                 </a>
             </li>
             <li>
-                <a href="https://chaos-bjqzf.ondigitalocean.app/about/" title="About Me">
+                <a href="https://anilbs.me/about/" title="About Me">
                     <span>About Me</span>
                 </a>
             </li>
@@ -198,7 +193,7 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://chaos-bjqzf.ondigitalocean.app/stats/powerlaw/powerlaw.jpeg" alt="">
+<figure class="entry-cover"><img loading="eager" src="https://anilbs.me/stats/powerlaw/powerlaw.jpeg" alt="">
         
 </figure>
   <div class="post-content"><h3 id="implementation-of-the-inverse-transform-sampling">Implementation of the Inverse Transform Sampling<a hidden class="anchor" aria-hidden="true" href="#implementation-of-the-inverse-transform-sampling">#</a></h3>
@@ -238,15 +233,15 @@ $$</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://chaos-bjqzf.ondigitalocean.app/tags/stats/">Stats</a></li>
-      <li><a href="https://chaos-bjqzf.ondigitalocean.app/tags/sampling/">Sampling</a></li>
+      <li><a href="https://anilbs.me/tags/stats/">Stats</a></li>
+      <li><a href="https://anilbs.me/tags/sampling/">Sampling</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://chaos-bjqzf.ondigitalocean.app/">Chaos</a></span> · 
+        <span>&copy; 2024 <a href="https://anilbs.me/">Chaos</a></span> · 
 
     <span>
         Powered by
