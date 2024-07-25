@@ -1,4 +1,4 @@
-baseURL = "https://anilbs.me"
+baseURL = "https://anil.battalahalli.me"
 languageCode = "en-us"
 title = "Chaos"
 theme = [ "PaperMod" ]
@@ -7,7 +7,7 @@ theme = [ "PaperMod" ]
 unsafe = true
 
 [params]
-defaultTheme: light
+defaultTheme = light
 
 [params.profileMode]
 enabled = true
