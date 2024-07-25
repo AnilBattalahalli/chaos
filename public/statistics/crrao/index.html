@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Chaos</title>
+<meta name="keywords" content="">
+<meta name="description" content="$$ \newcommand{\lik}{\mathcal{L}} \newcommand{\X}{\mathbf{X}} \newcommand{\thetavec}{\mathbf{\Theta}} \newcommand{\likfun}{\mathcal{L}(\X|\thetavec)} \newcommand{\score}{s(\thetavec)} \newcommand{\finfo}{\mathcal{I}(\thetavec)} \newcommand{\vartx}{\underset{{X, \thetavec}}{\text{Var}}} \newcommand{\dodotheta}{\frac{\partial}{\partial \thetavec}} \newcommand{\EX}{\underset{\X}{\mathbf{E}}} $$
+Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.">
+<meta name="author" content="">
+<link rel="canonical" href="https://anil.battalahalli.me/statistics/crrao/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.92140747afc33ea259162bd479a28d4b589b890876b5d9c2796ab48f6ca68c2e.css" integrity="sha256-khQHR6/DPqJZFivUeaKNS1ibiQh2tdnCeWq0j2ymjC4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://anil.battalahalli.me/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://anil.battalahalli.me/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://anil.battalahalli.me/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://anil.battalahalli.me/apple-touch-icon.png">
+<link rel="mask-icon" href="https://anil.battalahalli.me/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://anil.battalahalli.me/statistics/crrao/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://anil.battalahalli.me/" accesskey="h" title="Chaos (Alt + H)">Chaos</a>
+                    <div class="logo-switches">
+                        <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </div>
+        </div>
+                
+            <button id="menu-trigger" aria-haspopup="menu" aria-label="Menu Button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        <ul class="menu hidden">
+            <li>
+                <a href="https://anil.battalahalli.me/statistics/" title="Statistics">
+                    <span>Statistics</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.lomography.com/homes/anilbattalahalli" title="Film Photography">
+                    <span>Film Photography</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://anil.battalahalli.me/kannada/" title="Kannada">
+                    <span>Kannada</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://anil.battalahalli.me/about/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Noto+Sans+Kannada:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Noto+Sans+Kannada:wght@100..900&family=Tiro+Kannada:ital@0;1&display=swap" rel="stylesheet">
+</header><main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><p>$$
+\newcommand{\lik}{\mathcal{L}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\thetavec}{\mathbf{\Theta}}
+\newcommand{\likfun}{\mathcal{L}(\X|\thetavec)}
+\newcommand{\score}{s(\thetavec)}
+\newcommand{\finfo}{\mathcal{I}(\thetavec)}
+\newcommand{\vartx}{\underset{{X, \thetavec}}{\text{Var}}}
+\newcommand{\dodotheta}{\frac{\partial}{\partial \thetavec}}
+\newcommand{\EX}{\underset{\X}{\mathbf{E}}}
+$$</p>
+<p>Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.</p>
+<p>I first encountered the Cramér-Rao Lower Bound (CRLB) (which I will derive later in this article) during my second semester at the university. It was not just an inequality that I had to memorize for exams. It was a logical and elegant result that showed the limit of how much information about some parameter can be extracted from a random sample/data in the science of estimation. This is one of the most famous achievements of C.R. Rao that he developed with his professor Harald Cramér. His contributions form the foundation for the field of inferential statistics and are taught at both undergraduate and graduate levels.</p>
+<p>Cramér-Rao Lower Bound</p>
+<p>Let me try to explain what CRLB is before we get into all the math. Let’s say we are interested in calculating the bias of a coin i.e. what is the probability of getting heads from this coin, we can perform an experiment like tossing a coin a bunch of times.</p>
+<p>Bernoulli Trials and the Law of Large Numbers</p>
+<p>Let’s say we toss the coin 10 times and we note down the results.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Trial</th>
+<th style="text-align:center">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Tails</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Tails</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Tails</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">Heads</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">Tails</td>
+</tr>
+</tbody>
+</table>
+<p>Results from the coin flip experiment also called the Bernoulli trials</p>
+<p>One way to estimate the probability of heads is to simply average over all the trials (empirical probability) where we have heads. Which would give us a probability of 0.6 for heads and 0.4 for tails.</p>
+<p>Now as we know, there’s always an error associated with any form of estimation. For instance, if we repeat the experiment again, we may reasonably observe 9 heads and 1 tail and suddenly our point estimate for the probability of heads is 0.9 which is vastly different from what we observed before. So to quantify this error, we construct a confidence interval around it. It is important to notice that the error in estimation is due to the randomness in the observed data; so it seems natural that as we observe more data, we have lower error in estimation. In fact, the Law of Large Numbers applied to this case implies that if we flipped the coin infinite times, we will observe that the empirical probability of heads coincides with the &ldquo;true&rdquo; probability of heads for the coin.</p>
+<p>We will come back to this motivating example to discuss the lower bound for the error in the estimation of the probability later in the article.</p>
+<p>Some basic notations</p>
+<p>Now we need to discuss some notations before we proceed. We denote the set of observations as $\X = {x_1, x_2, x_3, \dots, x_n}$ and we assume that ${x_1, x_2, x_3, \dots, x_n}$ are independent and identically distributed from the distribution $f(x ; \mathbf{\Theta})$ where $\mathbf{\Theta}$ is a vector of parameters that the distribution depends on. For example, in the case of our coin-flip experiment, we have</p>
+<p>$$
+\begin{aligned}
+f(x;p)=\left{
+\begin{array}{ll}
+p \ &amp;, &amp; x=1\
+1 - p \ &amp;, &amp; x=0
+\end{array}
+\right.
+\end{aligned}
+$$</p>
+<p>In this distribution, we have only one parameter $p$ that helps quantify the probability of getting heads with a flip of the coin. We also define likelihood $\lik$ which is the joint density associated with observing ${x_1, x_2, x_3, \dots, x_n}$ given by</p>
+<p>$$
+\lik(\X| {\mathbf{\Theta}}) = \prod_{i=1}^{n} f(x_i ; \mathbf{\Theta})
+$$</p>
+<p>For example, in the case of the coin flip experiment, let&rsquo;s say there are overall $n$ trials out of which $m$ trials are heads, we can represent the likelihood function as,</p>
+<p>$$
+\lik(\X| p) = \prod_{i=1}^{n} p^m (1-p)^{n-m}
+$$</p>
+<p>In literal terms, given the $p$ for a coin, this function represents the likelihood of observing $m$ heads out of $n$. Now that we have the basic building blocks laid out for this discussion, we can proceed with defining the score.</p>
+<p>Score and Fisher Information</p>
+<p>The score is defined as the partial derivative of the log-likelihood function with respect to the parameter space. In other words,</p>
+<p>$$
+s(\thetavec|\X) = \frac{\partial }{\partial \thetavec}{\log \likfun}
+$$</p>
+<p>When we think of $\thetavec$ in 1-D, we can easily interpret the score function as the quantification of the sensitivity of the log-likelihood function with infinitesimal changes in the parameter $\theta$. In fact, maximum likelihood estimation can be performed by simply setting $\score = 0$ and solving for $\thetavec$.</p>
+<p>Given this, we can make a simple observation that if the data carries a lot of information about the parameter $\thetavec$, then $\score$ would be very sensitive to the choice of $\thetavec$. In other words, we can say that the data carries a lot of information about $\thetavec$ if the variance of $\score$ is high.</p>
+<p>This is basically the whole point of Fisher information which was formulated by R.A Fisher given by $\mathcal{I}(\theta)$ where,</p>
+<p>$$
+\begin{aligned}
+\finfo = \underset{{\X, \thetavec}}{\text{Var}} \  \score
+\end{aligned}
+$$</p>
+<p>Deriving the formula for Fisher information</p>
+<p>Even though we have an expression above that relates the variance of the score and Fisher information, we will now derive another relation for Fisher information with the expectation of the score that&rsquo;s used more widely.</p>
+<p>From the definition, we have</p>
+<p>$$
+\begin{aligned}
+\finfo &amp;= \underset{{\X, \thetavec}}{\text{Var}} \  \score\
+&amp;= \underset{{\X}}{\text{Var}} \ \left( \dodotheta {\log \likfun} | \thetavec \right) \</p>
+<p>\end{aligned}
+$$</p>
+<p>But, from the moments&rsquo; property, we have</p>
+<p>$$
+\text{Var}(\mathbf{Y}|\thetavec) = \mathbf{E}(\mathbf{Y}^2|\thetavec)+\mathbf{E}(\mathbf{Y}|\thetavec)^2
+$$</p>
+<p>Therefore, the Fisher information now becomes,</p>
+<p>$$
+\finfo = \underset{{\X, \thetavec}}{\text{Var}} \  \score = \
+\EX\left( \left(\dodotheta \log \likfun\right)^2 | \  \thetavec \right)+ \left(\EX\left( \dodotheta \log \likfun \  | \  \thetavec \right)\right)^2
+$$</p>
+<p>Let&rsquo;s focus on the second term there, $\left(\EX\left( \dodotheta \log \likfun \ | \ \thetavec \right)\right)^2$</p>
+<p>$\EX\left( \dodotheta \log \likfun \ | \ \thetavec \right)$ is very easy to work with</p>
+<p>$$
+\EX \left(\dodotheta \log \likfun | \thetavec \right) = \int_{\chi} \dodotheta \log \likfun \ \  f(\X|\thetavec) dx
+$$</p>
+<p>But we know that,</p>
+<p>$$
+\frac{d}{dx} (\log x) = \frac{1}{x}
+$$</p>
+<p>So now for a single data point $x$ and $\likfun = f(x|\thetavec)$ we have,</p>
+<p>$$
+\begin{aligned}
+\EX \left(\dodotheta \log  f(x|\thetavec) | \thetavec \right) &amp;= \int_{\chi} \dodotheta \log  f(x|\thetavec) \ \  f(x|\thetavec) \ dx \
+&amp;= \int_{\chi} \dodotheta f(x|\thetavec) \frac{f(x|\thetavec)}{f(x|\thetavec)} \ dx \
+&amp;= \int_{\chi} \dodotheta f(x|\thetavec) dx\
+&amp;= \dodotheta \int_{\chi} f(x|\thetavec) dx\
+&amp;= 0
+\end{aligned}
+$$</p>
+<p>This gives us one of the solutions for Fisher information:</p>
+<p>$$
+\finfo =
+\EX\left( \left(\dodotheta \log \likfun\right)^2 | \  \thetavec \right)
+$$</p>
+<p>Now consider $\frac{\partial ^2} {\partial \thetavec^2} \log \likfun$,</p>
+<p>$$
+\begin{aligned}
+\frac{\partial ^2} {\partial \thetavec^2} \log \likfun = \frac{\frac{\partial ^2} {\partial \thetavec^2}{\likfun}}{\likfun} - \left(\frac{\frac{\partial} {\partial \thetavec}{\likfun}}{\likfun} \right)^2
+\end{aligned}
+$$</p>
+<p>Taking expectations throughout the equation, we have</p>
+<p>$$
+\begin{aligned}
+\mathbf{E}\left[\frac{\partial ^2} {\partial \thetavec^2} \log \likfun\right] &amp;= \mathbf{E}\left[\frac{\frac{\partial ^2} {\partial \thetavec^2}{\likfun}}{\likfun}\right] - \mathbf{E}\left[\left(\frac{\frac{\partial} {\partial \thetavec}{\likfun}}{\likfun} \right)^2\right] \</p>
+<p>\mathbf{E}\left[\frac{\partial ^2} {\partial \thetavec^2} \log \likfun\right] &amp;= \mathbf{E}\left[\frac{\frac{\partial ^2} {\partial \thetavec^2}{\likfun}}{\likfun}\right]- \mathbf{E}\left[\left( \dodotheta \log \likfun \right)^2\right]
+\end{aligned}
+$$</p>
+<p>We can use the same trick to show that $\mathbf{E}\left[\frac{\frac{\partial ^2} {\partial \thetavec^2}{\likfun}}{\likfun}\right] = 0$ and plugging that into the expression we have,</p>
+<p>$$
+\mathbf{E}\left[\frac{\partial ^2} {\partial \thetavec^2} \log \likfun\right] = \mathbf{E}\left[\frac{\frac{\partial ^2} {\partial \thetavec^2}{\likfun}}{\likfun}\right]- \mathbf{E}\left[\left( \dodotheta \log \likfun \right)^2\right]
+$$</p>
+<p>Rearranging the terms,</p>
+<p>$$
+\mathbf{E}\left[\frac{\partial ^2} {\partial \thetavec^2} \log \likfun\right] = - \mathbf{E}\left[\left( \dodotheta \log \likfun \right)^2\right]
+$$</p>
+<p>or,</p>
+<p>$$ \finfo = -
+\mathbf{E}\left[\frac{\partial ^2} {\partial \thetavec^2} \log \likfun\right]
+$$</p>
+<p>Going back to our motivating example of Bernoulli trials as it turns out, the Fisher information for $n$ trials is given by,</p>
+<p>$$
+\begin{aligned}
+\mathcal{I}_X(p) =
+\frac{n}{p(1 - p)}\
+\end{aligned}
+$$</p>
+<p>Let&rsquo;s observe this for a bit. We have a constant $n$ which we can ignore for now. The denominator is $p (1-p)$ which maximizes at $p = \frac{1}{2}$ or, the Fisher information is at its minimum at $p = \frac{1}{2}$. Why is this?</p>
+<p>Conceptually, this means that when $p = \frac{1}{2}$, the Bernoulli trial is equally likely to produce a “success” or a “failure”. This makes it difficult to estimate the value of p from a sample of observations because there is no clear pattern in the data that would allow you to distinguish between different values of p which implies that the Fisher information is low for an unbiased coin for a given number of trials.</p>
+<p>Now we have all the pieces we need to derive the Cramér-Rao Lower Bound</p>
+<p>Let&rsquo;s start with an estimator $\hat{\thetavec}(\X)$ and let&rsquo;s assume that it is unbiased. Mathematically,</p>
+<p>$$
+\mathbf{E}\left[\hat{\thetavec}(\X) - \thetavec \right] = 0
+$$</p>
+<p>We can see that the randomness here pertains to $\X$, so we have</p>
+<p>$$
+\begin{aligned}
+\int_{\chi} \left(\hat{\thetavec}(\X) - \thetavec\right) f(x; \thetavec) dx = 0\
+\end{aligned}
+$$</p>
+<p>Taking partial derivatives $\dodotheta$ on both sides and applying the product rule for integration,</p>
+<p>$$
+\begin{aligned}
+\dodotheta \int_{\chi} \left(\hat{\thetavec}(\X) - \thetavec\right) f(x; \thetavec) dx &amp;= 0\
+\int_{\chi} \dodotheta f(x|\thetavec) \left(\hat{\thetavec}(\X) - \thetavec\right) dx &amp;= \int_{\chi} f(x; \thetavec) dx\
+\int_{\chi} \dodotheta f(x|\thetavec) \left(\hat{\thetavec}(\X) - \thetavec\right) dx &amp;= 1
+\end{aligned}
+$$</p>
+<p>Multiply and divide the integrand by $f(x; \thetavec)$</p>
+<p>$$
+\begin{aligned}
+\int_{\chi} \dodotheta f(x|\thetavec) \frac{f(x|\thetavec)}{f(x|\thetavec)} \left(\hat{\thetavec}(\X) - \thetavec\right) dx &amp;= 1\
+\end{aligned}
+$$</p>
+<p>Using the log derivative trick we can rewrite the equation above as,</p>
+<p>$$
+\begin{aligned}
+\int_{\chi} \dodotheta \log f(x|\thetavec) \  f(x|\thetavec) \left(\hat{\thetavec} \ (\X) - \thetavec\right) dx &amp;= 1\
+\end{aligned}
+$$</p>
+<p>Let us factor $f(x|\thetavec)$ as $\sqrt{f(x|\thetavec)} \ \times \ \sqrt{f(x|\thetavec)}$</p>
+<p>$$
+\begin{aligned}
+\int_{\chi} \left(\dodotheta \log f(x|\thetavec) \  \sqrt{f(x|\thetavec)}\right) \ \left(\sqrt{f(x|\thetavec)} \left(\hat{\thetavec} \ (\X) - \thetavec\right)\right) dx &amp;= 1\
+\end{aligned}
+$$</p>
+<p>Now we use Cauchy-Schwartz inequality, i.e.</p>
+<p>$$
+\left(\int_{A} f(x) \ g(x)\right)^2 \le \int_{A}f^2(x) dx \int_{A} g^2(x) dx
+$$</p>
+<p>Applying this to the integral at hand,</p>
+<p>$$
+\begin{aligned}
+\left[ \int_{\chi} \left(\dodotheta \log f(x|\thetavec) \  \sqrt{f(x|\thetavec)}\right) \ \left(\sqrt{f(x|\thetavec)} \left(\hat{\thetavec} \ (\X) - \thetavec\right)\right) \ dx \right]^2 \
+\le \int_{\chi} \left[\dodotheta \log f(x|\thetavec)\right]^2 \  f(x|\thetavec) \ \ dx \ \times \ \int_{\chi} \left(\hat{\thetavec} \ (\X) - \thetavec\right)^2 \ f(x|\thetavec) \ dx
+\end{aligned}
+$$</p>
+<p>Here, we already know that,</p>
+<p>$$
+\begin{aligned}
+\finfo &amp;= \mathbf{E} \left({\dodotheta \log f(x; \thetavec)}\right)^2 = \int_{\chi} \left[\dodotheta \log f(x|\thetavec)\right]^2 \ f(x|\thetavec) \ \ dx \
+\text{Var} \ \thetavec &amp;=  \int_{\chi} \left(\hat{\thetavec} \ (\X) - \thetavec\right)^2 \ f(x|\thetavec) \ dx \
+\end{aligned}
+$$</p>
+<p>Also from the previous result,</p>
+<p>$$
+\int_{\chi} \left(\dodotheta \log f(x|\thetavec) \  \sqrt{f(x|\thetavec)}\right) \ \left(\sqrt{f(x|\thetavec)} \left(\hat{\thetavec} \ (\X) - \thetavec\right)\right) dx = 1\
+$$</p>
+<p>Putting things together, we have:</p>
+<p>$$
+\finfo \ \text{Var} \ \thetavec \ge 1
+$$</p>
+<p>or,</p>
+<p>$$
+\text{Var} \ \thetavec \ge \frac{1}{\finfo}
+$$</p>
+<p>And this beautiful equation provides us with a lower bound for the error of an estimator. You can see that it is not a strict inequality. When the variance of an estimator reaches the Cramér-Rao Lower Bound is called the most efficient estimator. When your unbiased estimator reaches CRLB, you can stop searching for a better estimator.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://anil.battalahalli.me/">Chaos</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script>
+    
+    
+    let b = document.querySelector("#menu-trigger")
+    let m = document.querySelector(".menu")
+    b.addEventListener("click", function () {
+        m.classList.toggle("hidden")
+    });
+    
+    document.body.addEventListener('click', function (event) {
+        if (!b.contains(event.target)) {
+            m.classList.add("hidden")
+        }
+    });
+    
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
