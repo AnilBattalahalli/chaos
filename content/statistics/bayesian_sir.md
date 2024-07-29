@@ -7,7 +7,7 @@ showToc: false
 weight: 190
 math: true
 cover:
-    image: "stats/bayesian_sir/bayesian_sir.jpg"
+    image: "stats/bayesian_sir/bayesian_sir_cover.jpg"
 --- 
 <p style="text-align: center; font-style: italic; color: #808080;">
   <small>This project was co-authored by Heather Johnston and Youngwoo Kwon</small>
