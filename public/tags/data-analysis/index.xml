@@ -8,6 +8,14 @@
     <language>en-us</language>
     <atom:link href="https://anil.battalahalli.me/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C.R.Rao and his lower bounds</title>
+      <link>https://anil.battalahalli.me/statistics/crrao/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://anil.battalahalli.me/statistics/crrao/</guid>
+      <description>&#39;Abstract Dunes&#39; by Fons Heijnsbroek $$ \gdef{\lik}{\mathcal{L}} \gdef{\X}{\mathbf{X}} \gdef{\thetavec}{\mathbf{\Theta}} \gdef{\likfun}{\mathcal{L}(\X|\thetavec)} \gdef{\score}{s(\thetavec)} \gdef{\finfo}{\mathcal{I}(\thetavec)} \gdef{\vartx}{\underset{{X, \thetavec}}{\text{Var}}} \gdef{\dodotheta}{\frac{\partial}{\partial \thetavec}} \gdef{\EX}{\underset{\X}{\mathbf{E}}} $$
+Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine.</description>
+    </item>
+    <item>
       <title>Is the Dirichlet Function Riemann-Darboux Integrable?</title>
       <link>https://anil.battalahalli.me/statistics/dirichlet_distribution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

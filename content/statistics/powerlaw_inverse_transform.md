@@ -1,6 +1,5 @@
 ---
 title: "Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)"
-#description: "Can computers summarize the contents of an image?"
 dateString: Jan 2020 - Feb 2020
 draft: false
 tags: ["stats", "sampling"]

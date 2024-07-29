@@ -1,6 +1,5 @@
 ---
 title: "Is the Dirichlet Function Riemann-Darboux Integrable?"
-#description: "Can computers summarize the contents of an image?"
 dateString: Jan 2021 - Feb 2021
 draft: false
 tags: ["stats", "data analysis"]

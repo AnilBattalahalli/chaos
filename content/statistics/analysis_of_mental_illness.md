@@ -1,6 +1,5 @@
 ---
 title: "Analysis of Prevalence of Mental Illnesses and Suicide in Different Countries"
-#description: "Can computers summarize the contents of an image?"
 dateString: Jan 2020 - Feb 2020
 draft: false
 tags: ["stats", "data analysis"]

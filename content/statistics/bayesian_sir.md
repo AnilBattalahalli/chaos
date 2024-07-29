@@ -1,6 +1,5 @@
 ---
 title: "Bayesian Methods for the Estimation of Infection and Recovery Rates of an Epidemic from Stochastic SIR Data"
-#description: "Can computers summarize the contents of an image?"
 dateString: Jan 2022 - Feb 2022
 draft: false
 tags: ["stats", "data analysis"]
