@@ -4,7 +4,7 @@ dateString: Jan 2020 - Feb 2020
 draft: false
 tags: ["stats", "data analysis"]
 showToc: false
-weight: 145
+weight: 95
 math: true
 cover:
     image: "stats/crrao/crrao_cover.jpg"

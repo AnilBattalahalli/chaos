@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Kannada on Chaos</title>
-    <link>https://anil.battalahalli.me/tags/kannada/</link>
+    <link>http://localhost:1313/tags/kannada/</link>
     <description>Recent content in Kannada on Chaos</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <atom:link href="https://anil.battalahalli.me/tags/kannada/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/kannada/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ಚಿನ್ನ, ನೀನಿಲ್ಲದೆ ಬಿಮ್ಮೆನ್ನುತಿದೆ ರಮ್ಯೋದ್ಯಾನ</title>
-      <link>https://anil.battalahalli.me/kannada/chinna_neenillade/</link>
+      <link>http://localhost:1313/kannada/chinna_neenillade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/kannada/chinna_neenillade/</guid>
+      <guid>http://localhost:1313/kannada/chinna_neenillade/</guid>
       <description>ಮತ್ತದೇ ಬೇಸರ, ಅದೇ ಸಂಜೆ, ಅದೇ ಏಕಾಂತ
 ನಿನ್ನ ಜೊತೆಯಿಲ್ಲ,ದೆ ಮಾತಿಲ್ಲದೆ ಮನ ವಿಭ್ರಾಂತ
 ಕಣ್ಣನೆ ದಣಿಸುವ ಈ ಪಡುವಣ ಬಾನ್ ಬಣ್ಣಗಳು,
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>ಈ ದಿನಾಂತ ಸಮಯದಲಿ</title>
-      <link>https://anil.battalahalli.me/kannada/ee_dinaanta/</link>
+      <link>http://localhost:1313/kannada/ee_dinaanta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/kannada/ee_dinaanta/</guid>
+      <guid>http://localhost:1313/kannada/ee_dinaanta/</guid>
       <description>ಈ ದಿನಾಂತ ಸಮಯದಲಿ
 ಉಪವನ ಏಕಾಂತದಲಿ
 ಗೋಧೂಳಿ ಹೊನ್ನಿನಲಿ
@@ -57,9 +57,9 @@
     </item>
     <item>
       <title>ತಿರುಗಿ ನಾ ಹ್ಯಾಂಗ ನೋಡಲೇ ನಿನ್ನ?</title>
-      <link>https://anil.battalahalli.me/kannada/nee_hinga_nodabeda/</link>
+      <link>http://localhost:1313/kannada/nee_hinga_nodabeda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/kannada/nee_hinga_nodabeda/</guid>
+      <guid>http://localhost:1313/kannada/nee_hinga_nodabeda/</guid>
       <description>ನೀ ಹೀಂಗ ನೋಡಬ್ಯಾಡ ನನ್ನ
 ನೀ ಹೀಂಗ ನೋಡಿದರ ನನ್ನ ತಿರುಗಿ ನಾ ಹ್ಯಾಂಗ ನೋಡಲೇ ನಿನ್ನ
 ಸಂಸಾರ ಸಾಗರದಾಗ ಲೆಕ್ಕವಿರದಷ್ಟು ದುಃಖದ ಬಂಡಿ
@@ -74,9 +74,9 @@
     </item>
     <item>
       <title>ನೀ ಹೊರಟಿದ್ದೀಗ ಎಲ್ಲಿಗೆ?</title>
-      <link>https://anil.battalahalli.me/kannada/nee_horatiddiga_ellige/</link>
+      <link>http://localhost:1313/kannada/nee_horatiddiga_ellige/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/kannada/nee_horatiddiga_ellige/</guid>
+      <guid>http://localhost:1313/kannada/nee_horatiddiga_ellige/</guid>
       <description>ಘಮ ಘಮ ಘಮಾಡಿಸ್ತಾವ ಮಲ್ಲಿಗೆ
 ನೀ ಹೊರಟಿದ್ದೀಗ ಎಲ್ಲಿಗೆ?
 ತುಳುಕ್ಯಾಡುತ್ತಾವ ತೂಕಡಿಕಿ

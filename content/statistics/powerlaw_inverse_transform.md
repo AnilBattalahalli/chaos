@@ -7,7 +7,7 @@ showToc: false
 weight: 203
 math: true
 cover:
-    image: "stats/powerlaw/powerlaw.jpeg"
+    image: "stats/powerlaw/powerlaw.jpg"
 --- 
 
 ### Implementation of the Inverse Transform Sampling
