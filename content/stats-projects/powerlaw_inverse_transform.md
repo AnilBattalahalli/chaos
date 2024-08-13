@@ -9,6 +9,8 @@ cover:
     image: "stats/powerlaw/powerlaw.jpg"
 draft: true
 unlisted: true
+_build:
+  list: never
 --- 
 
 ### Implementation of the Inverse Transform Sampling

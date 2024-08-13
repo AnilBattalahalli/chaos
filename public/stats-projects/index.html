@@ -255,29 +255,6 @@ $$ \begin{aligned} f(x)&amp;=\left\{ \begin{array}{ll} 1, &amp; \text{if } x \te
   <footer class="entry-footer"></footer>
   <a class="entry-link" aria-label="post link to Analysis of Prevalence of Mental Illnesses and Suicide in Different Countries" href="https://anil.battalahalli.me/stats-projects/analysis_of_mental_illness/"></a>
 </article>
-
-<article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://anil.battalahalli.me/stats/powerlaw/powerlaw.jpg" alt="">
-</figure>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Implementation of the Inverse Transform Sampling The probability density function of a power law distribution is given by,
-$$f(x\ | \ x_m,\alpha) = \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ , x&gt;x_m$$
-We can find the cumulative density function by,
-$$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &amp;= \int_{-\infty}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} I(x&gt;x_m) \ dx \\ &amp;= \int_{x_m}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m} \frac{1}{x_m^{-\alpha}} \int_{x_m}^x x^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m^{-\alpha&#43;1}} \left[\frac{x^{-\alpha&#43;1}}{-\alpha&#43;1} \right]_{x_m}^x \\ F(x) &amp;= 1- \left( \frac{x}{x_m} \right)^{-\alpha&#43;1}\\ \end{aligned} $$...</p>
-  </div>
-  <footer class="entry-footer"></footer>
-  <a class="entry-link" aria-label="post link to Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)" href="https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/"></a>
-</article>
     </main>
     
 <footer class="footer">

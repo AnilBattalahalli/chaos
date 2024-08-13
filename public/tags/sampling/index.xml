@@ -7,15 +7,5 @@
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
     <atom:link href="https://anil.battalahalli.me/tags/sampling/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)</title>
-      <link>https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/</guid>
-      <description>Implementation of the Inverse Transform Sampling The probability density function of a power law distribution is given by,
-$$f(x\ | \ x_m,\alpha) = \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ , x&amp;gt;x_m$$
-We can find the cumulative density function by,
-$$ \begin{aligned} F(x) &amp;amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &amp;amp;= \int_{-\infty}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} I(x&amp;gt;x_m) \ dx \\ &amp;amp;= \int_{x_m}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ dx \\ &amp;amp;= \frac{\alpha-1}{x_m} \frac{1}{x_m^{-\alpha}} \int_{x_m}^x x^{-\alpha} \ dx \\ &amp;amp;= \frac{\alpha-1}{x_m^{-\alpha+1}} \left[\frac{x^{-\alpha+1}}{-\alpha+1} \right]_{x_m}^x \\ F(x) &amp;amp;= 1- \left( \frac{x}{x_m} \right)^{-\alpha+1}\\ \end{aligned} $$</description>
-    </item>
   </channel>
 </rss>
