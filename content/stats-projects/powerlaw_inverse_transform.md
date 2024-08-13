@@ -1,13 +1,14 @@
 ---
 title: "Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)"
 dateString: Jan 2020 - Feb 2020
-draft: false
 tags: ["stats", "sampling"]
 showToc: false
 weight: 203
 math: true
 cover:
     image: "stats/powerlaw/powerlaw.jpg"
+draft: true
+unlisted: true
 --- 
 
 ### Implementation of the Inverse Transform Sampling

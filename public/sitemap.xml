@@ -2,25 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://anil.battalahalli.me/statistics/crrao/</loc>
-  </url><url>
-    <loc>https://anil.battalahalli.me/statistics/bayesian_sir/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/bayesian_sir/</loc>
   </url><url>
     <loc>https://anil.battalahalli.me/kannada/chinna_neenillade/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/kannada/ee_dinaanta/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/mcmc_powerlaw/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/statistics/mcmc_powerlaw/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/crrao/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/statistics/dirichlet/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/dirichlet/</loc>
   </url><url>
     <loc>https://anil.battalahalli.me/kannada/nee_hinga_nodabeda/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/statistics/analysis_of_mental_illness/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/analysis_of_mental_illness/</loc>
   </url><url>
     <loc>https://anil.battalahalli.me/kannada/nee_horatiddiga_ellige/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/statistics/powerlaw_inverse_transform/</loc>
+    <loc>https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/</loc>
   </url><url>
     <loc>https://anil.battalahalli.me/</loc>
     <lastmod>2024-05-31T21:29:00-04:00</lastmod>
@@ -41,9 +39,9 @@
   </url><url>
     <loc>https://anil.battalahalli.me/search/</loc>
   </url><url>
-    <loc>https://anil.battalahalli.me/statistics/</loc>
-  </url><url>
     <loc>https://anil.battalahalli.me/tags/stats/</loc>
+  </url><url>
+    <loc>https://anil.battalahalli.me/stats-projects/</loc>
   </url><url>
     <loc>https://anil.battalahalli.me/tags/</loc>
   </url>

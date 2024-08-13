@@ -40,8 +40,9 @@
     background: var(--entry);
     border-radius: var(--radius);
     transition: transform 0.1s;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
 }
+
 
 .post-entry:active {
     transform: scale(0.96);
@@ -59,7 +60,7 @@
 .entry-content {
     margin: 8px 0;
     color: var(--secondary);
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.6;
     overflow: hidden;
     display: -webkit-box;
@@ -105,4 +106,34 @@
 .entry-cover a {
     color: var(--secondary);
     box-shadow: 0 1px 0 var(--primary);
+}
+
+.subcategory {
+    display: flex;
+    position: relative;
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    background: var(--entry);
+    border-radius: var(--radius);
+    transition: transform   
+ 0.1s ease-in-out;
+    border: 2px solid var(--border);
+}
+
+.subcategory:hover {
+    transform: scale(1.02); /* Grow by 2% on hover */
+}
+
+.subcategory:active {
+    transform: scale(0.96);
+}
+
+.subcategory .subcategory-image {
+    width: 20%; /* Make the image as wide as its container */
+    height: 20%; /* Maintain aspect ratio */
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.subcategory .subcategory-content {
+    flex: 1;
 }

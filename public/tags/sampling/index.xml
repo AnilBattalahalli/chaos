@@ -9,9 +9,9 @@
     <atom:link href="https://anil.battalahalli.me/tags/sampling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia)</title>
-      <link>https://anil.battalahalli.me/statistics/powerlaw_inverse_transform/</link>
+      <link>https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anil.battalahalli.me/statistics/powerlaw_inverse_transform/</guid>
+      <guid>https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/</guid>
       <description>Implementation of the Inverse Transform Sampling The probability density function of a power law distribution is given by,
 $$f(x\ | \ x_m,\alpha) = \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ , x&amp;gt;x_m$$
 We can find the cumulative density function by,

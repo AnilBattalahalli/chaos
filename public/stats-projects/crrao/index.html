@@ -7,11 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>C.R.Rao and his lower bounds | Chaos</title>
 <meta name="keywords" content="stats, data analysis">
-<meta name="description" content="&#39;Abstract Dunes&#39; by Fons Heijnsbroek $$ \gdef{\lik}{\mathcal{L}} \gdef{\X}{\mathbf{X}} \gdef{\thetavec}{\mathbf{\Theta}} \gdef{\likfun}{\mathcal{L}(\X|\thetavec)} \gdef{\score}{s(\thetavec)} \gdef{\finfo}{\mathcal{I}(\thetavec)} \gdef{\vartx}{\underset{{X, \thetavec}}{\text{Var}}} \gdef{\dodotheta}{\frac{\partial}{\partial \thetavec}} \gdef{\EX}{\underset{\X}{\mathbf{E}}} $$
-Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine.">
+<meta name="description" content="Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.">
 <meta name="author" content="">
-<link rel="canonical" href="https://anil.battalahalli.me/statistics/crrao/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.92140747afc33ea259162bd479a28d4b589b890876b5d9c2796ab48f6ca68c2e.css" integrity="sha256-khQHR6/DPqJZFivUeaKNS1ibiQh2tdnCeWq0j2ymjC4=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://anil.battalahalli.me/stats-projects/crrao/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc88c4dadcfb54218d4b2388cf5e37302b464cc23666c8634332102bc2103f10.css" integrity="sha256-vIjE2tz7VCGNSyOIz143MCtGTMI2ZshjQzIQK8IQPxA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://anil.battalahalli.me/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://anil.battalahalli.me/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://anil.battalahalli.me/favicon-32x32.png">
@@ -19,7 +18,7 @@ Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష�
 <link rel="mask-icon" href="https://anil.battalahalli.me/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://anil.battalahalli.me/statistics/crrao/">
+<link rel="alternate" hreflang="en" href="https://anil.battalahalli.me/stats-projects/crrao/">
 <noscript>
     <style>
         #theme-toggle,
@@ -191,12 +190,11 @@ Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష�
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://anil.battalahalli.me/stats/crrao/crrao_cover.jpg" alt="">
+<figure class="entry-cover"><img loading="eager" src="https://anil.battalahalli.me/stats/crrao/crrao.webp" alt="">
         
 </figure>
-  <div class="post-content"><p style="text-align: center; font-style: italic; color: #808080;">
-  <small>'Abstract Dunes' by Fons Heijnsbroek</small>
-</p>
+  <div class="post-content"><p>Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.</p>
+<p>I first encountered the Cramér-Rao Lower Bound (CRLB) (which I will derive later in this article) during my second semester at the university. It was not just an inequality that I had to memorize for exams. It was a logical and elegant result that showed the limit of how much information about some parameter can be extracted from a random sample/data in the science of estimation. This is one of the most famous achievements of C.R. Rao that he developed with his professor Harald Cramér. His contributions form the foundation for the field of inferential statistics and are taught at both undergraduate and graduate levels.</p>
 <p>$$
 \gdef{\lik}{\mathcal{L}}
 \gdef{\X}{\mathbf{X}}
@@ -208,8 +206,6 @@ Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష�
 \gdef{\dodotheta}{\frac{\partial}{\partial \thetavec}}
 \gdef{\EX}{\underset{\X}{\mathbf{E}}}
 $$</p>
-<p>Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.</p>
-<p>I first encountered the Cramér-Rao Lower Bound (CRLB) (which I will derive later in this article) during my second semester at the university. It was not just an inequality that I had to memorize for exams. It was a logical and elegant result that showed the limit of how much information about some parameter can be extracted from a random sample/data in the science of estimation. This is one of the most famous achievements of C.R. Rao that he developed with his professor Harald Cramér. His contributions form the foundation for the field of inferential statistics and are taught at both undergraduate and graduate levels.</p>
 <p>Cramér-Rao Lower Bound</p>
 <p>Let me try to explain what CRLB is before we get into all the math. Let’s say we are interested in calculating the bias of a coin i.e. what is the probability of getting heads from this coin, we can perform an experiment like tossing a coin a bunch of times.</p>
 <p>Bernoulli Trials and the Law of Large Numbers</p>

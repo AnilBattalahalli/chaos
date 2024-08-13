@@ -4,15 +4,16 @@ dateString: Jan 2020 - Feb 2020
 draft: false
 tags: ["stats", "data analysis"]
 showToc: false
-weight: 95
+weight: 145
 math: true
 cover:
-    image: "stats/crrao/crrao_cover.jpg"
+    image: "stats/crrao/crrao.webp"
 --- 
-<p style="text-align: center; font-style: italic; color: #808080;">
-  <small>'Abstract Dunes' by Fons Heijnsbroek</small>
-</p>
 
+
+Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.
+
+I first encountered the Cramér-Rao Lower Bound (CRLB) (which I will derive later in this article) during my second semester at the university. It was not just an inequality that I had to memorize for exams. It was a logical and elegant result that showed the limit of how much information about some parameter can be extracted from a random sample/data in the science of estimation. This is one of the most famous achievements of C.R. Rao that he developed with his professor Harald Cramér. His contributions form the foundation for the field of inferential statistics and are taught at both undergraduate and graduate levels.
 
 $$
 \gdef{\lik}{\mathcal{L}}
@@ -25,10 +26,6 @@ $$
 \gdef{\dodotheta}{\frac{\partial}{\partial \thetavec}}
 \gdef{\EX}{\underset{\X}{\mathbf{E}}}
 $$
-
-Calyampudi Radhakrishna Rao (కల్యంపూడి రాధాకృష్ణారావు) is a legendary mathematician and statistician who has made pioneering contributions to various fields such as information theory, estimation, inference, multivariate analysis, and orthogonal arrays. His groundbreaking work has had a profound impact on not only statistics but also economics, genetics, anthropology, geology, national planning, demography, biometry, and medicine. In April 2023, he received the International Prize in Statistics, also known as the Nobel Prize for Statistics, for his dedication to the field.
-
-I first encountered the Cramér-Rao Lower Bound (CRLB) (which I will derive later in this article) during my second semester at the university. It was not just an inequality that I had to memorize for exams. It was a logical and elegant result that showed the limit of how much information about some parameter can be extracted from a random sample/data in the science of estimation. This is one of the most famous achievements of C.R. Rao that he developed with his professor Harald Cramér. His contributions form the foundation for the field of inferential statistics and are taught at both undergraduate and graduate levels.
 
 Cramér-Rao Lower Bound
 

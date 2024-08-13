@@ -13,13 +13,15 @@ cover:
   <small>This is not really stats project but it is pretty cool</small>
 </p>
 
-$$
-\gdef{\boldphi}{\boldsymbol{\phi}}
-$$
 
 ## The Dirichlet Function
 
 The Dirichlet function is one of the easiest functions to define. It's literally,
+
+$$
+\gdef{\boldphi}{\boldsymbol{\phi}}
+$$
+
 
 <div>
 $$
