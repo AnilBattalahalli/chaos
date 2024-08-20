@@ -2,6 +2,7 @@ baseURL = "https://anil.battalahalli.me"
 languageCode = "en-us"
 title = "Chaos"
 theme = [ "PaperMod" ]
+ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$" ]
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -30,6 +31,11 @@ url = "https://github.com/AnilBattalahalli"
 name = "About Me"
 url = "/about/"
 weight = 30
+
+[[menu.main]]
+name = "CV"
+url = "/cv/"
+weight = 25
 
 [[menu.main]]
 name = "Statistics"

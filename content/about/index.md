@@ -1,6 +1,5 @@
 ---
 title: "About"
-date: 2024-05-31T21:29:00-04:00
 url: about
 math: true
 _build:
