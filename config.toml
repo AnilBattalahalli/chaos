@@ -51,10 +51,10 @@ name = "ಕಲಿ"
 url = "/kali/"
 weight = 35
 
-[[menu.main]]
-name = "Kannada"
-url = "/kannada/"
-weight = 20
+# [[menu.main]]
+# name = "Kannada"
+# url = "/kannada/"
+# weight = 20
 
 [[menu.main]]
 name = "Film Photography"

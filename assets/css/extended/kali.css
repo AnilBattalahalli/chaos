@@ -1,33 +1,23 @@
-/* ------------------ LAYOUT ------------------ */
-body {
+/* ------------------ WIDGET WRAPPER ------------------ */
+.kali-widget-wrapper {
   min-height: 100vh;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  align-items: center;
+  padding: 20px 0;
   background: #f5f5f5;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 10px; /* flexible padding */
-}
-
-/* ------------------ CONTAINER ------------------ */
-.kali-container {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
   box-sizing: border-box;
 }
 
+/* ------------------ CONTAINER ------------------ */
+.kali-widget-wrapper .kali-container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
 /* ------------------ BUTTON ------------------ */
-.kali-button {
+.kali-widget-wrapper .kali-button {
   padding: 10px 18px;
   border: none;
   background: black;
@@ -36,18 +26,18 @@ main {
   cursor: pointer;
   margin-bottom: 20px;
   font-size: 16px;
-  transition: background 0.2s;
+  transition: background 0.3s;
 }
 
-.kali-button:hover {
+.kali-widget-wrapper .kali-button:hover {
   background: #333;
 }
 
 /* ------------------ CARD ------------------ */
-.kali-card {
-  width: 100%;              /* fluid width */
+.kali-widget-wrapper .kali-card {
+  width: 100%;
   max-width: 600px;
-  height: 320px;            /* fixed height */
+  height: 320px;  /* fixed height */
   margin: auto;
   padding: 20px;
   border-radius: 16px;
@@ -55,96 +45,81 @@ main {
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  transition: opacity 0.3s;
-}
-
-/* ------------------ WORD ------------------ */
-.kali-word {
-  font-size: 26px;
-  font-weight: bold;
-  word-break: break-word;
-  text-align: left;
-}
-
-/* ------------------ PRONUNCIATION ------------------ */
-.kali-pronunciation {
-  color: gray;
-  margin-bottom: 10px;
-  font-size: 14px;
-  text-align: left;
-}
-
-/* ------------------ DEFINITIONS ------------------ */
-.kali-definitions {
-  flex: 1;
-  overflow-y: auto;
-  margin-top: 10px;
-}
-
-.kali-card ol {
-  padding-left: 24px;
-  margin: 0;
-  text-align: left;
-}
-
-.kali-card ol li {
-  display: list-item !important;
-  list-style-type: decimal !important;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  max-height: 4.2em;
+  justify-content: flex-start;
+  transition: opacity 0.4s ease; /* for dissolve effect */
   overflow: hidden;
 }
 
+/* ------------------ WORD ------------------ */
+.kali-widget-wrapper .kali-word {
+  font-size: 26px;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+/* ------------------ PRONUNCIATION ------------------ */
+.kali-widget-wrapper .kali-pronunciation {
+  color: gray;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* ------------------ DEFINITIONS ------------------ */
+.kali-widget-wrapper .kali-definitions {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  text-align: left; /* align definitions to left */
+}
+
+.kali-widget-wrapper .kali-definitions ol {
+  padding-left: 24px;
+  margin: 0;
+  list-style-type: decimal !important;
+}
+
+.kali-widget-wrapper .kali-definitions ol li {
+  display: list-item !important;   /* force numbered list */
+  list-style-type: decimal !important;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  max-height: 4.2em;  /* 3 lines max */
+  overflow: hidden;
+  word-break: break-word;
+}
+
 /* ------------------ REFERENCES ------------------ */
-.reference {
+.kali-widget-wrapper .reference {
   color: #555;
   font-style: italic;
 }
 
 /* ------------------ SCROLLBAR ------------------ */
-.kali-definitions::-webkit-scrollbar {
+.kali-widget-wrapper .kali-definitions::-webkit-scrollbar {
   width: 6px;
 }
 
-.kali-definitions::-webkit-scrollbar-thumb {
+.kali-widget-wrapper .kali-definitions::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 10px;
 }
 
-/* ------------------ FADE ANIMATION ------------------ */
-.fade-out {
-  opacity: 0;
-}
-
 /* ------------------ MOBILE ------------------ */
 @media (max-width: 600px) {
-
-  .kali-container {
+  .kali-widget-wrapper .kali-container {
     padding: 12px;
   }
 
-  .kali-word {
+  .kali-widget-wrapper .kali-word {
     font-size: 22px;
   }
 
-  .kali-pronunciation {
-    font-size: 12px;
-  }
-
-  .kali-button {
+  .kali-widget-wrapper .kali-button {
     width: 100%;
   }
 
-  .kali-card {
+  .kali-widget-wrapper .kali-card {
     padding: 15px;
     height: 260px;
-  }
-
-  .kali-definitions li {
-    -webkit-line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }

@@ -1,5 +1,4 @@
 const N_CHUNKS = 200;
-
 let dictionary = [];
 let chunkId = null;
 
@@ -15,7 +14,6 @@ async function initialLoad() {
     dictionary = await res.json();
 
     loadRandomEntry(); // show first word
-
   } catch (err) {
     console.error(err);
     document.getElementById("card").innerHTML = "Error loading data";
@@ -29,22 +27,17 @@ function loadRandomEntry() {
     return;
   }
 
+  // Fade out
   const card = document.getElementById("card");
-
-  // Start fade out
-  card.classList.add("fade-out");
+  card.style.opacity = 0;
 
   setTimeout(() => {
-    // Change content after fade out
     const entry = dictionary[Math.floor(Math.random() * dictionary.length)];
     renderCard(entry);
 
-    // Force reflow so fade-in works
-    void card.offsetWidth; 
-
     // Fade in
-    card.classList.remove("fade-out");
-  }, 300); // matches CSS transition duration
+    card.style.opacity = 1;
+  }, 300);  // matches CSS transition
 }
 
 /* ------------------ RENDER ------------------ */
@@ -57,19 +50,17 @@ function renderCard(entry) {
     html += `<div class="kali-pronunciation">${entry.pronunciation}</div>`;
   }
 
-  html += `<div class="kali-definitions"><ul>`;
+  html += `<div class="kali-definitions">`;
 
   entry.definitions.forEach((d, i) => {
-    const number = i + 1;
-
     if (d.is_reference) {
-      html += `<li class="reference"><strong>${number}.</strong> → ${d.text}</li>`;
+      html += `<div class="reference">→ ${d.text}</div>`;
     } else {
-      html += `<li><strong>${number}.</strong> ${d.text}</li>`;
+      html += `<div>${i + 1}. ${d.text}</div>`;  // manual numbering
     }
   });
 
-  html += "</ul></div>";
+  html += `</div>`;
 
   document.getElementById("card").innerHTML = html;
 }
