@@ -7,13 +7,23 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Generation of Power Law Samples with Inverse Transform Sampling (Python, R and Julia) | Chaos</title>
 <meta name="keywords" content="stats, sampling">
-<meta name="description" content="Implementation of the Inverse Transform Sampling The probability density function of a power law distribution is given by,
+<meta name="description" content="Implementation of the Inverse Transform Sampling
+The probability density function of a power law distribution is given by,
 $$f(x\ | \ x_m,\alpha) = \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ , x&gt;x_m$$
 We can find the cumulative density function by,
-$$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &amp;= \int_{-\infty}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} I(x&gt;x_m) \ dx \\ &amp;= \int_{x_m}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m} \frac{1}{x_m^{-\alpha}} \int_{x_m}^x x^{-\alpha} \ dx \\ &amp;= \frac{\alpha-1}{x_m^{-\alpha&#43;1}} \left[\frac{x^{-\alpha&#43;1}}{-\alpha&#43;1} \right]_{x_m}^x \\ F(x) &amp;= 1- \left( \frac{x}{x_m} \right)^{-\alpha&#43;1}\\ \end{aligned} $$">
+$$
+\begin{aligned}
+F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\
+&amp;= \int_{-\infty}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} I(x&gt;x_m) \ dx \\
+&amp;= \int_{x_m}^x \frac{\alpha-1}{x_m} \left(\frac{x}{x_m}\right)^{-\alpha} \ dx \\
+&amp;= \frac{\alpha-1}{x_m} \frac{1}{x_m^{-\alpha}} \int_{x_m}^x x^{-\alpha} \ dx \\
+&amp;= \frac{\alpha-1}{x_m^{-\alpha&#43;1}} \left[\frac{x^{-\alpha&#43;1}}{-\alpha&#43;1} \right]_{x_m}^x \\
+F(x) &amp;= 1- \left( \frac{x}{x_m} \right)^{-\alpha&#43;1}\\
+\end{aligned}
+$$">
 <meta name="author" content="">
 <link rel="canonical" href="https://anil.battalahalli.me/stats-projects/powerlaw_inverse_transform/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bc88c4dadcfb54218d4b2388cf5e37302b464cc23666c8634332102bc2103f10.css" integrity="sha256-vIjE2tz7VCGNSyOIz143MCtGTMI2ZshjQzIQK8IQPxA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2622bb0eb6a5878949073684c896a209a863ae6c4a16c68b9d276a110f4decec.css" integrity="sha256-JiK7Dralh4lJBzaEyJaiCahjrmxKFsaLnSdqEQ9N7Ow=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://anil.battalahalli.me/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://anil.battalahalli.me/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://anil.battalahalli.me/favicon-32x32.png">
@@ -115,7 +125,7 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
             </button>
         <ul class="menu hidden">
             <li>
-                <a href="https://anil.battalahalli.me/statistics/" title="Statistics">
+                <a href="https://anil.battalahalli.me/stats-projects/" title="Statistics">
                     <span>Statistics</span>
                 </a>
             </li>
@@ -143,6 +153,11 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
             <li>
                 <a href="https://anil.battalahalli.me/about/" title="About Me">
                     <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://anil.battalahalli.me/dictionary/" title="Dictionary">
+                    <span>Dictionary</span>
                 </a>
             </li>
         </ul>
@@ -204,7 +219,8 @@ $$ \begin{aligned} F(x) &amp;= \int_{-\infty}^x f(x\ | \ x_m,\alpha) \ dx \\ &am
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://anil.battalahalli.me/stats/powerlaw/powerlaw.jpg" alt="">
+<figure class="entry-cover">
+        <img loading="eager" src="https://anil.battalahalli.me/stats/powerlaw/powerlaw.jpg" alt="">
         
 </figure>
   <div class="post-content"><h3 id="implementation-of-the-inverse-transform-sampling">Implementation of the Inverse Transform Sampling<a hidden class="anchor" aria-hidden="true" href="#implementation-of-the-inverse-transform-sampling">#</a></h3>
@@ -252,7 +268,7 @@ $$</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://anil.battalahalli.me/">Chaos</a></span> · 
+        <span>&copy; 2026 <a href="https://anil.battalahalli.me/">Chaos</a></span> · 
 
     <span>
         Powered by

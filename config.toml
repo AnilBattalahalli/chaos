@@ -3,7 +3,11 @@ languageCode = "en-us"
 title = "Chaos"
 theme = [ "PaperMod" ]
 ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$"]
+disableKinds = ["RSS"]
 
+[author]
+  name = "Anil Battalahalli"
+  email = "anilbs@umich.edu"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -41,6 +45,11 @@ weight = 10
 # name = "Self Study"
 # url = "/selfstudy/"
 # weight = 12
+
+[[menu.main]]
+name = "Dictionary"
+url = "/dictionary/"
+weight = 35
 
 [[menu.main]]
 name = "Kannada"
