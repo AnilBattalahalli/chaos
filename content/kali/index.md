@@ -4,8 +4,9 @@ layout: "blank"
 ---
 
 <div class="kali-container">
-  <h1>Kali</h1>
-  <button class="kali-button" onclick="loadRandomEntry()">New Word</button>
+  <!-- <h1>ಕಲಿ</h1> -->
+  <br>
+  <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
 
   <div id="card" class="kali-card">Loading...</div>
 </div>
