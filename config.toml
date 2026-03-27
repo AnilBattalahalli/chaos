@@ -47,8 +47,8 @@ weight = 10
 # weight = 12
 
 [[menu.main]]
-name = "Dictionary"
-url = "/dictionary/"
+name = "ಕಲಿ"
+url = "/kali/"
 weight = 35
 
 [[menu.main]]

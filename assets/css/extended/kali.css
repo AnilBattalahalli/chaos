@@ -1,0 +1,38 @@
+.kali-container {
+  width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.kali-button {
+  padding: 10px 20px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.kali-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.kali-word {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.kali-pronunciation {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.kali-reference {
+  color: #555;
+  font-style: italic;
+}
