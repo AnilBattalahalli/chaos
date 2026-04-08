@@ -5,10 +5,11 @@ layout: "blank"
 
 <div class="kali-widget-wrapper">
   <div class="kali-container">
-    <!-- <h1>ಕಲಿ</h1> -->
-    <br>
-    <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
-    <div id="card" class="kali-card">Loading...</div>
+    <div class="kali-header">
+      <h1 class="kali-title">ಕ<span>ಲಿ</span></h1>
+      <button class="kali-button" onclick="loadRandomEntry()">↻ ಹೊಸ ಪದ</button>
+    </div>
+    <div id="card" class="kali-card"></div>
   </div>
 </div>
 

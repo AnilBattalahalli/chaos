@@ -1,69 +1,83 @@
-const N_CHUNKS = 200;
+const N_CHUNKS = 20;
 let dictionary = [];
 let chunkId = null;
 
-/* ------------------ INITIAL LOAD ------------------ */
 async function initialLoad() {
   try {
-    // Pick ONE chunk per page load
     chunkId = Math.floor(Math.random() * N_CHUNKS);
-
-    const res = await fetch(`/kali/dict_${chunkId}.json`);
+    const res = await fetch(`/kali/IWN_Ka_En_${chunkId}.json`);
     if (!res.ok) throw new Error("Failed to fetch JSON");
 
     dictionary = await res.json();
-
-    loadRandomEntry(); // show first word
+    loadRandomEntry();
   } catch (err) {
     console.error(err);
     document.getElementById("card").innerHTML = "Error loading data";
   }
 }
 
-/* ------------------ RANDOM WORD ------------------ */
 function loadRandomEntry() {
   if (!dictionary || dictionary.length === 0) {
     document.getElementById("card").innerHTML = "Loading...";
     return;
   }
 
-  // Fade out
   const card = document.getElementById("card");
   card.style.opacity = 0;
+  card.style.transform = "translateY(20px)";
 
   setTimeout(() => {
     const entry = dictionary[Math.floor(Math.random() * dictionary.length)];
     renderCard(entry);
 
-    // Fade in
     card.style.opacity = 1;
-  }, 300);  // matches CSS transition
+    card.style.transform = "translateY(0)";
+  }, 300);
 }
 
-/* ------------------ RENDER ------------------ */
 function renderCard(entry) {
   let html = "";
 
-  html += `<div class="kali-word">${entry.word}</div>`;
-
-  if (entry.pronunciation) {
-    html += `<div class="kali-pronunciation">${entry.pronunciation}</div>`;
+  if (entry.pos || entry.part_of_speech) {
+    html += `<div class="kali-pos-tag">${entry.pos || entry.part_of_speech}</div>`;
   }
 
-  html += `<div class="kali-definitions">`;
+  html += `<div class="kali-word">${entry.kannada_root}</div>`;
 
-  entry.definitions.forEach((d, i) => {
-    if (d.is_reference) {
-      html += `<div class="reference">→ ${d.text}</div>`;
-    } else {
-      html += `<div>${i + 1}. ${d.text}</div>`;  // manual numbering
-    }
-  });
+  if (entry.transliteration) {
+    html += `<div class="kali-transliteration">${entry.transliteration}</div>`;
+  }
 
-  html += `</div>`;
+  if (entry.kannada_synonyms && entry.kannada_synonyms.length > 0) {
+    html += `<div class="kali-synonyms">`;
+    entry.kannada_synonyms.forEach(s => {
+      html += `<span class="chip">${s}</span>`;
+    });
+    html += `</div>`;
+  }
+
+  html += `<div class="kali-divider"></div>`;
+
+  if (entry.english_gloss) {
+    html += `<span class="kali-section-label en">English</span>`;
+    html += `<div class="kali-english-gloss">${entry.english_gloss}</div>`;
+  }
+
+  if (entry.kannada_meaning) {
+    html += `<span class="kali-section-label kn">ಕನ್ನಡ ಅರ್ಥ</span>`;
+    html += `<div class="kali-kannada-meaning">${entry.kannada_meaning}</div>`;
+  }
+
+  if (entry.kannada_example) {
+    html += `<span class="kali-section-label ex">ಉದಾಹರಣೆ</span>`;
+    html += `<div class="kali-kannada-example">${entry.kannada_example}</div>`;
+  }
+
+  html += `<div class="kali-card-footer">
+    <span class="kali-source-tag">IWN corpus · chunk #${chunkId}</span>
+  </div>`;
 
   document.getElementById("card").innerHTML = html;
 }
 
-/* ------------------ START ------------------ */
 window.addEventListener("DOMContentLoaded", initialLoad);

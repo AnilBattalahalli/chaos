@@ -1,125 +1,199 @@
-/* ------------------ WIDGET WRAPPER ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 .kali-widget-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
-  background: #f5f5f5;
+  justify-content: flex-start;
+  padding: 56px 20px;
+  background: #0f0e17;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
 }
 
-/* ------------------ CONTAINER ------------------ */
-.kali-widget-wrapper .kali-container {
+.kali-container {
   width: 100%;
-  max-width: 700px;
-  text-align: center;
+  max-width: 680px;
 }
 
-/* ------------------ BUTTON ------------------ */
-.kali-widget-wrapper .kali-button {
-  padding: 10px 18px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  font-size: 16px;
-  transition: background 0.3s;
-}
-
-.kali-widget-wrapper .kali-button:hover {
-  background: #333;
-}
-
-/* ------------------ CARD ------------------ */
-.kali-widget-wrapper .kali-card {
-  width: 100%;
-  max-width: 600px;
-  height: 320px;  /* fixed height */
-  margin: auto;
-  padding: 20px;
-  border-radius: 16px;
-  background: white;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+.kali-header {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: opacity 0.4s ease; /* for dissolve effect */
-  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
-/* ------------------ WORD ------------------ */
-.kali-widget-wrapper .kali-word {
-  font-size: 26px;
-  font-weight: bold;
-  word-break: break-word;
-}
-
-/* ------------------ PRONUNCIATION ------------------ */
-.kali-widget-wrapper .kali-pronunciation {
-  color: gray;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-/* ------------------ DEFINITIONS ------------------ */
-.kali-widget-wrapper .kali-definitions {
-  flex: 1;
-  overflow-y: auto;
-  margin-top: 10px;
-  text-align: left; /* align definitions to left */
-}
-
-.kali-widget-wrapper .kali-definitions ol {
-  padding-left: 24px;
+.kali-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fffffe;
+  letter-spacing: -1px;
   margin: 0;
-  list-style-type: decimal !important;
 }
 
-.kali-widget-wrapper .kali-definitions ol li {
-  display: list-item !important;   /* force numbered list */
-  list-style-type: decimal !important;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  max-height: 4.2em;  /* 3 lines max */
+.kali-title span { color: #ff8906; }
+
+.kali-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #ff8906;
+  color: #0f0e17;
+  border: none;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.2px;
+  font-family: 'Inter', sans-serif;
+}
+
+.kali-button:hover {
+  transform: translateY(-2px);
+  background: #f9a825;
+}
+
+.kali-card {
+  background: #1a1926;
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
   overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+.kali-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff8906, #e53170, #3da9fc);
+}
+
+.kali-pos-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ff8906;
+  background: rgba(255, 137, 6, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
+.kali-word {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fffffe;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 8px;
   word-break: break-word;
 }
 
-/* ------------------ REFERENCES ------------------ */
-.kali-widget-wrapper .reference {
-  color: #555;
+.kali-transliteration {
+  font-size: 16px;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 24px;
   font-style: italic;
 }
 
-/* ------------------ SCROLLBAR ------------------ */
-.kali-widget-wrapper .kali-definitions::-webkit-scrollbar {
-  width: 6px;
+.kali-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 24px 0;
 }
 
-.kali-widget-wrapper .kali-definitions::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
+.kali-synonyms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-/* ------------------ MOBILE ------------------ */
+.kali-synonyms .chip {
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(61,169,252,0.1);
+  color: #3da9fc;
+  border: 1px solid rgba(61,169,252,0.2);
+  transition: background 0.2s;
+  cursor: default;
+  display: inline-block;
+}
+
+.kali-synonyms .chip:hover {
+  background: rgba(61,169,252,0.2);
+  transform: none;
+}
+
+.kali-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.kali-section-label.en { color: #3da9fc; }
+.kali-section-label.kn { color: #4ecdc4; }
+.kali-section-label.ex { color: #e1b382; }
+
+.kali-english-gloss {
+  font-size: 18px;
+  color: #fffffe;
+  line-height: 1.55;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.kali-kannada-meaning {
+  font-size: 15px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.kali-kannada-example {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  line-height: 1.6;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  border-left: 3px solid rgba(225,179,130,0.35);
+}
+
+.kali-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.kali-source-tag {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.3px;
+}
+
 @media (max-width: 600px) {
-  .kali-widget-wrapper .kali-container {
-    padding: 12px;
-  }
-
-  .kali-widget-wrapper .kali-word {
-    font-size: 22px;
-  }
-
-  .kali-widget-wrapper .kali-button {
-    width: 100%;
-  }
-
-  .kali-widget-wrapper .kali-card {
-    padding: 15px;
-    height: 260px;
-  }
+  .kali-title { font-size: 32px; }
+  .kali-button { font-size: 14px; padding: 10px 18px; }
+  .kali-card { padding: 24px 20px; }
+  .kali-word { font-size: 40px; }
+  .kali-english-gloss { font-size: 16px; }
 }
