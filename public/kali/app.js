@@ -1,11 +1,11 @@
-const N_CHUNKS = 20;
+const N_CHUNKS = 12;
 let dictionary = [];
 let chunkId = null;
 
 async function initialLoad() {
   try {
     chunkId = Math.floor(Math.random() * N_CHUNKS);
-    const res = await fetch(`/kali/IWN_Ka_En_${chunkId}.json`);
+    const res = await fetch(`/kali/IWN_Ka_En_filtered_${chunkId}.json`);
     if (!res.ok) throw new Error("Failed to fetch JSON");
 
     dictionary = await res.json();
