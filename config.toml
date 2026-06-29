@@ -51,6 +51,11 @@ name = "ಕಲಿ"
 url = "/kali/"
 weight = 35
 
+[[menu.main]]
+name = "Learn German"
+url = "/learngerman/"
+weight = 36
+
 # [[menu.main]]
 # name = "Kannada"
 # url = "/kannada/"
