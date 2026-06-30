@@ -1,9 +1,7 @@
-const N_CHUNKS = 10;
 const STORAGE_KEY = "learngerman:ratings";
 const DEWEIGHT_PROB = 0.7;
 
 let vocab = [];
-let chunkId = null;
 let current = null;
 let isFlipped = false;
 
@@ -30,9 +28,8 @@ function saveRating(id, rating) {
 /* ------------------ INITIAL LOAD ------------------ */
 async function initialLoad() {
   try {
-    chunkId = Math.floor(Math.random() * N_CHUNKS);
-    const res = await fetch(`/learngerman/vocab_${chunkId}.json`);
-    if (!res.ok) throw new Error("Failed to fetch vocab chunk");
+    const res = await fetch(`/learngerman/vocab.json`);
+    if (!res.ok) throw new Error("Failed to fetch vocab");
     vocab = await res.json();
     nextCard();
   } catch (err) {
