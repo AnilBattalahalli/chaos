@@ -59,7 +59,6 @@ function nextCard() {
   const card = document.getElementById("card");
   card.classList.remove("flipped");
   document.getElementById("rating-row").hidden = true;
-  document.getElementById("show-answer").hidden = false;
 
   document.querySelector(".card-front").innerHTML = renderFront(current);
   document.querySelector(".card-back").innerHTML = renderBack(current);
@@ -110,7 +109,6 @@ function flip() {
   if (isFlipped || !current) return;
   isFlipped = true;
   document.getElementById("card").classList.add("flipped");
-  document.getElementById("show-answer").hidden = true;
   document.getElementById("rating-row").hidden = false;
 }
 
@@ -142,7 +140,6 @@ function handleKey(e) {
 /* ------------------ WIRE UP ------------------ */
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("card").addEventListener("click", flip);
-  document.getElementById("show-answer").addEventListener("click", flip);
   document.querySelectorAll("#rating-row button").forEach((btn) => {
     btn.addEventListener("click", () => handleRating(btn.dataset.rating));
   });

@@ -3,6 +3,11 @@ title: "Learn German"
 layout: "blank"
 ---
 
+<div id="learngerman-splash" class="learngerman-splash">
+  <div class="splash-greeting">Hi, 🌻</div>
+  <div class="splash-loading">loading...</div>
+</div>
+
 <div class="learngerman-widget-wrapper">
   <div class="learngerman-container">
     <div id="card" class="learngerman-card">
@@ -17,7 +22,6 @@ layout: "blank"
       <button data-rating="good" type="button">Good</button>
       <button data-rating="easy" type="button">Easy</button>
     </div>
-    <button id="show-answer" class="learngerman-button" type="button">Show answer</button>
   </div>
 </div>
 
