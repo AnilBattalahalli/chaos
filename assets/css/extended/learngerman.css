@@ -10,7 +10,7 @@
   background: #f5f5f5;
   opacity: 0;
   pointer-events: none;
-  animation: lg-splash 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: lg-splash 2.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .learngerman-splash .splash-greeting {
@@ -30,8 +30,8 @@
 
 @keyframes lg-splash {
   0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  66%  { opacity: 1; }
+  13%  { opacity: 1; }
+  78%  { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
 }
 
@@ -45,11 +45,11 @@
   background: #f5f5f5;
   box-sizing: border-box;
   opacity: 0;
-  animation: lg-applet-in 1.5s ease forwards;
+  animation: lg-applet-in 2.3s ease forwards;
 }
 
 @keyframes lg-applet-in {
-  0%, 60% { opacity: 0; }
+  0%, 78% { opacity: 0; }
   100%    { opacity: 1; }
 }
 
