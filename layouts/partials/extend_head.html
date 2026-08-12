@@ -1,3 +1,7 @@
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
+{{ if eq .RelPermalink "/kali/" }}
+<link rel="manifest" href="/kali/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/kali/icons/icon-192.png">
+{{ end }}

@@ -1,15 +1,22 @@
 const N_CHUNKS = 200;
 const ALL_LEVELS = [1, 2, 3];
-const STORAGE_KEY = "kaliLevels";
+const LEVELS_STORAGE_KEY = "kaliLevels";
+const SAVED_STORAGE_KEY = "kaliSaved";
+const QUIZ_STORAGE_KEY = "kaliQuizMode";
 
 let dictionary = [];
 let chunkId = null;
 let selectedLevels = loadSelectedLevels();
+let savedWords = loadSavedWords();
+let quizMode = loadQuizMode();
+let currentEntry = null;
+let revealed = true;
+let deferredInstallPrompt = null;
 
 /* ------------------ LEVEL FILTER STATE ------------------ */
 function loadSelectedLevels() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(LEVELS_STORAGE_KEY);
     if (!raw) return new Set(ALL_LEVELS);
     const arr = JSON.parse(raw).filter((l) => ALL_LEVELS.includes(l));
     return arr.length ? new Set(arr) : new Set(ALL_LEVELS);
@@ -19,7 +26,7 @@ function loadSelectedLevels() {
 }
 
 function saveSelectedLevels() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...selectedLevels]));
+  localStorage.setItem(LEVELS_STORAGE_KEY, JSON.stringify([...selectedLevels]));
 }
 
 function currentPool() {
@@ -27,10 +34,143 @@ function currentPool() {
   return dictionary.filter((e) => e.level == null || selectedLevels.has(e.level));
 }
 
+/* ------------------ SAVED WORDS STATE ------------------ */
+function entryKey(entry) {
+  return `${entry.word}::${entry.pronunciation || ""}::${entry.definitions?.[0]?.text || ""}`;
+}
+
+function loadSavedWords() {
+  try {
+    const raw = localStorage.getItem(SAVED_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function persistSavedWords() {
+  localStorage.setItem(SAVED_STORAGE_KEY, JSON.stringify(savedWords));
+}
+
+function isSaved(entry) {
+  const key = entryKey(entry);
+  return savedWords.some((e) => entryKey(e) === key);
+}
+
+function toggleSaveCurrent() {
+  if (!currentEntry) return;
+
+  const key = entryKey(currentEntry);
+  const idx = savedWords.findIndex((e) => entryKey(e) === key);
+
+  if (idx === -1) {
+    savedWords.push(currentEntry);
+  } else {
+    savedWords.splice(idx, 1);
+  }
+
+  persistSavedWords();
+  updateSaveButton();
+  renderSavedList();
+}
+
+function removeSaved(key) {
+  savedWords = savedWords.filter((e) => entryKey(e) !== key);
+  persistSavedWords();
+  updateSaveButton();
+  renderSavedList();
+}
+
+function updateSaveButton() {
+  const btn = document.getElementById("save-toggle");
+  if (!btn) return;
+  const saved = currentEntry ? isSaved(currentEntry) : false;
+  btn.textContent = saved ? "★" : "☆";
+  btn.classList.toggle("active", saved);
+  btn.setAttribute("aria-pressed", saved);
+}
+
+function updateSavedCount() {
+  const el = document.getElementById("saved-count");
+  if (!el) return;
+  el.textContent = savedWords.length ? ` (${savedWords.length})` : "";
+}
+
+function renderSavedList() {
+  updateSavedCount();
+  const list = document.getElementById("saved-list");
+  if (!list) return;
+
+  if (savedWords.length === 0) {
+    list.innerHTML = `<div class="kali-saved-empty">ಯಾವುದೂ ಉಳಿಸಿಲ್ಲ</div>`;
+    return;
+  }
+
+  list.innerHTML = savedWords
+    .map((e) => {
+      const key = entryKey(e).replace(/"/g, "&quot;");
+      return `
+        <div class="kali-saved-item">
+          <button class="kali-saved-word" data-key="${key}">${e.word}</button>
+          <button class="kali-saved-remove" data-key="${key}" aria-label="remove">×</button>
+        </div>
+      `;
+    })
+    .join("");
+
+  list.querySelectorAll(".kali-saved-word").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const entry = savedWords.find((e) => entryKey(e) === btn.dataset.key);
+      if (entry) {
+        togglePanel("saved-panel", "saved-toggle", false);
+        showEntry(entry);
+      }
+    });
+  });
+
+  list.querySelectorAll(".kali-saved-remove").forEach((btn) => {
+    btn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      removeSaved(btn.dataset.key);
+    });
+  });
+}
+
+/* ------------------ QUIZ MODE STATE ------------------ */
+function loadQuizMode() {
+  return localStorage.getItem(QUIZ_STORAGE_KEY) === "1";
+}
+
+function toggleQuizMode() {
+  quizMode = !quizMode;
+  localStorage.setItem(QUIZ_STORAGE_KEY, quizMode ? "1" : "0");
+
+  const btn = document.getElementById("quiz-toggle");
+  if (btn) {
+    btn.classList.toggle("active", quizMode);
+    btn.setAttribute("aria-pressed", quizMode);
+  }
+
+  if (currentEntry) {
+    revealed = !quizMode;
+    renderCard();
+  }
+}
+
+function revealAnswer() {
+  revealed = true;
+  renderCard();
+}
+
 /* ------------------ INITIAL LOAD ------------------ */
 async function initialLoad() {
   wireLevelPanel();
   syncChipState();
+  wireSavedPanel();
+  renderSavedList();
+  wireQuizToggle();
+  wireInstallPrompt();
+  registerServiceWorker();
 
   try {
     await fetchRandomChunk();
@@ -74,41 +214,77 @@ async function loadRandomEntry() {
     return;
   }
 
+  const entry = pool[Math.floor(Math.random() * pool.length)];
+
   // Fade out
   card.style.opacity = 0;
 
   setTimeout(() => {
-    const entry = pool[Math.floor(Math.random() * pool.length)];
-    renderCard(entry);
-
-    // Fade in
-    card.style.opacity = 1;
+    showEntry(entry);
   }, 300); // matches CSS transition
 }
 
+function showEntry(entry) {
+  currentEntry = entry;
+  revealed = !quizMode;
+  renderCard();
+
+  const card = document.getElementById("card");
+  card.style.opacity = 1;
+}
+
 /* ------------------ RENDER ------------------ */
-function renderCard(entry) {
+function renderCard() {
+  const entry = currentEntry;
+  if (!entry) return;
+
   let html = "";
 
+  html += `<button id="save-toggle" class="kali-save-toggle" aria-label="save">☆</button>`;
   html += `<div class="kali-word">${entry.word}</div>`;
 
   if (entry.pronunciation) {
     html += `<div class="kali-pronunciation">${entry.pronunciation}</div>`;
   }
 
-  html += `<div class="kali-definitions">`;
-
-  entry.definitions.forEach((d, i) => {
-    if (d.is_reference) {
-      html += `<div class="reference">→ ${d.text}</div>`;
-    } else {
-      html += `<div>${i + 1}. ${d.text}</div>`; // manual numbering
-    }
-  });
-
-  html += `</div>`;
+  if (quizMode && !revealed) {
+    html += `<button class="kali-reveal" onclick="revealAnswer()">ಅರ್ಥ ಏನಿರಬಹುದು? ಉತ್ತರ ನೋಡಲು ತಟ್ಟಿ</button>`;
+  } else {
+    html += `<div class="kali-definitions">`;
+    entry.definitions.forEach((d, i) => {
+      if (d.is_reference) {
+        html += `<div class="reference">→ ${d.text}</div>`;
+      } else {
+        html += `<div>${i + 1}. ${d.text}</div>`; // manual numbering
+      }
+    });
+    html += `</div>`;
+  }
 
   document.getElementById("card").innerHTML = html;
+
+  updateSaveButton();
+  document.getElementById("save-toggle")?.addEventListener("click", toggleSaveCurrent);
+}
+
+/* ------------------ GENERIC PANEL TOGGLE ------------------ */
+function togglePanel(panelId, toggleBtnId, forceOpen) {
+  const panel = document.getElementById(panelId);
+  const btn = document.getElementById(toggleBtnId);
+  const isHidden = panel.hasAttribute("hidden");
+  const open = forceOpen != null ? forceOpen : isHidden;
+
+  if (open) {
+    panel.removeAttribute("hidden");
+    btn.setAttribute("aria-expanded", "true");
+  } else {
+    panel.setAttribute("hidden", "");
+    btn.setAttribute("aria-expanded", "false");
+  }
+}
+
+function toggleLevelPanel() {
+  togglePanel("level-panel", "level-toggle");
 }
 
 /* ------------------ LEVEL FILTER UI ------------------ */
@@ -157,17 +333,46 @@ function updateLevelCount() {
   el.textContent = selectedLevels.size === ALL_LEVELS.length ? "" : ` (${selectedLevels.size})`;
 }
 
-function toggleLevelPanel() {
-  const panel = document.getElementById("level-panel");
-  const btn = document.getElementById("level-toggle");
-  const isHidden = panel.hasAttribute("hidden");
+/* ------------------ SAVED PANEL UI ------------------ */
+function wireSavedPanel() {
+  document.getElementById("saved-toggle").addEventListener("click", () => togglePanel("saved-panel", "saved-toggle"));
+}
 
-  if (isHidden) {
-    panel.removeAttribute("hidden");
-    btn.setAttribute("aria-expanded", "true");
-  } else {
-    panel.setAttribute("hidden", "");
-    btn.setAttribute("aria-expanded", "false");
+/* ------------------ QUIZ TOGGLE UI ------------------ */
+function wireQuizToggle() {
+  const btn = document.getElementById("quiz-toggle");
+  btn.classList.toggle("active", quizMode);
+  btn.setAttribute("aria-pressed", quizMode);
+  btn.addEventListener("click", toggleQuizMode);
+}
+
+/* ------------------ PWA INSTALL ------------------ */
+function wireInstallPrompt() {
+  const btn = document.getElementById("install-toggle");
+  if (!btn) return;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    btn.hidden = false;
+  });
+
+  btn.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    btn.hidden = true;
+  });
+
+  window.addEventListener("appinstalled", () => {
+    btn.hidden = true;
+  });
+}
+
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/kali/sw.js").catch((err) => console.error(err));
   }
 }
 
