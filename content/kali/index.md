@@ -7,9 +7,6 @@ layout: "blank"
   <div class="kali-container">
     <!-- <h1>ಕಲಿ</h1> -->
     <br>
-    <div class="kali-toolbar">
-      <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
-    </div>
     <div class="kali-toolbar-secondary">
       <button id="level-toggle" class="kali-secondary-btn" onclick="toggleLevelPanel()" aria-expanded="false">
         ಹಂತ<span id="level-count" class="kali-level-count"></span>
@@ -36,6 +33,9 @@ layout: "blank"
       <div id="saved-list" class="kali-saved-list"></div>
     </div>
     <div id="card" class="kali-card">Loading...</div>
+    <div class="kali-toolbar kali-toolbar-primary">
+      <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
+    </div>
   </div>
 </div>
 

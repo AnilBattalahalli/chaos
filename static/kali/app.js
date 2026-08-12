@@ -159,7 +159,9 @@ function toggleQuizMode() {
 
 function revealAnswer() {
   revealed = true;
-  renderCard();
+  // toggle the class on the existing element (not a fresh renderCard) so the
+  // flip transition has something to animate from
+  document.getElementById("card-flip")?.classList.add("flipped");
 }
 
 /* ------------------ INITIAL LOAD ------------------ */
@@ -234,31 +236,48 @@ function showEntry(entry) {
 }
 
 /* ------------------ RENDER ------------------ */
+function wordBlockHtml(entry) {
+  let html = `<div class="kali-word">${entry.word}</div>`;
+  if (entry.pronunciation) {
+    html += `<div class="kali-pronunciation">${entry.pronunciation}</div>`;
+  }
+  return html;
+}
+
+function definitionsHtml(entry) {
+  let html = `<div class="kali-definitions">`;
+  entry.definitions.forEach((d, i) => {
+    if (d.is_reference) {
+      html += `<div class="reference">→ ${d.text}</div>`;
+    } else {
+      html += `<div>${i + 1}. ${d.text}</div>`; // manual numbering
+    }
+  });
+  html += `</div>`;
+  return html;
+}
+
 function renderCard() {
   const entry = currentEntry;
   if (!entry) return;
 
-  let html = "";
+  let html = `<button id="save-toggle" class="kali-save-toggle" aria-label="save">☆</button>`;
 
-  html += `<button id="save-toggle" class="kali-save-toggle" aria-label="save">☆</button>`;
-  html += `<div class="kali-word">${entry.word}</div>`;
-
-  if (entry.pronunciation) {
-    html += `<div class="kali-pronunciation">${entry.pronunciation}</div>`;
-  }
-
-  if (quizMode && !revealed) {
+  if (quizMode) {
+    // two-sided flip card: front asks, back reveals — tapping flips it in place
+    html += `<div id="card-flip" class="kali-flip${revealed ? " flipped" : ""}">`;
+    html += `<div class="kali-card-face kali-card-front">`;
+    html += wordBlockHtml(entry);
     html += `<button class="kali-reveal" onclick="revealAnswer()">ಅರ್ಥ ಏನಿರಬಹುದು? ಉತ್ತರ ನೋಡಲು ತಟ್ಟಿ</button>`;
-  } else {
-    html += `<div class="kali-definitions">`;
-    entry.definitions.forEach((d, i) => {
-      if (d.is_reference) {
-        html += `<div class="reference">→ ${d.text}</div>`;
-      } else {
-        html += `<div>${i + 1}. ${d.text}</div>`; // manual numbering
-      }
-    });
     html += `</div>`;
+    html += `<div class="kali-card-face kali-card-back">`;
+    html += wordBlockHtml(entry);
+    html += definitionsHtml(entry);
+    html += `</div>`;
+    html += `</div>`;
+  } else {
+    html += wordBlockHtml(entry);
+    html += definitionsHtml(entry);
   }
 
   document.getElementById("card").innerHTML = html;
