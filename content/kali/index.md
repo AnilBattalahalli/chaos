@@ -15,12 +15,9 @@ layout: "blank"
     </div>
     <div id="level-panel" class="kali-level-panel" hidden>
       <div class="kali-level-grid">
-        <button class="kali-chip" data-level="5">೫ ಸಂಸ್ಕೃತ</button>
-        <button class="kali-chip" data-level="4">೪ ಸಂಸ್ಕೃತ ಛಾಯೆ</button>
-        <button class="kali-chip" data-level="3">೩ ತದ್ಭವ</button>
-        <button class="kali-chip" data-level="2">೨ ದ್ರಾವಿಡ+</button>
-        <button class="kali-chip" data-level="1">೧ ಅಚ್ಚ ಕನ್ನಡ</button>
-        <button class="kali-chip" data-level="0">೦ ಅನ್ಯದೇಶ್ಯ</button>
+        <button class="kali-chip" data-level="3">3 ಸಂಸ್ಕೃತ</button>
+        <button class="kali-chip" data-level="2">2 ಸಂಸ್ಕೃತ ಪ್ರಭಾವ</button>
+        <button class="kali-chip" data-level="1">1 ಕನ್ನಡ ಪದಗಳು</button>
       </div>
       <button class="kali-chip kali-chip-all" data-action="all">ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ</button>
     </div>

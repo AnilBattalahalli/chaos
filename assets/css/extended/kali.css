@@ -76,13 +76,13 @@
 
 .kali-widget-wrapper .kali-level-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 8px;
   margin-bottom: 8px;
 }
 
 .kali-widget-wrapper .kali-chip {
-  padding: 8px 6px;
+  padding: 10px 6px;
   border: 1px solid var(--border);
   background: var(--entry);
   color: var(--primary);
@@ -189,10 +189,6 @@
 
   .kali-widget-wrapper .kali-toolbar {
     flex-direction: column;
-  }
-
-  .kali-widget-wrapper .kali-level-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .kali-widget-wrapper .kali-card {

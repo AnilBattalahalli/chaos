@@ -1,5 +1,5 @@
 const N_CHUNKS = 200;
-const ALL_LEVELS = [0, 1, 2, 3, 4, 5];
+const ALL_LEVELS = [1, 2, 3];
 const STORAGE_KEY = "kaliLevels";
 
 let dictionary = [];
