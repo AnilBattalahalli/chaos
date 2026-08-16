@@ -1,0 +1,4364 @@
+{
+  "stage": 3,
+  "title": "Direct Objects & Accusative Articles",
+  "cheatsheet": "## Stage 03: Direct Objects & Accusative Articles\n\n**Structure:** `Subject` + `Conjugated Verb` + `Accusative Object`\n\n**Case Focus:** Accusative Case (the direct object receiving the action).\n\n**Rule:** Only **Masculine** articles change (`der` → `den`, `ein` → `einen`, `kein` → `keinen`). Feminine, Neuter, and Plural stay identical to their nominative (Stage 02) forms.\n\n### Article Declension (Nominative vs. Accusative)\n\n| Gender | Nominative | Accusative |\n| :--- | :--- | :--- |\n| Masculine | der / ein / kein | **den / einen / keinen** |\n| Feminine | die / eine / keine | die / eine / keine |\n| Neuter | das / ein / kein | das / ein / kein |\n| Plural | die / — / keine | die / — / keine |\n\n### Sentence Frames\n* `[Subject] + [Verb] + [Accusative Article + Noun]`\n* Ich brauche **einen** Schlüssel. *(I need a key. — Masculine)*\n* Du hast **eine** Taschenlampe. *(You have a flashlight. — Feminine)*\n* Er liest **ein** Buch. *(He reads a book. — Neuter)*\n* Wir kaufen **keine** Äpfel. *(We buy no apples. — Plural)*\n\n### POS Tags Used\n`PRON` pronoun · `VERB` conjugated verb · `DET` article (definite/indefinite/negative) · `NOUN` noun · `ADV` adverb (e.g. *not*)\n",
+  "sentence_count": 100,
+  "sentences": [
+    {
+      "id": 1,
+      "english": "I have the table.",
+      "german": "Ich habe den Tisch.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Tisch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "table",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 2,
+      "english": "You need the chair.",
+      "german": "Du brauchst den Stuhl.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Stuhl",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "chair",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 3,
+      "english": "He buys the key.",
+      "german": "Er kauft den Schlüssel.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Schlüssel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "key",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 4,
+      "english": "She sees the dog.",
+      "german": "Sie sieht den Hund.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Hund",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "dog",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 5,
+      "english": "It look fors the man.",
+      "german": "Es sucht den Mann.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Mann",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "man",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 6,
+      "english": "We like the apple.",
+      "german": "Wir mögen den Apfel.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Apfel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "apple",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 7,
+      "english": "You all have the ball.",
+      "german": "Ihr habt den Ball.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Ball",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "ball",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 8,
+      "english": "They need the tree.",
+      "german": "Sie brauchen den Baum.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Baum",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "tree",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 9,
+      "english": "You buy the computer. (formal)",
+      "german": "Sie kaufen den Computer.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Computer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "computer",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 10,
+      "english": "I see the friend.",
+      "german": "Ich sehe den Freund.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Freund",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "friend",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 11,
+      "english": "You look for the garden.",
+      "german": "Du suchst den Garten.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Garten",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "garden",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 12,
+      "english": "He likes the sky.",
+      "german": "Er mag den Himmel.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "mag",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Himmel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "likes",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "sky",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 13,
+      "english": "She haves the coffee.",
+      "german": "Sie hat den Kaffee.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hat",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Kaffee",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "haves",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "coffee",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 14,
+      "english": "It needs the spoon.",
+      "german": "Es braucht den Löffel.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "braucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Löffel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "needs",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "spoon",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 15,
+      "english": "We buy the moon.",
+      "german": "Wir kaufen den Mond.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Mond",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "moon",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 16,
+      "english": "You all see the park.",
+      "german": "Ihr seht den Park.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "seht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Park",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "park",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 17,
+      "english": "They look for the ring.",
+      "german": "Sie suchen den Ring.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Ring",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "ring",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 18,
+      "english": "You like the son. (formal)",
+      "german": "Sie mögen den Sohn.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Sohn",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "son",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 19,
+      "english": "I have the mirror.",
+      "german": "Ich habe den Spiegel.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Spiegel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "mirror",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 20,
+      "english": "You need the star.",
+      "german": "Du brauchst den Stern.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Stern",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "star",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 21,
+      "english": "He buys the carpet.",
+      "german": "Er kauft den Teppich.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Teppich",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "carpet",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 22,
+      "english": "She sees the car.",
+      "german": "Sie sieht den Wagen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Wagen",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "car",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 23,
+      "english": "It look fors the wine.",
+      "german": "Es sucht den Wein.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Wein",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "wine",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 24,
+      "english": "We like the wind.",
+      "german": "Wir mögen den Wind.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "den",
+          "pos": "DET"
+        },
+        {
+          "word": "Wind",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "wind",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "def"
+    },
+    {
+      "id": 25,
+      "english": "You all have a train.",
+      "german": "Ihr habt einen Zug.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Zug",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "train",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 26,
+      "english": "They need a brother.",
+      "german": "Sie brauchen einen Bruder.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Bruder",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "brother",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 27,
+      "english": "You buy a mountain. (formal)",
+      "german": "Sie kaufen einen Berg.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Berg",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "mountain",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 28,
+      "english": "I see a fish.",
+      "german": "Ich sehe einen Fisch.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Fisch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "fish",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 29,
+      "english": "You look for a river.",
+      "german": "Du suchst einen Fluss.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Fluss",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "river",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 30,
+      "english": "He likes a suitcase.",
+      "german": "Er mag einen Koffer.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "mag",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Koffer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "likes",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "suitcase",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 31,
+      "english": "She haves a table.",
+      "german": "Sie hat einen Tisch.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hat",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Tisch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "haves",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "table",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 32,
+      "english": "It needs a chair.",
+      "german": "Es braucht einen Stuhl.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "braucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Stuhl",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "needs",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "chair",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 33,
+      "english": "We buy a key.",
+      "german": "Wir kaufen einen Schlüssel.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Schlüssel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "key",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 34,
+      "english": "You all see a dog.",
+      "german": "Ihr seht einen Hund.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "seht",
+          "pos": "VERB"
+        },
+        {
+          "word": "einen",
+          "pos": "DET"
+        },
+        {
+          "word": "Hund",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "dog",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "indef"
+    },
+    {
+      "id": 35,
+      "english": "They look for not a man.",
+      "german": "Sie suchen keinen Mann.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Mann",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "man",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 36,
+      "english": "You like not an apple. (formal)",
+      "german": "Sie mögen keinen Apfel.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Apfel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "an",
+          "pos": "DET"
+        },
+        {
+          "word": "apple",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 37,
+      "english": "I have not a ball.",
+      "german": "Ich habe keinen Ball.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Ball",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "ball",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 38,
+      "english": "You need not a tree.",
+      "german": "Du brauchst keinen Baum.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Baum",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "tree",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 39,
+      "english": "He buys not a computer.",
+      "german": "Er kauft keinen Computer.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Computer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "computer",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 40,
+      "english": "She sees not a friend.",
+      "german": "Sie sieht keinen Freund.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "keinen",
+          "pos": "DET"
+        },
+        {
+          "word": "Freund",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "friend",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "masculine",
+      "article_type": "neg"
+    },
+    {
+      "id": 41,
+      "english": "It look fors the lamp.",
+      "german": "Es sucht die Lampe.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Lampe",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "lamp",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 42,
+      "english": "We like the flower.",
+      "german": "Wir mögen die Blume.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Blume",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "flower",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 43,
+      "english": "You all have the cat.",
+      "german": "Ihr habt die Katze.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Katze",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "cat",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 44,
+      "english": "They need the bag.",
+      "german": "Sie brauchen die Tasche.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tasche",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "bag",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 45,
+      "english": "You buy the clock. (formal)",
+      "german": "Sie kaufen die Uhr.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Uhr",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "clock",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 46,
+      "english": "I see the school.",
+      "german": "Ich sehe die Schule.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Schule",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "school",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 47,
+      "english": "You look for the street.",
+      "german": "Du suchst die Straße.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Straße",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "street",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 48,
+      "english": "He likes the door.",
+      "german": "Er mag die Tür.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "mag",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tür",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "likes",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "door",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 49,
+      "english": "She haves the wall.",
+      "german": "Sie hat die Wand.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hat",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Wand",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "haves",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "wall",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 50,
+      "english": "It needs the newspaper.",
+      "german": "Es braucht die Zeitung.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "braucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Zeitung",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "needs",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "newspaper",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 51,
+      "english": "We buy the banana.",
+      "german": "Wir kaufen die Banane.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Banane",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "banana",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 52,
+      "english": "You all see the glasses.",
+      "german": "Ihr seht die Brille.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "seht",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Brille",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "glasses",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 53,
+      "english": "They look for the guitar.",
+      "german": "Sie suchen die Gitarre.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Gitarre",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "guitar",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 54,
+      "english": "You like the jacket. (formal)",
+      "german": "Sie mögen die Jacke.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Jacke",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "jacket",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 55,
+      "english": "I have the card.",
+      "german": "Ich habe die Karte.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Karte",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "card",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "def"
+    },
+    {
+      "id": 56,
+      "english": "You need a church.",
+      "german": "Du brauchst eine Kirche.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Kirche",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "church",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 57,
+      "english": "He buys a coast.",
+      "german": "Er kauft eine Küste.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Küste",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "coast",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 58,
+      "english": "She sees a music.",
+      "german": "Sie sieht eine Musik.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Musik",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "music",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 59,
+      "english": "It look fors a night.",
+      "german": "Es sucht eine Nacht.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Nacht",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "night",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 60,
+      "english": "We like a sun.",
+      "german": "Wir mögen eine Sonne.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Sonne",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "sun",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 61,
+      "english": "You all have a language.",
+      "german": "Ihr habt eine Sprache.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Sprache",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "language",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "indef"
+    },
+    {
+      "id": 62,
+      "english": "They need not a cup.",
+      "german": "Sie brauchen keine Tasse.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Tasse",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "cup",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "neg"
+    },
+    {
+      "id": 63,
+      "english": "You buy not a cloud. (formal)",
+      "german": "Sie kaufen keine Wolke.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Wolke",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "cloud",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "neg"
+    },
+    {
+      "id": 64,
+      "english": "I see not a week.",
+      "german": "Ich sehe keine Woche.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Woche",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "week",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "neg"
+    },
+    {
+      "id": 65,
+      "english": "You look for not a number.",
+      "german": "Du suchst keine Zahl.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Zahl",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "number",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "feminine",
+      "article_type": "neg"
+    },
+    {
+      "id": 66,
+      "english": "He likes the book.",
+      "german": "Er mag das Buch.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "mag",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Buch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "likes",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "book",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 67,
+      "english": "She haves the car.",
+      "german": "Sie hat das Auto.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hat",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Auto",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "haves",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "car",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 68,
+      "english": "It needs the house.",
+      "german": "Es braucht das Haus.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "braucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Haus",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "needs",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "house",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 69,
+      "english": "We buy the window.",
+      "german": "Wir kaufen das Fenster.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Fenster",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "window",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 70,
+      "english": "You all see the bed.",
+      "german": "Ihr seht das Bett.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "seht",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Bett",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "bed",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 71,
+      "english": "They look for the picture.",
+      "german": "Sie suchen das Bild.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Bild",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "picture",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 72,
+      "english": "You like the bread. (formal)",
+      "german": "Sie mögen das Brot.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Brot",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "bread",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 73,
+      "english": "I have the egg.",
+      "german": "Ich habe das Ei.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Ei",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "egg",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 74,
+      "english": "You need the money.",
+      "german": "Du brauchst das Geld.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Geld",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "money",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 75,
+      "english": "He buys the glass.",
+      "german": "Er kauft das Glas.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Glas",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "glass",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 76,
+      "english": "She sees the shirt.",
+      "german": "Sie sieht das Hemd.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Hemd",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "shirt",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 77,
+      "english": "It look fors the year.",
+      "german": "Es sucht das Jahr.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Jahr",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "year",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 78,
+      "english": "We like the country.",
+      "german": "Wir mögen das Land.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Land",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "country",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 79,
+      "english": "You all have the sea.",
+      "german": "Ihr habt das Meer.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Meer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "sea",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 80,
+      "english": "They need the knife.",
+      "german": "Sie brauchen das Messer.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Messer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "knife",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "def"
+    },
+    {
+      "id": 81,
+      "english": "You buy a paper. (formal)",
+      "german": "Sie kaufen ein Papier.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Papier",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "paper",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 82,
+      "english": "I see a horse.",
+      "german": "Ich sehe ein Pferd.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Pferd",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "horse",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 83,
+      "english": "You look for a shelf.",
+      "german": "Du suchst ein Regal.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Regal",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "shelf",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 84,
+      "english": "He likes a ship.",
+      "german": "Er mag ein Schiff.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "mag",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Schiff",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "likes",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "ship",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 85,
+      "english": "She haves a sofa.",
+      "german": "Sie hat ein Sofa.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hat",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Sofa",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "haves",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "sofa",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 86,
+      "english": "It needs a game.",
+      "german": "Es braucht ein Spiel.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "braucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Spiel",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "needs",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "game",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "indef"
+    },
+    {
+      "id": 87,
+      "english": "We buy not a phone.",
+      "german": "Wir kaufen kein Telefon.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Telefon",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "phone",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "neg"
+    },
+    {
+      "id": 88,
+      "english": "You all see not a room.",
+      "german": "Ihr seht kein Zimmer.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "seht",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Zimmer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "room",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "neg"
+    },
+    {
+      "id": 89,
+      "english": "They look for not a ticket.",
+      "german": "Sie suchen kein Ticket.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "suchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Ticket",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "look for",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "ticket",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "neg"
+    },
+    {
+      "id": 90,
+      "english": "You like not a cellphone. (formal)",
+      "german": "Sie mögen kein Handy.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Handy",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "cellphone",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "neuter",
+      "article_type": "neg"
+    },
+    {
+      "id": 91,
+      "english": "I have the books.",
+      "german": "Ich habe die Bücher.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "habe",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Bücher",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "books",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 92,
+      "english": "You need the cars.",
+      "german": "Du brauchst die Autos.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchst",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Autos",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "cars",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 93,
+      "english": "He buys the houses.",
+      "german": "Er kauft die Häuser.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kauft",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Häuser",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "buys",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "houses",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 94,
+      "english": "She sees the children.",
+      "german": "Sie sieht die Kinder.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "sieht",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Kinder",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sees",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "children",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 95,
+      "english": "It look fors the tables.",
+      "german": "Es sucht die Tische.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "sucht",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tische",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "look fors",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "tables",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 96,
+      "english": "We like the flowers.",
+      "german": "Wir mögen die Blumen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "mögen",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Blumen",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "like",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "flowers",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 97,
+      "english": "You all have the cats.",
+      "german": "Ihr habt die Katzen.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "habt",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Katzen",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "have",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "cats",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "def"
+    },
+    {
+      "id": 98,
+      "english": "They need no friends.",
+      "german": "Sie brauchen keine Freunde.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "brauchen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Freunde",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "need",
+          "pos": "VERB"
+        },
+        {
+          "word": "no",
+          "pos": "DET"
+        },
+        {
+          "word": "friends",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "neg"
+    },
+    {
+      "id": 99,
+      "english": "You buy no windows. (formal)",
+      "german": "Sie kaufen keine Fenster.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kaufen",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Fenster",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "buy",
+          "pos": "VERB"
+        },
+        {
+          "word": "no",
+          "pos": "DET"
+        },
+        {
+          "word": "windows",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "neg"
+    },
+    {
+      "id": 100,
+      "english": "I see no clocks.",
+      "german": "Ich sehe keine Uhren.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "sehe",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Uhren",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "see",
+          "pos": "VERB"
+        },
+        {
+          "word": "no",
+          "pos": "DET"
+        },
+        {
+          "word": "clocks",
+          "pos": "NOUN"
+        }
+      ],
+      "gender": "plural",
+      "article_type": "neg"
+    }
+  ]
+}

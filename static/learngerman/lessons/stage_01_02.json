@@ -1,0 +1,3103 @@
+{
+  "stages": [
+    1,
+    2
+  ],
+  "title": "Subject + Verb, and Gender Recognition (Combined)",
+  "cheatsheet": "## Stages 01 + 02: Subject + Verb, and Gender Recognition\n\n### Stage 01 — Core Subject + Conjugated Verb\n\n**Structure:** `Subject` + `Conjugated Verb`\n**Word Order Rule:** Verb-Second (V2) — the conjugated verb is always the second grammatical element.\n\n| Pronoun | Ending | Example |\n| :--- | :--- | :--- |\n| ich | -e | Ich lerne. |\n| du | -st | Du lernst. |\n| er / sie / es | -t | Er lernt. |\n| wir | -en | Wir lernen. |\n| ihr | -t | Ihr lernt. |\n| sie / Sie | -en | Sie lernen. |\n\nVerbs whose stem ends in `-t`/`-d` insert an extra `-e-` (du **arbeit-e-st**). A few common verbs shift their stem vowel in `du`/`er` (*schlafen* → er **schläft**).\n\n### Stage 02 — Gender Recognition & Nominative Articles (bridge stage)\n\n**Structure:** `Das ist` / `Das sind` + `Article` + `Noun` — no case-shifting yet, `sein` takes a nominative complement.\n\n| Gender | Definite | Indefinite | Negative |\n| :--- | :--- | :--- | :--- |\n| Masculine | der | ein | kein |\n| Feminine | die | eine | keine |\n| Neuter | das | ein | kein |\n| Plural | die | — | keine |\n\n### POS Tags Used\n`PRON` pronoun · `VERB` conjugated verb · `DET` article (definite/indefinite/negative) · `NOUN` noun · `ADV` adverb (e.g. *not*)\n",
+  "sentence_count": 100,
+  "sentences": [
+    {
+      "id": 1,
+      "stage_origin": 1,
+      "english": "I learn.",
+      "german": "Ich lerne.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "lerne",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "learn",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "stage_origin": 1,
+      "english": "I come.",
+      "german": "Ich komme.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "komme",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "come",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "stage_origin": 1,
+      "english": "I play.",
+      "german": "Ich spiele.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "spiele",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "play",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "stage_origin": 1,
+      "english": "I cook.",
+      "german": "Ich koche.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "koche",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "cook",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "stage_origin": 1,
+      "english": "I dance.",
+      "german": "Ich tanze.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanze",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "dance",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "stage_origin": 1,
+      "english": "I laugh.",
+      "german": "Ich lache.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "lache",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "laugh",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "stage_origin": 1,
+      "english": "I work.",
+      "german": "Ich arbeite.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeite",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "work",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "stage_origin": 1,
+      "english": "I sleep.",
+      "german": "Ich schlafe.",
+      "german_pos": [
+        {
+          "word": "Ich",
+          "pos": "PRON"
+        },
+        {
+          "word": "schlafe",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "I",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleep",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "stage_origin": 1,
+      "english": "You learn.",
+      "german": "Du lernst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "learn",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "stage_origin": 1,
+      "english": "You live.",
+      "german": "Du wohnst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "wohnst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "live",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "stage_origin": 1,
+      "english": "You play.",
+      "german": "Du spielst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "play",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "stage_origin": 1,
+      "english": "You sing.",
+      "german": "Du singst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "singst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "sing",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "stage_origin": 1,
+      "english": "You dance.",
+      "german": "Du tanzt.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "dance",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "stage_origin": 1,
+      "english": "You laugh.",
+      "german": "Du lachst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "lachst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "laugh",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "stage_origin": 1,
+      "english": "You work.",
+      "german": "Du arbeitest.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeitest",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "work",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "stage_origin": 1,
+      "english": "You sleep.",
+      "german": "Du schläfst.",
+      "german_pos": [
+        {
+          "word": "Du",
+          "pos": "PRON"
+        },
+        {
+          "word": "schläfst",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleep",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "stage_origin": 1,
+      "english": "He comes.",
+      "german": "Er kommt.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "comes",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "stage_origin": 1,
+      "english": "He lives.",
+      "german": "Er wohnt.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "wohnt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "lives",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "stage_origin": 1,
+      "english": "He cooks.",
+      "german": "Er kocht.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "kocht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "cooks",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "stage_origin": 1,
+      "english": "He sings.",
+      "german": "Er singt.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "singt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "sings",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "stage_origin": 1,
+      "english": "He dances.",
+      "german": "Er tanzt.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "dances",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "stage_origin": 1,
+      "english": "He hears.",
+      "german": "Er hört.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "hört",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "hears",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "stage_origin": 1,
+      "english": "He works.",
+      "german": "Er arbeitet.",
+      "german_pos": [
+        {
+          "word": "Er",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeitet",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "He",
+          "pos": "PRON"
+        },
+        {
+          "word": "works",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "stage_origin": 1,
+      "english": "She learns.",
+      "german": "Sie lernt.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "learns",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "stage_origin": 1,
+      "english": "She comes.",
+      "german": "Sie kommt.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "comes",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "stage_origin": 1,
+      "english": "She plays.",
+      "german": "Sie spielt.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "plays",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "stage_origin": 1,
+      "english": "She cooks.",
+      "german": "Sie kocht.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kocht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "cooks",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "stage_origin": 1,
+      "english": "She sings.",
+      "german": "Sie singt.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "singt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sings",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "stage_origin": 1,
+      "english": "She laughs.",
+      "german": "Sie lacht.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lacht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "laughs",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "stage_origin": 1,
+      "english": "She hears.",
+      "german": "Sie hört.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hört",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "hears",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "stage_origin": 1,
+      "english": "She sleeps.",
+      "german": "Sie schläft.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "schläft",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "She",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleeps",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "stage_origin": 1,
+      "english": "It learns.",
+      "german": "Es lernt.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "learns",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "stage_origin": 1,
+      "english": "It comes.",
+      "german": "Es kommt.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "comes",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "stage_origin": 1,
+      "english": "It plays.",
+      "german": "Es spielt.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "plays",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "stage_origin": 1,
+      "english": "It cooks.",
+      "german": "Es kocht.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "kocht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "cooks",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "stage_origin": 1,
+      "english": "It dances.",
+      "german": "Es tanzt.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "dances",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "stage_origin": 1,
+      "english": "It laughs.",
+      "german": "Es lacht.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "lacht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "laughs",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "stage_origin": 1,
+      "english": "It works.",
+      "german": "Es arbeitet.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeitet",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "works",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "stage_origin": 1,
+      "english": "It sleeps.",
+      "german": "Es schläft.",
+      "german_pos": [
+        {
+          "word": "Es",
+          "pos": "PRON"
+        },
+        {
+          "word": "schläft",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "It",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleeps",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "stage_origin": 1,
+      "english": "We learn.",
+      "german": "Wir lernen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "learn",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "stage_origin": 1,
+      "english": "We live.",
+      "german": "Wir wohnen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "wohnen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "live",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "stage_origin": 1,
+      "english": "We play.",
+      "german": "Wir spielen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "play",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "stage_origin": 1,
+      "english": "We sing.",
+      "german": "Wir singen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "singen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "sing",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "stage_origin": 1,
+      "english": "We dance.",
+      "german": "Wir tanzen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "dance",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "stage_origin": 1,
+      "english": "We laugh.",
+      "german": "Wir lachen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "lachen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "laugh",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "stage_origin": 1,
+      "english": "We work.",
+      "german": "Wir arbeiten.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeiten",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "work",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "stage_origin": 1,
+      "english": "We sleep.",
+      "german": "Wir schlafen.",
+      "german_pos": [
+        {
+          "word": "Wir",
+          "pos": "PRON"
+        },
+        {
+          "word": "schlafen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "We",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleep",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "stage_origin": 1,
+      "english": "You all come.",
+      "german": "Ihr kommt.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "come",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "stage_origin": 1,
+      "english": "You all live.",
+      "german": "Ihr wohnt.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "wohnt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "live",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "stage_origin": 1,
+      "english": "You all cook.",
+      "german": "Ihr kocht.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "kocht",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "cook",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "stage_origin": 1,
+      "english": "You all sing.",
+      "german": "Ihr singt.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "singt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "sing",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "stage_origin": 1,
+      "english": "You all dance.",
+      "german": "Ihr tanzt.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzt",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "dance",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "stage_origin": 1,
+      "english": "You all hear.",
+      "german": "Ihr hört.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "hört",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "hear",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "stage_origin": 1,
+      "english": "You all work.",
+      "german": "Ihr arbeitet.",
+      "german_pos": [
+        {
+          "word": "Ihr",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeitet",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You all",
+          "pos": "PRON"
+        },
+        {
+          "word": "work",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "stage_origin": 1,
+      "english": "They learn.",
+      "german": "Sie lernen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "learn",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "stage_origin": 1,
+      "english": "They come.",
+      "german": "Sie kommen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "come",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "stage_origin": 1,
+      "english": "They play.",
+      "german": "Sie spielen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "play",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "stage_origin": 1,
+      "english": "They cook.",
+      "german": "Sie kochen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kochen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "cook",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "stage_origin": 1,
+      "english": "They sing.",
+      "german": "Sie singen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "singen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "sing",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "stage_origin": 1,
+      "english": "They laugh.",
+      "german": "Sie lachen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lachen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "laugh",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "stage_origin": 1,
+      "english": "They hear.",
+      "german": "Sie hören.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "hören",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "hear",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "stage_origin": 1,
+      "english": "They sleep.",
+      "german": "Sie schlafen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "schlafen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "They",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleep",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "stage_origin": 1,
+      "english": "You learn. (formal)",
+      "german": "Sie lernen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lernen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "learn",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "stage_origin": 1,
+      "english": "You come. (formal)",
+      "german": "Sie kommen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kommen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "come",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "stage_origin": 1,
+      "english": "You play. (formal)",
+      "german": "Sie spielen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "spielen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "play",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "stage_origin": 1,
+      "english": "You cook. (formal)",
+      "german": "Sie kochen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "kochen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "cook",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "stage_origin": 1,
+      "english": "You dance. (formal)",
+      "german": "Sie tanzen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "tanzen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "dance",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "stage_origin": 1,
+      "english": "You laugh. (formal)",
+      "german": "Sie lachen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "lachen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "laugh",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "stage_origin": 1,
+      "english": "You work. (formal)",
+      "german": "Sie arbeiten.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "arbeiten",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "work",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "stage_origin": 1,
+      "english": "You sleep. (formal)",
+      "german": "Sie schlafen.",
+      "german_pos": [
+        {
+          "word": "Sie",
+          "pos": "PRON"
+        },
+        {
+          "word": "schlafen",
+          "pos": "VERB"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "You",
+          "pos": "PRON"
+        },
+        {
+          "word": "sleep",
+          "pos": "VERB"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "stage_origin": 2,
+      "english": "This is the table.",
+      "german": "Das ist der Tisch.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "der",
+          "pos": "DET"
+        },
+        {
+          "word": "Tisch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "table",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "stage_origin": 2,
+      "english": "This is the man.",
+      "german": "Das ist der Mann.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "der",
+          "pos": "DET"
+        },
+        {
+          "word": "Mann",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "man",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "stage_origin": 2,
+      "english": "This is the computer.",
+      "german": "Das ist der Computer.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "der",
+          "pos": "DET"
+        },
+        {
+          "word": "Computer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "computer",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "stage_origin": 2,
+      "english": "This is the coffee.",
+      "german": "Das ist der Kaffee.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "der",
+          "pos": "DET"
+        },
+        {
+          "word": "Kaffee",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "coffee",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "stage_origin": 2,
+      "english": "This is the son.",
+      "german": "Das ist der Sohn.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "der",
+          "pos": "DET"
+        },
+        {
+          "word": "Sohn",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "son",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "stage_origin": 2,
+      "english": "This is a car.",
+      "german": "Das ist ein Wagen.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Wagen",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "car",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "stage_origin": 2,
+      "english": "This is a brother.",
+      "german": "Das ist ein Bruder.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Bruder",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "brother",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "stage_origin": 2,
+      "english": "This is not a suitcase.",
+      "german": "Das ist kein Koffer.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Koffer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "suitcase",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "stage_origin": 2,
+      "english": "This is the lamp.",
+      "german": "Das ist die Lampe.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Lampe",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "lamp",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "stage_origin": 2,
+      "english": "This is the bag.",
+      "german": "Das ist die Tasche.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tasche",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "bag",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "stage_origin": 2,
+      "english": "This is the door.",
+      "german": "Das ist die Tür.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tür",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "door",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "stage_origin": 2,
+      "english": "This is the banana.",
+      "german": "Das ist die Banane.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Banane",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "banana",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "stage_origin": 2,
+      "english": "This is the card.",
+      "german": "Das ist die Karte.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Karte",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "card",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "stage_origin": 2,
+      "english": "This is a music.",
+      "german": "Das ist eine Musik.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Musik",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "music",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "stage_origin": 2,
+      "english": "This is a cup.",
+      "german": "Das ist eine Tasse.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "eine",
+          "pos": "DET"
+        },
+        {
+          "word": "Tasse",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "cup",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "stage_origin": 2,
+      "english": "This is not a number.",
+      "german": "Das ist keine Zahl.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Zahl",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "number",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "stage_origin": 2,
+      "english": "This is the book.",
+      "german": "Das ist das Buch.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Buch",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "book",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "stage_origin": 2,
+      "english": "This is the window.",
+      "german": "Das ist das Fenster.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Fenster",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "window",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "stage_origin": 2,
+      "english": "This is the egg.",
+      "german": "Das ist das Ei.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Ei",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "egg",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "stage_origin": 2,
+      "english": "This is the shirt.",
+      "german": "Das ist das Hemd.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Hemd",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "shirt",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "stage_origin": 2,
+      "english": "This is the knife.",
+      "german": "Das ist das Messer.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "das",
+          "pos": "DET"
+        },
+        {
+          "word": "Messer",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "knife",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "stage_origin": 2,
+      "english": "This is a shelf.",
+      "german": "Das ist ein Regal.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Regal",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "shelf",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "stage_origin": 2,
+      "english": "This is a phone.",
+      "german": "Das ist ein Telefon.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "ein",
+          "pos": "DET"
+        },
+        {
+          "word": "Telefon",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "phone",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "stage_origin": 2,
+      "english": "This is not a cellphone.",
+      "german": "Das ist kein Handy.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "ist",
+          "pos": "VERB"
+        },
+        {
+          "word": "kein",
+          "pos": "DET"
+        },
+        {
+          "word": "Handy",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "This",
+          "pos": "PRON"
+        },
+        {
+          "word": "is",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "a",
+          "pos": "DET"
+        },
+        {
+          "word": "cellphone",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "stage_origin": 2,
+      "english": "These are the books.",
+      "german": "Das sind die Bücher.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Bücher",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "books",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "stage_origin": 2,
+      "english": "These are the houses.",
+      "german": "Das sind die Häuser.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Häuser",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "houses",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "stage_origin": 2,
+      "english": "These are the tables.",
+      "german": "Das sind die Tische.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Tische",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "tables",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "stage_origin": 2,
+      "english": "These are the flowers.",
+      "german": "Das sind die Blumen.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Blumen",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "flowers",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "stage_origin": 2,
+      "english": "These are the friends.",
+      "german": "Das sind die Freunde.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "die",
+          "pos": "DET"
+        },
+        {
+          "word": "Freunde",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "the",
+          "pos": "DET"
+        },
+        {
+          "word": "friends",
+          "pos": "NOUN"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "stage_origin": 2,
+      "english": "These are not clocks.",
+      "german": "Das sind keine Uhren.",
+      "german_pos": [
+        {
+          "word": "Das",
+          "pos": "PRON"
+        },
+        {
+          "word": "sind",
+          "pos": "VERB"
+        },
+        {
+          "word": "keine",
+          "pos": "DET"
+        },
+        {
+          "word": "Uhren",
+          "pos": "NOUN"
+        }
+      ],
+      "english_pos": [
+        {
+          "word": "These",
+          "pos": "PRON"
+        },
+        {
+          "word": "are",
+          "pos": "VERB"
+        },
+        {
+          "word": "not",
+          "pos": "ADV"
+        },
+        {
+          "word": "clocks",
+          "pos": "NOUN"
+        }
+      ]
+    }
+  ]
+}
