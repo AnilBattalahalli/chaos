@@ -1,0 +1,4 @@
+[
+  { "id": "stage_01_02", "file": "stage_01_02.json", "title": "Stages 01+02: Subject + Verb, Gender Recognition", "stages": [1, 2] },
+  { "id": "stage_03", "file": "stage_03.json", "title": "Stage 03: Direct Objects & Accusative Articles", "stages": [3] }
+]
