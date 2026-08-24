@@ -74,6 +74,13 @@ layout: "blank"
           <div id="donate-amount-error" class="kali-amount-error"></div>
         </div>
         <button id="donate-cta" class="kali-donate-cta" disabled>Select an amount</button>
+        <div class="kali-app-row">
+          <span class="kali-app-row-label">Or open directly in</span>
+          <div class="kali-app-row-buttons">
+            <button type="button" class="kali-app-btn" data-app="gpay" disabled>Google Pay</button>
+            <button type="button" class="kali-app-btn" data-app="phonepe" disabled>PhonePe</button>
+          </div>
+        </div>
         <p class="kali-donate-note">This just opens your UPI app with the payment pre-filled — we never see or process the payment ourselves.</p>
         <div class="kali-donate-qr">
           <div id="donate-qr-canvas" hidden></div>

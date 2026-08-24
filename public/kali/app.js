@@ -407,12 +407,31 @@ function registerServiceWorker() {
 }
 
 /* ------------------ DONATE (direct UPI, no gateway) ------------------ */
-function buildUpiUrl(amount) {
+// iOS has no system-level chooser for custom URL schemes the way Android
+// does, so a generic upi:// link just resolves to whichever app last
+// registered it (WhatsApp, in practice) instead of prompting. These
+// app-specific schemes carry the exact same UPI payload — no separate
+// flow, just a different door into the same payment — so a user who
+// wants a particular app can pick it directly.
+const DONATION_APP_SCHEMES = {
+  gpay: (qs) => `tez://upi/pay?${qs}`,
+  phonepe: (qs) => `phonepe://pay?${qs}`,
+};
+
+function buildUpiQueryString(amount) {
   const parts = [`pa=${encodeURIComponent(DONATION_UPI_ID)}`, `pn=${encodeURIComponent(DONATION_PAYEE_NAME)}`];
   if (amount != null) parts.push(`am=${amount.toFixed(2)}`);
   parts.push("cu=INR");
   parts.push(`tn=${encodeURIComponent(DONATION_NOTE)}`);
-  return `upi://pay?${parts.join("&")}`;
+  return parts.join("&");
+}
+
+function buildUpiUrl(amount) {
+  return `upi://pay?${buildUpiQueryString(amount)}`;
+}
+
+function buildAppUpiUrl(app, amount) {
+  return DONATION_APP_SCHEMES[app](buildUpiQueryString(amount));
 }
 
 function wireDonateModal() {
@@ -427,6 +446,7 @@ function wireDonateModal() {
   const qrContainer = document.getElementById("donate-qr-canvas");
   const qrCaption = document.getElementById("donate-qr-caption");
   const qrAvailable = typeof QRCode !== "undefined";
+  const appBtns = document.querySelectorAll(".kali-app-btn[data-app]");
   let qrInstance = null;
 
   function openModal() {
@@ -496,6 +516,9 @@ function wireDonateModal() {
       cta.disabled = true;
       cta.textContent = "Select an amount";
     }
+    appBtns.forEach((b) => {
+      b.disabled = amount == null;
+    });
     updateQr(amount);
   }
 
@@ -545,6 +568,13 @@ function wireDonateModal() {
     if (donateAmount == null) return;
     // hands off to whichever UPI app the OS picks; we never see or claim a result
     window.location.href = buildUpiUrl(donateAmount);
+  });
+
+  appBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (donateAmount == null) return;
+      window.location.href = buildAppUpiUrl(btn.dataset.app, donateAmount);
+    });
   });
 }
 
