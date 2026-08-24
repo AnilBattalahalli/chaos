@@ -413,8 +413,17 @@ function registerServiceWorker() {
 // app-specific schemes carry the exact same UPI payload — no separate
 // flow, just a different door into the same payment — so a user who
 // wants a particular app can pick it directly.
+//
+// Google Pay doesn't publish a supported app-specific deep link for
+// third-party payees. Its old "tez://" scheme still opens the app, but on
+// current builds it's misrouted through GPay's "pay via QR image from
+// gallery" flow instead of a normal payment request — showing that flow's
+// ₹2,000 QR-import cap regardless of the actual amount. The generic
+// upi://pay intent is what Google actually recommends, and Android's own
+// chooser already lets a user pick Google Pay from it, so route through
+// that instead of the broken app-specific scheme.
 const DONATION_APP_SCHEMES = {
-  gpay: (qs) => `tez://upi/pay?${qs}`,
+  gpay: (qs) => `upi://pay?${qs}`,
   phonepe: (qs) => `phonepe://pay?${qs}`,
 };
 
