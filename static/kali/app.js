@@ -427,8 +427,20 @@ const DONATION_APP_SCHEMES = {
   phonepe: (qs) => `phonepe://pay?${qs}`,
 };
 
+function generateTransactionRef() {
+  // NPCI's UPI intent spec expects a "tr" (transaction reference) on every
+  // request; some apps fall back to more defensive/restrictive handling of
+  // links that omit it. Client-only, so this is just for uniqueness, not
+  // idempotency or reconciliation.
+  const time = Date.now().toString(36).toUpperCase();
+  const rand = Math.random().toString(36).slice(2, 8).toUpperCase();
+  return `KALI${time}${rand}`.slice(0, 35);
+}
+
 function buildUpiQueryString(amount) {
   const parts = [`pa=${encodeURIComponent(DONATION_UPI_ID)}`, `pn=${encodeURIComponent(DONATION_PAYEE_NAME)}`];
+  parts.push("mc=0000"); // no specific merchant category — this is a personal VPA, not a registered merchant
+  parts.push(`tr=${generateTransactionRef()}`);
   if (amount != null) parts.push(`am=${amount.toFixed(2)}`);
   parts.push("cu=INR");
   parts.push(`tn=${encodeURIComponent(DONATION_NOTE)}`);
