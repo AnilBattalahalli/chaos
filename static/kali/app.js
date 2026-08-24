@@ -4,6 +4,13 @@ const LEVELS_STORAGE_KEY = "kaliLevels";
 const SAVED_STORAGE_KEY = "kaliSaved";
 const QUIZ_STORAGE_KEY = "kaliQuizMode";
 
+// ---- Donation config: the only place the UPI ID is set ----
+const DONATION_UPI_ID = "anilbattalahalli-3@okhdfcbank";
+const DONATION_PAYEE_NAME = "Kali 2.0";
+const DONATION_NOTE = "Donation to Kali 2.0";
+const DONATION_PRESETS = [50, 100, 250, 500, 1000];
+const DONATION_MAX_AMOUNT = 100000;
+
 let dictionary = [];
 let chunkId = null;
 let selectedLevels = loadSelectedLevels();
@@ -12,6 +19,7 @@ let quizMode = loadQuizMode();
 let currentEntry = null;
 let revealed = true;
 let deferredInstallPrompt = null;
+let donateAmount = null;
 
 /* ------------------ LEVEL FILTER STATE ------------------ */
 function loadSelectedLevels() {
@@ -172,6 +180,7 @@ async function initialLoad() {
   renderSavedList();
   wireQuizToggle();
   wireInstallPrompt();
+  wireDonateModal();
   registerServiceWorker();
 
   try {
@@ -395,6 +404,148 @@ function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/kali/sw.js").catch((err) => console.error(err));
   }
+}
+
+/* ------------------ DONATE (direct UPI, no gateway) ------------------ */
+function buildUpiUrl(amount) {
+  const parts = [`pa=${encodeURIComponent(DONATION_UPI_ID)}`, `pn=${encodeURIComponent(DONATION_PAYEE_NAME)}`];
+  if (amount != null) parts.push(`am=${amount.toFixed(2)}`);
+  parts.push("cu=INR");
+  parts.push(`tn=${encodeURIComponent(DONATION_NOTE)}`);
+  return `upi://pay?${parts.join("&")}`;
+}
+
+function wireDonateModal() {
+  const backdrop = document.getElementById("donate-modal-backdrop");
+  const openBtn = document.getElementById("donate-toggle");
+  const closeBtn = document.getElementById("donate-modal-close");
+  const amountBtns = document.querySelectorAll(".kali-amount-btn[data-amount]");
+  const customWrap = document.getElementById("donate-custom-wrap");
+  const customInput = document.getElementById("donate-custom-input");
+  const errorEl = document.getElementById("donate-amount-error");
+  const cta = document.getElementById("donate-cta");
+  const qrContainer = document.getElementById("donate-qr-canvas");
+  const qrCaption = document.getElementById("donate-qr-caption");
+  const qrAvailable = typeof QRCode !== "undefined";
+  let qrInstance = null;
+
+  function openModal() {
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add("open"));
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    backdrop.classList.remove("open");
+    document.body.style.overflow = "";
+    setTimeout(() => {
+      backdrop.hidden = true;
+    }, 200);
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !backdrop.hidden) closeModal();
+  });
+
+  function updateQr(amount) {
+    if (!qrContainer) return;
+
+    if (!qrAvailable) {
+      qrContainer.hidden = true;
+      qrCaption.textContent = "QR code unavailable — use the Donate button above instead.";
+      return;
+    }
+
+    if (amount == null) {
+      qrContainer.hidden = true;
+      qrCaption.textContent = "Pick or enter an amount to show a scannable QR code here.";
+      return;
+    }
+
+    try {
+      const url = buildUpiUrl(amount);
+      if (!qrInstance) {
+        qrInstance = new QRCode(qrContainer, { text: url, width: 132, height: 132, correctLevel: QRCode.CorrectLevel.M });
+      } else {
+        qrInstance.clear();
+        qrInstance.makeCode(url);
+      }
+      qrContainer.hidden = false;
+      const amtStr = Number.isInteger(amount) ? amount : amount.toFixed(2);
+      qrCaption.innerHTML = `Scan with any UPI app to pay <b>₹${amtStr}</b>`;
+    } catch (err) {
+      console.error(err);
+      qrContainer.hidden = true;
+      qrCaption.textContent = "Couldn't generate the QR code.";
+    }
+  }
+
+  function setAmount(amount) {
+    donateAmount = amount;
+    if (amount != null) {
+      cta.disabled = false;
+      const amtStr = Number.isInteger(amount) ? amount : amount.toFixed(2);
+      cta.textContent = `Donate ₹${amtStr}`;
+    } else {
+      cta.disabled = true;
+      cta.textContent = "Select an amount";
+    }
+    updateQr(amount);
+  }
+
+  amountBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      amountBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      errorEl.textContent = "";
+
+      if (btn.dataset.amount === "custom") {
+        customWrap.hidden = false;
+        customInput.value = "";
+        customInput.focus();
+        setAmount(null);
+      } else {
+        customWrap.hidden = true;
+        setAmount(Number(btn.dataset.amount));
+      }
+    });
+  });
+
+  customInput.addEventListener("input", () => {
+    const raw = customInput.value.trim();
+    if (raw === "") {
+      errorEl.textContent = "";
+      setAmount(null);
+      return;
+    }
+
+    const val = Number(raw);
+    if (!Number.isFinite(val) || val <= 0) {
+      errorEl.textContent = "Enter a positive amount.";
+      setAmount(null);
+      return;
+    }
+    if (val > DONATION_MAX_AMOUNT) {
+      errorEl.textContent = `Max is ₹${DONATION_MAX_AMOUNT.toLocaleString("en-IN")} per UPI transaction.`;
+      setAmount(null);
+      return;
+    }
+
+    errorEl.textContent = "";
+    setAmount(Math.round(val * 100) / 100);
+  });
+
+  cta.addEventListener("click", () => {
+    if (donateAmount == null) return;
+    // hands off to whichever UPI app the OS picks; we never see or claim a result
+    window.location.href = buildUpiUrl(donateAmount);
+  });
 }
 
 /* ------------------ START ------------------ */

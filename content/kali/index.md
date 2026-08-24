@@ -52,7 +52,37 @@ layout: "blank"
     <div class="kali-toolbar kali-toolbar-primary">
       <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
     </div>
+    <button id="donate-toggle" class="kali-donate-toggle">
+      <span class="heart" aria-hidden="true">&#10084;</span> Donate
+    </button>
+    <div id="donate-modal-backdrop" class="kali-modal-backdrop" hidden>
+      <div class="kali-modal" role="dialog" aria-modal="true" aria-labelledby="donate-modal-title">
+        <button id="donate-modal-close" class="kali-modal-close" aria-label="Close">&times;</button>
+        <h2 id="donate-modal-title" class="kali-modal-title">ಕಲಿ 2.0 is free for everyone &#10084;</h2>
+        <p class="kali-modal-message">If you've found it useful and want to help keep it alive, you can leave a little donation. It helps cover the costs of running and maintaining the project.</p>
+        <p class="kali-modal-message">No pressure at all — just thank you for being here. &lt;3</p>
+        <div class="kali-amount-grid">
+          <button class="kali-amount-btn" data-amount="50">₹50</button>
+          <button class="kali-amount-btn" data-amount="100">₹100</button>
+          <button class="kali-amount-btn" data-amount="250">₹250</button>
+          <button class="kali-amount-btn" data-amount="500">₹500</button>
+          <button class="kali-amount-btn" data-amount="1000">₹1000</button>
+          <button class="kali-amount-btn" data-amount="custom">Custom</button>
+        </div>
+        <div id="donate-custom-wrap" class="kali-amount-custom-wrap" hidden>
+          <input id="donate-custom-input" class="kali-amount-custom-input" type="number" inputmode="decimal" min="1" step="1" placeholder="Enter amount in ₹">
+          <div id="donate-amount-error" class="kali-amount-error"></div>
+        </div>
+        <button id="donate-cta" class="kali-donate-cta" disabled>Select an amount</button>
+        <p class="kali-donate-note">This just opens your UPI app with the payment pre-filled — we never see or process the payment ourselves.</p>
+        <div class="kali-donate-qr">
+          <div id="donate-qr-canvas" hidden></div>
+          <p id="donate-qr-caption">Pick or enter an amount to show a scannable QR code here.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="/kali/app.js"></script>
