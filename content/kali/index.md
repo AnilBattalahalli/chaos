@@ -95,6 +95,13 @@ layout: "blank"
           </label>
         </div>
         <button id="donate-cta" class="kali-donate-cta" disabled>Select an amount</button>
+        <div class="kali-upi-id-row">
+          <span class="kali-upi-id-label">Or copy the UPI ID and pay manually:</span>
+          <div class="kali-upi-id-copy">
+            <code id="donate-upi-id-text" class="kali-upi-id-text"></code>
+            <button type="button" id="donate-copy-upi" class="kali-copy-upi-btn">Copy</button>
+          </div>
+        </div>
         <p class="kali-donate-note">This just opens your UPI app with the payment pre-filled — we never see or process the payment ourselves.</p>
         <div class="kali-donate-qr">
           <div id="donate-qr-canvas" hidden></div>

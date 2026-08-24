@@ -588,6 +588,38 @@ function wireDonateModal() {
     const url = donatePayMethod === "other" ? buildUpiUrl(donateAmount) : buildAppUpiUrl(donatePayMethod, donateAmount);
     window.location.href = url;
   });
+
+  const upiIdText = document.getElementById("donate-upi-id-text");
+  const copyBtn = document.getElementById("donate-copy-upi");
+  if (upiIdText) upiIdText.textContent = DONATION_UPI_ID;
+
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(DONATION_UPI_ID);
+      } catch (err) {
+        // clipboard API unavailable/blocked: fall back to selecting the text
+        const range = document.createRange();
+        range.selectNodeContents(upiIdText);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try {
+          document.execCommand("copy");
+        } catch (fallbackErr) {
+          console.error(fallbackErr);
+        }
+        sel.removeAllRanges();
+      }
+      const original = copyBtn.textContent;
+      copyBtn.textContent = "Copied!";
+      copyBtn.disabled = true;
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.disabled = false;
+      }, 1500);
+    });
+  }
 }
 
 /* ------------------ START ------------------ */
