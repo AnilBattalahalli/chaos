@@ -585,37 +585,112 @@
   cursor: not-allowed;
 }
 
-.kali-app-row {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.kali-app-row-label {
-  font-size: 11px;
+.kali-pay-methods-label {
+  margin: 4px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.kali-app-row-buttons {
+.kali-pay-methods {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 6px;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
-.kali-app-btn {
-  padding: 7px 14px;
+.kali-pay-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
   border: 1px solid var(--border);
+  border-radius: 10px;
   background: var(--theme);
-  color: var(--primary);
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 500;
   cursor: pointer;
+  transition: border-color 0.15s;
 }
 
-.kali-app-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+.kali-pay-method-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.kali-pay-method-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kali-pay-method-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary);
+}
+
+.kali-pay-method-icon-generic {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+}
+
+.kali-pay-method-label {
+  flex: 1;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.kali-pay-method-check {
+  flex-shrink: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+}
+
+.kali-pay-method-check::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.kali-pay-method-input:checked ~ .kali-pay-method-check {
+  background: var(--kali-accent);
+  border-color: var(--kali-accent);
+}
+
+.kali-pay-method-input:checked ~ .kali-pay-method-check::after {
+  opacity: 1;
+}
+
+.kali-pay-method-input:checked ~ * {
+  color: var(--kali-accent);
+}
+
+.kali-pay-method:has(.kali-pay-method-input:checked) {
+  border-color: var(--kali-accent);
+}
+
+.kali-pay-method-input:focus-visible ~ .kali-pay-method-check {
+  outline: 2px solid var(--kali-accent);
+  outline-offset: 2px;
 }
 
 .kali-donate-note {

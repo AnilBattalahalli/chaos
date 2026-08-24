@@ -446,8 +446,9 @@ function wireDonateModal() {
   const qrContainer = document.getElementById("donate-qr-canvas");
   const qrCaption = document.getElementById("donate-qr-caption");
   const qrAvailable = typeof QRCode !== "undefined";
-  const appBtns = document.querySelectorAll(".kali-app-btn[data-app]");
+  const payMethodInputs = document.querySelectorAll(".kali-pay-method-input");
   let qrInstance = null;
+  let donatePayMethod = null;
 
   function openModal() {
     backdrop.hidden = false;
@@ -506,19 +507,20 @@ function wireDonateModal() {
     }
   }
 
-  function setAmount(amount) {
-    donateAmount = amount;
-    if (amount != null) {
+  function refreshCta() {
+    if (donateAmount != null && donatePayMethod != null) {
       cta.disabled = false;
-      const amtStr = Number.isInteger(amount) ? amount : amount.toFixed(2);
+      const amtStr = Number.isInteger(donateAmount) ? donateAmount : donateAmount.toFixed(2);
       cta.textContent = `Donate ₹${amtStr}`;
     } else {
       cta.disabled = true;
-      cta.textContent = "Select an amount";
+      cta.textContent = donateAmount == null ? "Select an amount" : "Choose a payment app";
     }
-    appBtns.forEach((b) => {
-      b.disabled = amount == null;
-    });
+  }
+
+  function setAmount(amount) {
+    donateAmount = amount;
+    refreshCta();
     updateQr(amount);
   }
 
@@ -564,17 +566,18 @@ function wireDonateModal() {
     setAmount(Math.round(val * 100) / 100);
   });
 
-  cta.addEventListener("click", () => {
-    if (donateAmount == null) return;
-    // hands off to whichever UPI app the OS picks; we never see or claim a result
-    window.location.href = buildUpiUrl(donateAmount);
+  payMethodInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      donatePayMethod = input.value;
+      refreshCta();
+    });
   });
 
-  appBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (donateAmount == null) return;
-      window.location.href = buildAppUpiUrl(btn.dataset.app, donateAmount);
-    });
+  cta.addEventListener("click", () => {
+    if (donateAmount == null || donatePayMethod == null) return;
+    // hands off to whichever UPI app was picked; we never see or claim a result
+    const url = donatePayMethod === "other" ? buildUpiUrl(donateAmount) : buildAppUpiUrl(donatePayMethod, donateAmount);
+    window.location.href = url;
   });
 }
 
