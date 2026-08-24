@@ -1,21 +1,25 @@
 ---
-title: "ಕಲಿ"
+title: "ಕಲಿ 2.0"
 layout: "blank"
 ---
 
+<div id="kali-splash" class="kali-splash">
+  <div class="kali-splash-title">ಕಲಿ 2.0</div>
+</div>
+
 <div class="kali-widget-wrapper">
   <div class="kali-container">
-    <!-- <h1>ಕಲಿ</h1> -->
+    <h1 class="kali-heading">ಕಲಿ 2.0</h1>
     <br>
     <div class="kali-toolbar-secondary">
       <button id="level-toggle" class="kali-secondary-btn" onclick="toggleLevelPanel()" aria-expanded="false">
-        ಹಂತ<span id="level-count" class="kali-level-count"></span>
+        Levels<span id="level-count" class="kali-level-count"></span>
       </button>
       <button id="saved-toggle" class="kali-secondary-btn" aria-expanded="false">
-        ಉಳಿಸಿದ<span id="saved-count" class="kali-level-count"></span>
+        Saved<span id="saved-count" class="kali-level-count"></span>
       </button>
       <button id="quiz-toggle" class="kali-secondary-btn" aria-pressed="false">
-        ಕ್ವಿಜ್
+        Quiz Mode
       </button>
       <button id="install-toggle" class="kali-secondary-btn" hidden>
         ಸ್ಥಾಪಿಸಿ
@@ -23,9 +27,21 @@ layout: "blank"
     </div>
     <div id="level-panel" class="kali-level-panel" hidden>
       <div class="kali-level-grid">
-        <button class="kali-chip" data-level="3">3 ಸಂಸ್ಕೃತ</button>
-        <button class="kali-chip" data-level="2">2 ಸಂಸ್ಕೃತ ಪ್ರಭಾವ</button>
-        <button class="kali-chip" data-level="1">1 ಕನ್ನಡ ಪದಗಳು</button>
+        <label class="kali-level-option">
+          <input type="checkbox" class="kali-level-checkbox" data-level="3">
+          <span class="kali-checkbox-box"></span>
+          <span class="kali-level-label">Pure Sanskrit</span>
+        </label>
+        <label class="kali-level-option">
+          <input type="checkbox" class="kali-level-checkbox" data-level="2">
+          <span class="kali-checkbox-box"></span>
+          <span class="kali-level-label">Sanskrit Influence</span>
+        </label>
+        <label class="kali-level-option">
+          <input type="checkbox" class="kali-level-checkbox" data-level="1">
+          <span class="kali-checkbox-box"></span>
+          <span class="kali-level-label">Pure Kannada</span>
+        </label>
       </div>
       <button class="kali-chip kali-chip-all" data-action="all">ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ</button>
     </div>

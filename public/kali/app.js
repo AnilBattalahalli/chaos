@@ -167,7 +167,7 @@ function revealAnswer() {
 /* ------------------ INITIAL LOAD ------------------ */
 async function initialLoad() {
   wireLevelPanel();
-  syncChipState();
+  syncLevelCheckboxState();
   wireSavedPanel();
   renderSavedList();
   wireQuizToggle();
@@ -308,40 +308,42 @@ function toggleLevelPanel() {
 
 /* ------------------ LEVEL FILTER UI ------------------ */
 function wireLevelPanel() {
-  document.querySelectorAll(".kali-chip[data-level]").forEach((btn) => {
-    const lvl = Number(btn.dataset.level);
-    btn.addEventListener("click", () => toggleLevel(lvl));
+  document.querySelectorAll(".kali-level-checkbox").forEach((cb) => {
+    const lvl = Number(cb.dataset.level);
+    cb.addEventListener("change", () => toggleLevel(lvl, cb));
   });
 
-  const allBtn = document.querySelector(".kali-chip-all");
-  allBtn.addEventListener("click", selectAllLevels);
+  document.querySelector(".kali-chip-all").addEventListener("click", selectAllLevels);
 }
 
-function toggleLevel(lvl) {
-  if (selectedLevels.has(lvl)) {
-    if (selectedLevels.size === 1) return; // keep at least one level active
-    selectedLevels.delete(lvl);
-  } else {
+function toggleLevel(lvl, checkbox) {
+  // the checkbox has already flipped its own `checked` by the time `change`
+  // fires, so revert it visually if this would drop selection to zero
+  if (!checkbox.checked && selectedLevels.size === 1 && selectedLevels.has(lvl)) {
+    checkbox.checked = true;
+    return;
+  }
+
+  if (checkbox.checked) {
     selectedLevels.add(lvl);
+  } else {
+    selectedLevels.delete(lvl);
   }
   saveSelectedLevels();
-  syncChipState();
+  syncLevelCheckboxState();
   loadRandomEntry();
 }
 
 function selectAllLevels() {
   selectedLevels = new Set(ALL_LEVELS);
   saveSelectedLevels();
-  syncChipState();
+  syncLevelCheckboxState();
   loadRandomEntry();
 }
 
-function syncChipState() {
-  document.querySelectorAll(".kali-chip[data-level]").forEach((btn) => {
-    const lvl = Number(btn.dataset.level);
-    const active = selectedLevels.has(lvl);
-    btn.classList.toggle("active", active);
-    btn.setAttribute("aria-pressed", active);
+function syncLevelCheckboxState() {
+  document.querySelectorAll(".kali-level-checkbox").forEach((cb) => {
+    cb.checked = selectedLevels.has(Number(cb.dataset.level));
   });
   updateLevelCount();
 }
