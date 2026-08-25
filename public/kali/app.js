@@ -5,11 +5,7 @@ const SAVED_STORAGE_KEY = "kaliSaved";
 const QUIZ_STORAGE_KEY = "kaliQuizMode";
 
 // ---- Donation config: the only place the UPI ID is set ----
-const DONATION_UPI_ID = "anilbattalahalli-3@okhdfcbank";
-const DONATION_PAYEE_NAME = "Kali 2.0";
-const DONATION_NOTE = "Donation to Kali 2.0";
-const DONATION_PRESETS = [50, 100, 250, 500, 1000];
-const DONATION_MAX_AMOUNT = 100000;
+const DONATION_UPI_ID = "learnwithkali@axl";
 
 let dictionary = [];
 let chunkId = null;
@@ -19,7 +15,6 @@ let quizMode = loadQuizMode();
 let currentEntry = null;
 let revealed = true;
 let deferredInstallPrompt = null;
-let donateAmount = null;
 
 /* ------------------ LEVEL FILTER STATE ------------------ */
 function loadSelectedLevels() {
@@ -406,70 +401,18 @@ function registerServiceWorker() {
   }
 }
 
-/* ------------------ DONATE (direct UPI, no gateway) ------------------ */
-// iOS has no system-level chooser for custom URL schemes the way Android
-// does, so a generic upi:// link just resolves to whichever app last
-// registered it (WhatsApp, in practice) instead of prompting. These
-// app-specific schemes carry the exact same UPI payload — no separate
-// flow, just a different door into the same payment — so a user who
-// wants a particular app can pick it directly.
-//
-// Google Pay doesn't publish a supported app-specific deep link for
-// third-party payees. Its old "tez://" scheme still opens the app, but on
-// current builds it's misrouted through GPay's "pay via QR image from
-// gallery" flow instead of a normal payment request — showing that flow's
-// ₹2,000 QR-import cap regardless of the actual amount. The generic
-// upi://pay intent is what Google actually recommends, and Android's own
-// chooser already lets a user pick Google Pay from it, so route through
-// that instead of the broken app-specific scheme.
-const DONATION_APP_SCHEMES = {
-  gpay: (qs) => `upi://pay?${qs}`,
-  phonepe: (qs) => `phonepe://pay?${qs}`,
-};
-
-function generateTransactionRef() {
-  // NPCI's UPI intent spec expects a "tr" (transaction reference) on every
-  // request; some apps fall back to more defensive/restrictive handling of
-  // links that omit it. Client-only, so this is just for uniqueness, not
-  // idempotency or reconciliation.
-  const time = Date.now().toString(36).toUpperCase();
-  const rand = Math.random().toString(36).slice(2, 8).toUpperCase();
-  return `KALI${time}${rand}`.slice(0, 35);
-}
-
-function buildUpiQueryString(amount) {
-  const parts = [`pa=${encodeURIComponent(DONATION_UPI_ID)}`, `pn=${encodeURIComponent(DONATION_PAYEE_NAME)}`];
-  parts.push("mc=0000"); // no specific merchant category — this is a personal VPA, not a registered merchant
-  parts.push(`tr=${generateTransactionRef()}`);
-  if (amount != null) parts.push(`am=${amount.toFixed(2)}`);
-  parts.push("cu=INR");
-  parts.push(`tn=${encodeURIComponent(DONATION_NOTE)}`);
-  return parts.join("&");
-}
-
-function buildUpiUrl(amount) {
-  return `upi://pay?${buildUpiQueryString(amount)}`;
-}
-
-function buildAppUpiUrl(app, amount) {
-  return DONATION_APP_SCHEMES[app](buildUpiQueryString(amount));
-}
-
+/* ------------------ DONATE (copy UPI ID, no gateway) ------------------ */
+// upi://pay deep links get treated as untrusted regardless of app, scheme,
+// or payload — confirmed on-device that the identical link works scanned
+// live but fails opened from a browser, in every app tried. Since that's
+// not something a website's link can change, this just offers the UPI ID
+// to copy so people can pay from inside their own app directly.
 function wireDonateModal() {
   const backdrop = document.getElementById("donate-modal-backdrop");
   const openBtn = document.getElementById("donate-toggle");
   const closeBtn = document.getElementById("donate-modal-close");
-  const amountBtns = document.querySelectorAll(".kali-amount-btn[data-amount]");
-  const customWrap = document.getElementById("donate-custom-wrap");
-  const customInput = document.getElementById("donate-custom-input");
-  const errorEl = document.getElementById("donate-amount-error");
-  const cta = document.getElementById("donate-cta");
-  const qrContainer = document.getElementById("donate-qr-canvas");
-  const qrCaption = document.getElementById("donate-qr-caption");
-  const qrAvailable = typeof QRCode !== "undefined";
-  const payMethodInputs = document.querySelectorAll(".kali-pay-method-input");
-  let qrInstance = null;
-  let donatePayMethod = null;
+  const upiIdText = document.getElementById("donate-upi-id-text");
+  const copyBtn = document.getElementById("donate-copy-upi");
 
   function openModal() {
     backdrop.hidden = false;
@@ -495,143 +438,33 @@ function wireDonateModal() {
     if (e.key === "Escape" && !backdrop.hidden) closeModal();
   });
 
-  function updateQr(amount) {
-    if (!qrContainer) return;
+  upiIdText.textContent = DONATION_UPI_ID;
 
-    if (!qrAvailable) {
-      qrContainer.hidden = true;
-      qrCaption.textContent = "QR code unavailable — use the Donate button above instead.";
-      return;
-    }
-
-    if (amount == null) {
-      qrContainer.hidden = true;
-      qrCaption.textContent = "Pick or enter an amount to show a scannable QR code here.";
-      return;
-    }
-
+  copyBtn.addEventListener("click", async () => {
     try {
-      const url = buildUpiUrl(amount);
-      if (!qrInstance) {
-        qrInstance = new QRCode(qrContainer, { text: url, width: 132, height: 132, correctLevel: QRCode.CorrectLevel.M });
-      } else {
-        qrInstance.clear();
-        qrInstance.makeCode(url);
-      }
-      qrContainer.hidden = false;
-      const amtStr = Number.isInteger(amount) ? amount : amount.toFixed(2);
-      qrCaption.innerHTML = `Scan with any UPI app to pay <b>₹${amtStr}</b>`;
+      await navigator.clipboard.writeText(DONATION_UPI_ID);
     } catch (err) {
-      console.error(err);
-      qrContainer.hidden = true;
-      qrCaption.textContent = "Couldn't generate the QR code.";
-    }
-  }
-
-  function refreshCta() {
-    if (donateAmount != null && donatePayMethod != null) {
-      cta.disabled = false;
-      const amtStr = Number.isInteger(donateAmount) ? donateAmount : donateAmount.toFixed(2);
-      cta.textContent = `Donate ₹${amtStr}`;
-    } else {
-      cta.disabled = true;
-      cta.textContent = donateAmount == null ? "Select an amount" : "Choose a payment app";
-    }
-  }
-
-  function setAmount(amount) {
-    donateAmount = amount;
-    refreshCta();
-    updateQr(amount);
-  }
-
-  amountBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      amountBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      errorEl.textContent = "";
-
-      if (btn.dataset.amount === "custom") {
-        customWrap.hidden = false;
-        customInput.value = "";
-        customInput.focus();
-        setAmount(null);
-      } else {
-        customWrap.hidden = true;
-        setAmount(Number(btn.dataset.amount));
-      }
-    });
-  });
-
-  customInput.addEventListener("input", () => {
-    const raw = customInput.value.trim();
-    if (raw === "") {
-      errorEl.textContent = "";
-      setAmount(null);
-      return;
-    }
-
-    const val = Number(raw);
-    if (!Number.isFinite(val) || val <= 0) {
-      errorEl.textContent = "Enter a positive amount.";
-      setAmount(null);
-      return;
-    }
-    if (val > DONATION_MAX_AMOUNT) {
-      errorEl.textContent = `Max is ₹${DONATION_MAX_AMOUNT.toLocaleString("en-IN")} per UPI transaction.`;
-      setAmount(null);
-      return;
-    }
-
-    errorEl.textContent = "";
-    setAmount(Math.round(val * 100) / 100);
-  });
-
-  payMethodInputs.forEach((input) => {
-    input.addEventListener("change", () => {
-      donatePayMethod = input.value;
-      refreshCta();
-    });
-  });
-
-  cta.addEventListener("click", () => {
-    if (donateAmount == null || donatePayMethod == null) return;
-    // hands off to whichever UPI app was picked; we never see or claim a result
-    const url = donatePayMethod === "other" ? buildUpiUrl(donateAmount) : buildAppUpiUrl(donatePayMethod, donateAmount);
-    window.location.href = url;
-  });
-
-  const upiIdText = document.getElementById("donate-upi-id-text");
-  const copyBtn = document.getElementById("donate-copy-upi");
-  if (upiIdText) upiIdText.textContent = DONATION_UPI_ID;
-
-  if (copyBtn) {
-    copyBtn.addEventListener("click", async () => {
+      // clipboard API unavailable/blocked: fall back to selecting the text
+      const range = document.createRange();
+      range.selectNodeContents(upiIdText);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
       try {
-        await navigator.clipboard.writeText(DONATION_UPI_ID);
-      } catch (err) {
-        // clipboard API unavailable/blocked: fall back to selecting the text
-        const range = document.createRange();
-        range.selectNodeContents(upiIdText);
-        const sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-        try {
-          document.execCommand("copy");
-        } catch (fallbackErr) {
-          console.error(fallbackErr);
-        }
-        sel.removeAllRanges();
+        document.execCommand("copy");
+      } catch (fallbackErr) {
+        console.error(fallbackErr);
       }
-      const original = copyBtn.textContent;
-      copyBtn.textContent = "Copied!";
-      copyBtn.disabled = true;
-      setTimeout(() => {
-        copyBtn.textContent = original;
-        copyBtn.disabled = false;
-      }, 1500);
-    });
-  }
+      sel.removeAllRanges();
+    }
+    const original = copyBtn.textContent;
+    copyBtn.textContent = "Copied!";
+    copyBtn.disabled = true;
+    setTimeout(() => {
+      copyBtn.textContent = original;
+      copyBtn.disabled = false;
+    }, 1500);
+  });
 }
 
 /* ------------------ START ------------------ */
