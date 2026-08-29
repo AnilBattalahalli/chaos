@@ -595,14 +595,6 @@
   cursor: default;
 }
 
-.kali-donate-note {
-  margin: 10px 0 0;
-  font-size: 11.5px;
-  color: var(--secondary);
-  text-align: center;
-  line-height: 1.5;
-}
-
 /* ------------------ MOBILE ------------------ */
 @media (max-width: 600px) {
   .kali-widget-wrapper .kali-container {

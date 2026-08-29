@@ -58,9 +58,9 @@ layout: "blank"
     <div id="donate-modal-backdrop" class="kali-modal-backdrop" hidden>
       <div class="kali-modal" role="dialog" aria-modal="true" aria-labelledby="donate-modal-title">
         <button id="donate-modal-close" class="kali-modal-close" aria-label="Close">&times;</button>
-        <h2 id="donate-modal-title" class="kali-modal-title">ಕಲಿ 2.0 is free for everyone &#10084;</h2>
+        <h2 id="donate-modal-title" class="kali-modal-title">ಕಲಿ 2.0 is free for everyone ❤️</h2>
         <p class="kali-modal-message">If you've found it useful and want to help keep it alive, you can leave a little donation. It helps cover the costs of running and maintaining the project.</p>
-        <p class="kali-modal-message">No pressure at all — just thank you for being here. &lt;3</p>
+        <p class="kali-modal-message">Thank you for being here ❤️</p>
         <div class="kali-pay-with" aria-hidden="true">
           <span class="kali-pay-with-label">Pay with</span>
           <div class="kali-pay-with-icons">
@@ -75,7 +75,6 @@ layout: "blank"
             <button type="button" id="donate-copy-upi" class="kali-copy-upi-btn">Copy</button>
           </div>
         </div>
-        <p class="kali-donate-note">We never see or process the payment ourselves — this just copies the ID so you can pay however you like.</p>
       </div>
     </div>
   </div>
