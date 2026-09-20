@@ -40,15 +40,57 @@
 .kali-widget-wrapper {
   --kali-accent: #2f6fed;
   --kali-heart: #e2456f;
+  --kali-lvl-5: #d6455f;
+  --kali-lvl-4: #e2703f;
+  --kali-lvl-3: #e0a52c;
+  --kali-lvl-2: #3fb0c9;
+  --kali-lvl-1: #2f9e6f;
+  --kali-lvl-0: #7c6fed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  background: var(--code-bg);
-  box-sizing: border-box;
+  background-color: var(--code-bg);
+  background-image: repeating-linear-gradient(
+      to right,
+      color-mix(in srgb, var(--border) 45%, transparent) 0,
+      color-mix(in srgb, var(--border) 45%, transparent) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--border) 45%, transparent) 0,
+      color-mix(in srgb, var(--border) 45%, transparent) 1px,
+      transparent 1px,
+      transparent 40px
+    );
   opacity: 0;
   animation: kali-app-in 1.8s ease forwards;
+  position: relative;
+}
+
+/* ------------------ LEVEL COLOR HELPERS ------------------ */
+.kali-widget-wrapper .kali-level-0 { --kali-level-color: var(--kali-lvl-0); }
+.kali-widget-wrapper .kali-level-1 { --kali-level-color: var(--kali-lvl-1); }
+.kali-widget-wrapper .kali-level-2 { --kali-level-color: var(--kali-lvl-2); }
+.kali-widget-wrapper .kali-level-3 { --kali-level-color: var(--kali-lvl-3); }
+.kali-widget-wrapper .kali-level-4 { --kali-level-color: var(--kali-lvl-4); }
+.kali-widget-wrapper .kali-level-5 { --kali-level-color: var(--kali-lvl-5); }
+
+/* ------------------ KICKER (Greptile-style bracket tag) ------------------ */
+.kali-widget-wrapper .kali-kicker,
+.kali-modal-kicker {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.kali-modal-kicker {
+  margin: 0 0 6px;
 }
 
 @keyframes kali-app-in {
@@ -87,14 +129,15 @@
 /* ------------------ BUTTON ------------------ */
 .kali-widget-wrapper .kali-button {
   flex: 2 1 auto;
-  padding: 10px 18px;
+  padding: 10px 22px;
   border: none;
   background: var(--primary);
   color: var(--theme);
-  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 600;
   transition: opacity 0.3s;
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
 }
 
 .kali-widget-wrapper .kali-button:hover {
@@ -139,7 +182,7 @@
   font-size: 13px;
 }
 
-/* ------------------ LEVEL PANEL ------------------ */
+/* ------------------ LEVEL PANEL (also used by Legend + Saved) ------------------ */
 .kali-widget-wrapper .kali-level-panel {
   margin-bottom: 16px;
   padding: 12px;
@@ -149,96 +192,22 @@
   text-align: left;
 }
 
-.kali-widget-wrapper .kali-level-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-/* ------------------ LEVEL CHECKBOXES ------------------ */
-.kali-widget-wrapper .kali-level-option {
+/* ------------------ LEGEND ------------------ */
+.kali-widget-wrapper .kali-legend-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 4px;
-  cursor: pointer;
-  user-select: none;
+  padding: 7px 4px;
+  font-size: 14px;
+  color: var(--primary);
 }
 
-.kali-widget-wrapper .kali-level-checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.kali-widget-wrapper .kali-checkbox-box {
-  position: relative;
+.kali-widget-wrapper .kali-legend-dot {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid var(--border);
-  border-radius: 5px;
-  background: var(--theme);
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.kali-widget-wrapper .kali-level-checkbox:checked + .kali-checkbox-box {
-  background: var(--kali-accent);
-  border-color: var(--kali-accent);
-}
-
-.kali-widget-wrapper .kali-checkbox-box::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 5px;
+  width: 10px;
   height: 10px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-
-.kali-widget-wrapper .kali-level-checkbox:checked + .kali-checkbox-box::after {
-  opacity: 1;
-}
-
-.kali-widget-wrapper .kali-level-checkbox:focus-visible + .kali-checkbox-box {
-  outline: 2px solid var(--kali-accent);
-  outline-offset: 2px;
-}
-
-.kali-widget-wrapper .kali-level-label {
-  font-size: 15px;
-  color: var(--primary);
-}
-
-.kali-widget-wrapper .kali-chip {
-  padding: 10px 6px;
-  border: 1px solid var(--border);
-  background: var(--entry);
-  color: var(--primary);
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 13px;
-  line-height: 1.2;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-.kali-widget-wrapper .kali-chip.active {
-  background: var(--kali-accent);
-  color: #fff;
-  border-color: var(--kali-accent);
-}
-
-.kali-widget-wrapper .kali-chip-all {
-  width: 100%;
-  font-size: 13px;
-  color: var(--secondary);
+  border-radius: 50%;
+  background: var(--kali-level-color);
 }
 
 /* ------------------ SAVED LIST ------------------ */
@@ -362,58 +331,102 @@
   cursor: pointer;
 }
 
-/* ------------------ WORD ------------------ */
+/* ------------------ ROOT WORD ROW ------------------ */
+.kali-widget-wrapper .kali-root-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .kali-widget-wrapper .kali-word {
-  font-size: 26px;
+  display: inline-block;
+  font-size: 24px;
   font-weight: bold;
   word-break: break-word;
+  padding: 3px 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--kali-level-color);
+  background: color-mix(in srgb, var(--kali-level-color) 18%, transparent);
 }
 
-/* ------------------ PRONUNCIATION ------------------ */
-.kali-widget-wrapper .kali-pronunciation {
+/* ------------------ SYNONYMS BUTTON ------------------ */
+.kali-widget-wrapper .kali-syn-btn {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--theme);
   color: var(--secondary);
-  margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s, color 0.18s;
 }
 
-/* ------------------ DEFINITIONS ------------------ */
-.kali-widget-wrapper .kali-definitions {
+.kali-widget-wrapper .kali-syn-btn:hover {
+  border-color: var(--kali-accent);
+  color: var(--kali-accent);
+}
+
+/* ------------------ CARD CONTENT ------------------ */
+.kali-widget-wrapper .kali-content {
   flex: 1;
   overflow-y: auto;
-  margin-top: 10px;
-  text-align: left; /* align definitions to left */
+  margin-top: 12px;
+  text-align: left;
 }
 
-.kali-widget-wrapper .kali-definitions ol {
-  padding-left: 24px;
-  margin: 0;
-  list-style-type: decimal !important;
+.kali-widget-wrapper .kali-content p {
+  margin: 0 0 10px;
+  line-height: 1.5;
 }
 
-.kali-widget-wrapper .kali-definitions ol li {
-  display: list-item !important;   /* force numbered list */
-  list-style-type: decimal !important;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  max-height: 4.2em;  /* 3 lines max */
-  overflow: hidden;
-  word-break: break-word;
-}
-
-/* ------------------ REFERENCES ------------------ */
-.kali-widget-wrapper .reference {
-  color: var(--secondary);
+.kali-widget-wrapper .kali-gloss {
+  color: var(--primary);
   font-style: italic;
+  font-size: 14.5px;
+}
+
+.kali-widget-wrapper .kali-meaning {
+  color: var(--primary);
+  font-size: 15px;
+}
+
+.kali-widget-wrapper .kali-example {
+  color: var(--secondary);
+  font-size: 13.5px;
 }
 
 /* ------------------ SCROLLBAR ------------------ */
-.kali-widget-wrapper .kali-definitions::-webkit-scrollbar {
+.kali-widget-wrapper .kali-content::-webkit-scrollbar {
   width: 6px;
 }
 
-.kali-widget-wrapper .kali-definitions::-webkit-scrollbar-thumb {
+.kali-widget-wrapper .kali-content::-webkit-scrollbar-thumb {
   background: var(--tertiary);
   border-radius: 10px;
+}
+
+/* ------------------ SYNONYM CHIPS (in popover) ------------------ */
+.kali-synonym-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.kali-syn-chip {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  border-left: 3px solid var(--kali-level-color);
+  background: color-mix(in srgb, var(--kali-level-color) 18%, transparent);
+  color: var(--primary);
 }
 
 /* ------------------ DONATE TOGGLE ------------------ */

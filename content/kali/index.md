@@ -12,8 +12,8 @@ layout: "blank"
     <h1 class="kali-heading">ಕಲಿ 2.0</h1>
     <br>
     <div class="kali-toolbar-secondary">
-      <button id="level-toggle" class="kali-secondary-btn" onclick="toggleLevelPanel()" aria-expanded="false">
-        Levels<span id="level-count" class="kali-level-count"></span>
+      <button id="legend-toggle" class="kali-secondary-btn" aria-expanded="false">
+        Legend
       </button>
       <button id="saved-toggle" class="kali-secondary-btn" aria-expanded="false">
         Saved<span id="saved-count" class="kali-level-count"></span>
@@ -25,29 +25,18 @@ layout: "blank"
         ಸ್ಥಾಪಿಸಿ
       </button>
     </div>
-    <div id="level-panel" class="kali-level-panel" hidden>
-      <div class="kali-level-grid">
-        <label class="kali-level-option">
-          <input type="checkbox" class="kali-level-checkbox" data-level="3">
-          <span class="kali-checkbox-box"></span>
-          <span class="kali-level-label">Pure Sanskrit</span>
-        </label>
-        <label class="kali-level-option">
-          <input type="checkbox" class="kali-level-checkbox" data-level="2">
-          <span class="kali-checkbox-box"></span>
-          <span class="kali-level-label">Sanskrit Influence</span>
-        </label>
-        <label class="kali-level-option">
-          <input type="checkbox" class="kali-level-checkbox" data-level="1">
-          <span class="kali-checkbox-box"></span>
-          <span class="kali-level-label">Pure Kannada</span>
-        </label>
-      </div>
-      <button class="kali-chip kali-chip-all" data-action="all">ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ</button>
+    <div id="legend-panel" class="kali-level-panel" hidden>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-5"></span><span>Pure Sanskrit (Tatsama)</span></div>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-4"></span><span>Heavy Sanskrit Influence</span></div>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-3"></span><span>Tadbhava (Nativized Sanskrit)</span></div>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-2"></span><span>Dravidian with Sanskrit Touch</span></div>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-1"></span><span>Pure Dēśya</span></div>
+      <div class="kali-legend-row"><span class="kali-legend-dot kali-level-0"></span><span>Anyadēśya (Foreign)</span></div>
     </div>
     <div id="saved-panel" class="kali-level-panel" hidden>
       <div id="saved-list" class="kali-saved-list"></div>
     </div>
+    <div class="kali-kicker">[ ಕಲಿ ]</div>
     <div id="card" class="kali-card">Loading...</div>
     <div class="kali-toolbar kali-toolbar-primary">
       <button class="kali-button" onclick="loadRandomEntry()">ಹೊಸ ಪದ</button>
@@ -75,6 +64,14 @@ layout: "blank"
             <button type="button" id="donate-copy-upi" class="kali-copy-upi-btn">Copy</button>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="synonyms-modal-backdrop" class="kali-modal-backdrop" hidden>
+      <div class="kali-modal" role="dialog" aria-modal="true" aria-labelledby="synonyms-modal-title">
+        <button id="synonyms-modal-close" class="kali-modal-close" aria-label="Close">&times;</button>
+        <div class="kali-modal-kicker">[ SYNONYMS ]</div>
+        <h2 id="synonyms-modal-title" class="kali-modal-title"></h2>
+        <div id="synonyms-list" class="kali-synonym-list"></div>
       </div>
     </div>
   </div>
