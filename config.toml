@@ -12,6 +12,13 @@ disableKinds = ["RSS"]
 [markup.goldmark.renderer]
 unsafe = true
 
+# Switches the site's visual skin. Values:
+#   "manifest"  -> creamy/paper "Manifest" skin (assets/css/extended/theme-manifest.css)
+#   unset/empty -> stock PaperMod look
+# Comment out (or remove) the line below to go back to plain PaperMod.
+[params]
+skin = "manifest"
+
 [params.profileMode]
 enabled = true
 title = "Anil Battalahalli"
