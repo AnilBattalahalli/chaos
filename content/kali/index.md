@@ -66,14 +66,6 @@ layout: "blank"
         </div>
       </div>
     </div>
-    <div id="synonyms-modal-backdrop" class="kali-modal-backdrop" hidden>
-      <div class="kali-modal" role="dialog" aria-modal="true" aria-labelledby="synonyms-modal-title">
-        <button id="synonyms-modal-close" class="kali-modal-close" aria-label="Close">&times;</button>
-        <div class="kali-modal-kicker">[ SYNONYMS ]</div>
-        <h2 id="synonyms-modal-title" class="kali-modal-title"></h2>
-        <div id="synonyms-list" class="kali-synonym-list"></div>
-      </div>
-    </div>
   </div>
 </div>
 

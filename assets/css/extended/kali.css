@@ -350,27 +350,24 @@
   background: color-mix(in srgb, var(--kali-level-color) 18%, transparent);
 }
 
-/* ------------------ SYNONYMS BUTTON ------------------ */
-.kali-widget-wrapper .kali-syn-btn {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--theme);
-  color: var(--secondary);
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
+/* ------------------ WORD META (pronunciation + part of speech) ------------------ */
+.kali-widget-wrapper .kali-word-meta {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.18s, color 0.18s;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--secondary);
+  font-size: 13px;
 }
 
-.kali-widget-wrapper .kali-syn-btn:hover {
-  border-color: var(--kali-accent);
-  color: var(--kali-accent);
+.kali-widget-wrapper .kali-pronunciation {
+  font-style: italic;
+}
+
+.kali-widget-wrapper .kali-pos {
+  font-size: 11px;
+  padding: 1px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
 }
 
 /* ------------------ CARD CONTENT ------------------ */
@@ -392,12 +389,12 @@
   font-size: 14.5px;
 }
 
-.kali-widget-wrapper .kali-meaning {
+.kali-widget-wrapper .kali-example {
   color: var(--primary);
   font-size: 15px;
 }
 
-.kali-widget-wrapper .kali-example {
+.kali-widget-wrapper .kali-example-en {
   color: var(--secondary);
   font-size: 13.5px;
 }
@@ -410,23 +407,6 @@
 .kali-widget-wrapper .kali-content::-webkit-scrollbar-thumb {
   background: var(--tertiary);
   border-radius: 10px;
-}
-
-/* ------------------ SYNONYM CHIPS (in popover) ------------------ */
-.kali-synonym-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.kali-syn-chip {
-  display: inline-block;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 14px;
-  border-left: 3px solid var(--kali-level-color);
-  background: color-mix(in srgb, var(--kali-level-color) 18%, transparent);
-  color: var(--primary);
 }
 
 /* ------------------ DONATE TOGGLE ------------------ */

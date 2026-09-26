@@ -1,16 +1,17 @@
-const N_CHUNKS = 90;
+const N_CHUNKS = 100;
 const SAVED_STORAGE_KEY = "kaliSaved";
 const QUIZ_STORAGE_KEY = "kaliQuizMode";
 const DATA_VERSION_KEY = "kaliDataVersion";
-const DATA_VERSION = "3";
+const DATA_VERSION = "4";
 
 // ---- Donation config: the only place the UPI ID is set ----
 const DONATION_UPI_ID = "learnwithkali@axl";
 
 /* ------------------ ONE-TIME DATA MIGRATION ------------------ */
-// the dictionary schema changed (3-level -> 6-level, definitions -> gloss/
-// meaning/example), so old saved words can never match a new entry again.
-// Wipe the old, now-orphaned state once per browser, before anything reads it.
+// the dictionary schema changed again (root/synonyms/gloss/meaning -> flat
+// word/pos/pronunciation/definition/example), so old saved words can never
+// match a new entry again. Wipe the old, now-orphaned state once per browser,
+// before anything reads it.
 (function migrateDataVersionIfNeeded() {
   if (localStorage.getItem(DATA_VERSION_KEY) === DATA_VERSION) return;
   localStorage.removeItem(SAVED_STORAGE_KEY);
@@ -28,7 +29,7 @@ let deferredInstallPrompt = null;
 
 /* ------------------ SAVED WORDS STATE ------------------ */
 function entryKey(entry) {
-  return `${entry.root}::${entry.gloss}`;
+  return `${entry.word}::${entry.definition}`;
 }
 
 function loadSavedWords() {
@@ -103,7 +104,7 @@ function renderSavedList() {
       const key = entryKey(e).replace(/"/g, "&quot;");
       return `
         <div class="kali-saved-item">
-          <button class="kali-saved-word" data-key="${key}">${e.root}</button>
+          <button class="kali-saved-word" data-key="${key}">${e.word}</button>
           <button class="kali-saved-remove" data-key="${key}" aria-label="remove">×</button>
         </div>
       `;
@@ -164,7 +165,6 @@ async function initialLoad() {
   wireQuizToggle();
   wireInstallPrompt();
   wireDonateModal();
-  wireSynonymsModal();
   registerServiceWorker();
 
   try {
@@ -218,11 +218,14 @@ function showEntry(entry) {
 }
 
 /* ------------------ RENDER ------------------ */
-function wordBlockHtml(entry, showSynonymsButton) {
+function wordBlockHtml(entry) {
   let html = `<div class="kali-root-row">`;
-  html += `<span class="kali-word kali-level-${entry.level}">${entry.root}</span>`;
-  if (showSynonymsButton && entry.synonyms && entry.synonyms.length) {
-    html += `<button class="kali-syn-btn" aria-label="synonyms" onclick="openSynonyms()">+${entry.synonyms.length}</button>`;
+  html += `<span class="kali-word kali-level-${entry.level}">${entry.word}</span>`;
+  if (entry.pronunciation || entry.pos) {
+    html += `<span class="kali-word-meta">`;
+    if (entry.pronunciation) html += `<span class="kali-pronunciation">${entry.pronunciation}</span>`;
+    if (entry.pos) html += `<span class="kali-pos">${entry.pos}</span>`;
+    html += `</span>`;
   }
   html += `</div>`;
   return html;
@@ -230,11 +233,9 @@ function wordBlockHtml(entry, showSynonymsButton) {
 
 function contentHtml(entry) {
   let html = `<div class="kali-content">`;
-  html += `<p class="kali-gloss">${entry.gloss}</p>`;
-  html += `<p class="kali-meaning">${entry.meaning}</p>`;
-  if (entry.example) {
-    html += `<p class="kali-example">${entry.example}</p>`;
-  }
+  html += `<p class="kali-gloss">${entry.definition}</p>`;
+  html += `<p class="kali-example">${entry.example}</p>`;
+  html += `<p class="kali-example-en">${entry.example_en}</p>`;
   html += `</div>`;
   return html;
 }
@@ -249,16 +250,16 @@ function renderCard() {
     // two-sided flip card: front asks, back reveals — tapping flips it in place
     html += `<div id="card-flip" class="kali-flip${revealed ? " flipped" : ""}">`;
     html += `<div class="kali-card-face kali-card-front">`;
-    html += wordBlockHtml(entry, false);
+    html += wordBlockHtml(entry);
     html += `<button class="kali-reveal" onclick="revealAnswer()">ಅರ್ಥ ಏನಿರಬಹುದು? ಉತ್ತರ ನೋಡಲು ತಟ್ಟಿ</button>`;
     html += `</div>`;
     html += `<div class="kali-card-face kali-card-back">`;
-    html += wordBlockHtml(entry, true);
+    html += wordBlockHtml(entry);
     html += contentHtml(entry);
     html += `</div>`;
     html += `</div>`;
   } else {
-    html += wordBlockHtml(entry, true);
+    html += wordBlockHtml(entry);
     html += contentHtml(entry);
   }
 
@@ -396,42 +397,6 @@ function wireDonateModal() {
       copyBtn.disabled = false;
     }, 1500);
   });
-}
-
-/* ------------------ SYNONYMS POPOVER ------------------ */
-function wireSynonymsModal() {
-  const backdrop = document.getElementById("synonyms-modal-backdrop");
-  const closeBtn = document.getElementById("synonyms-modal-close");
-
-  function closeModal() {
-    backdrop.classList.remove("open");
-    document.body.style.overflow = "";
-    setTimeout(() => {
-      backdrop.hidden = true;
-    }, 200);
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", (e) => {
-    if (e.target === backdrop) closeModal();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !backdrop.hidden) closeModal();
-  });
-}
-
-function openSynonyms() {
-  if (!currentEntry || !currentEntry.synonyms || !currentEntry.synonyms.length) return;
-
-  document.getElementById("synonyms-modal-title").textContent = currentEntry.root;
-  document.getElementById("synonyms-list").innerHTML = currentEntry.synonyms
-    .map((s) => `<span class="kali-syn-chip kali-level-${s.level}">${s.word}</span>`)
-    .join("");
-
-  const backdrop = document.getElementById("synonyms-modal-backdrop");
-  backdrop.hidden = false;
-  requestAnimationFrame(() => backdrop.classList.add("open"));
-  document.body.style.overflow = "hidden";
 }
 
 /* ------------------ START ------------------ */

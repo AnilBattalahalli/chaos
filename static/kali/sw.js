@@ -1,4 +1,4 @@
-const CACHE = "kali-v3";
+const CACHE = "kali-v4";
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
