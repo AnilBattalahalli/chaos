@@ -17,7 +17,7 @@ sitemap:
   <div class="nakshe-container">
     <h1 class="nakshe-heading">ನಕ್ಷೆ</h1>
     <div class="nk-kicker">[ map ]</div>
-    <div class="nakshe-app" data-lat="12.9716" data-lon="77.5946" data-zoom="14" data-theme="noir" data-marker="heart"></div>
+    <div class="nakshe-app" data-lat="12.9716" data-lon="77.5946" data-zoom="14" data-theme="noir" data-marker="heart" data-buildings="off"></div>
   </div>
 </div>
 

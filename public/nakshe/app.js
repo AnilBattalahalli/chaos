@@ -27,27 +27,59 @@
     };
   }
 
-  function buildStyle(t, size) {
+  function buildingLayers(t, k, mode, fade) {
+    var src = { source: "omt", "source-layer": "building" };
+    var tone = t.secondary;
+    if (mode === "tint") {
+      // very faded footprints
+      return [Object.assign({ id: "b-tint", type: "fill", paint: { "fill-color": tone, "fill-opacity": fade * 0.45 } }, src)];
+    }
+    if (mode === "lines") {
+      // hairline outlines only
+      return [Object.assign({ id: "b-line", type: "line",
+        layout: { "line-join": "round" },
+        paint: { "line-color": tone, "line-width": 0.6 * k, "line-opacity": Math.min(1, fade * 1.4) } }, src)];
+    }
+    if (mode === "shadow") {
+      // paper cut-out: a soft offset shadow under a footprint in the paper color
+      return [
+        Object.assign({ id: "b-shadow", type: "fill",
+          paint: { "fill-color": tone, "fill-opacity": fade * 0.9, "fill-translate": [2.5 * k, 2.5 * k] } }, src),
+        Object.assign({ id: "b-paper", type: "fill", paint: { "fill-color": t.bg, "fill-opacity": 1 } }, src),
+        Object.assign({ id: "b-edge", type: "line",
+          paint: { "line-color": tone, "line-width": 0.4 * k, "line-opacity": fade * 0.8 } }, src),
+      ];
+    }
+    return [];
+  }
+
+  function buildStyle(t, size, o) {
     var k = size / 512;
+    o = o || {};
+    var base = [
+      { id: "bg", type: "background", paint: { "background-color": t.bg } },
+      { id: "grass", type: "fill", source: "omt", "source-layer": "landcover", filter: match(["grass"]),
+        paint: { "fill-color": t.parks } },
+      { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": t.parks } },
+      { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": t.water } },
+      { id: "waterway", type: "line", source: "omt", "source-layer": "waterway",
+        paint: { "line-color": t.water, "line-width": BASE.waterway * k } },
+    ];
+    // buildings sit above land and water but under the roads
+    var buildings = buildingLayers(t, k, o.buildings || "off", o.fade == null ? 0.4 : o.fade);
+    // thin roads first so major roads end up on top
+    var roads = [
+      road("r-path", ["path", "pedestrian", "track", "service", "busway"], t.other, BASE.path * k),
+      road("r-minor", ["minor", "residential", "living_street", "unclassified"], t.residential, BASE.minor * k),
+      road("r-tertiary", ["tertiary"], t.tertiary, BASE.tertiary * k),
+      road("r-secondary", ["secondary"], t.secondary, BASE.secondary * k),
+      road("r-primary", ["primary", "trunk"], t.primary, BASE.primary * k),
+      road("r-motorway", ["motorway"], t.motorway, BASE.motorway * k),
+    ];
     return {
       version: 8,
       sources: { omt: { type: "vector", url: TILES_URL } },
-      layers: [
-        { id: "bg", type: "background", paint: { "background-color": t.bg } },
-        { id: "grass", type: "fill", source: "omt", "source-layer": "landcover", filter: match(["grass"]),
-          paint: { "fill-color": t.parks } },
-        { id: "park", type: "fill", source: "omt", "source-layer": "park", paint: { "fill-color": t.parks } },
-        { id: "water", type: "fill", source: "omt", "source-layer": "water", paint: { "fill-color": t.water } },
-        { id: "waterway", type: "line", source: "omt", "source-layer": "waterway",
-          paint: { "line-color": t.water, "line-width": BASE.waterway * k } },
-        // thin roads first so major roads end up on top
-        road("r-path", ["path", "pedestrian", "track", "service", "busway"], t.other, BASE.path * k),
-        road("r-minor", ["minor", "residential", "living_street", "unclassified"], t.residential, BASE.minor * k),
-        road("r-tertiary", ["tertiary"], t.tertiary, BASE.tertiary * k),
-        road("r-secondary", ["secondary"], t.secondary, BASE.secondary * k),
-        road("r-primary", ["primary", "trunk"], t.primary, BASE.primary * k),
-        road("r-motorway", ["motorway"], t.motorway, BASE.motorway * k),
-      ],
+      layers: base.concat(buildings, roads),
     };
   }
 
@@ -92,6 +124,8 @@
       lat: parseFloat(root.dataset.lat), lon: parseFloat(root.dataset.lon),
       zoom: parseFloat(root.dataset.zoom), theme: root.dataset.theme,
       marker: root.dataset.marker === "dot" ? "dot" : "heart",
+      buildings: ["tint", "lines", "shadow"].indexOf(root.dataset.buildings) >= 0 ? root.dataset.buildings : "off",
+      fade: parseFloat(root.dataset.fade) || 0.4,
     };
     if (!themes[state.theme]) state.theme = Object.keys(themes)[0];
 
@@ -103,6 +137,12 @@
       '<div class="nk-row"><div class="nk-field"><label>Marker</label>' +
         '<div class="nk-seg"><button type="button" data-m="heart">Red heart</button><button type="button" data-m="dot">Red dot</button></div>' +
       '</div></div>' +
+      '<div class="nk-row"><div class="nk-field"><label>Buildings</label>' +
+        '<div class="nk-seg nk-seg-sm"><button type="button" data-b="off">Off</button><button type="button" data-b="tint">Tint</button>' +
+        '<button type="button" data-b="lines">Lines</button><button type="button" data-b="shadow">Shadow</button></div>' +
+      '</div></div>' +
+      '<div class="nk-field nk-zoomfield nk-fadefield"><label>Building fade <b class="nk-fadeval"></b></label>' +
+        '<input type="range" class="nk-fade" min="0.05" max="1" step="0.05"></div>' +
       '<div class="nk-field nk-zoomfield"><label>Zoom <b class="nk-zoomval"></b></label>' +
         '<input type="range" class="nk-zoom" min="3" max="19" step="0.1"></div>' +
       '<div class="nk-kicker">[ style: <span class="nk-themename"></span> ]</div><div class="nk-themes"></div>' +
@@ -121,11 +161,13 @@
     var themeBox = $(".nk-themes"), themeName = $(".nk-themename"), mapBox = $(".nk-map");
     var glDiv = $(".nk-gl"), markerDiv = $(".nk-marker"), status = $(".nk-status");
     var dlBtn = $(".nk-download"), sizeSel = $(".nk-size");
-    var segBtns = root.querySelectorAll(".nk-seg button");
+    var segBtns = root.querySelectorAll(".nk-seg button[data-m]");
+    var bldBtns = root.querySelectorAll(".nk-seg button[data-b]");
+    var fadeIn = $(".nk-fade"), fadeVal = $(".nk-fadeval"), fadeField = $(".nk-fadefield");
 
     var map = new maplibregl.Map({
       container: glDiv,
-      style: buildStyle(themes[state.theme], mapBox.clientWidth || 512),
+      style: styleFor(mapBox.clientWidth || 512, themes[state.theme]),
       center: [state.lon, state.lat],
       zoom: state.zoom,
       attributionControl: false,
@@ -136,6 +178,15 @@
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
     function theme() { return themes[state.theme]; }
+    function styleFor(size, t) { return buildStyle(t || theme(), size, { buildings: state.buildings, fade: state.fade }); }
+
+    function applyBuildings() {
+      bldBtns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.b === state.buildings); });
+      fadeField.hidden = state.buildings === "off";
+      fadeVal.textContent = Math.round(state.fade * 100) + "%";
+      fadeIn.value = state.fade;
+      map.setStyle(styleFor(mapBox.clientWidth || 512));
+    }
 
     function drawPreviewMarker() {
       var s = mapBox.clientWidth || 512;
@@ -159,7 +210,7 @@
       themeBox.querySelectorAll(".nk-theme").forEach(function (b) {
         b.setAttribute("aria-pressed", b.dataset.key === state.theme);
       });
-      map.setStyle(buildStyle(theme(), mapBox.clientWidth || 512));
+      map.setStyle(styleFor(mapBox.clientWidth || 512));
       drawPreviewMarker();
     }
 
@@ -184,6 +235,16 @@
     segBtns.forEach(function (b) {
       b.addEventListener("click", function () { state.marker = b.dataset.m; applyMarker(); });
     });
+    bldBtns.forEach(function (b) {
+      b.addEventListener("click", function () { state.buildings = b.dataset.b; applyBuildings(); });
+    });
+    fadeIn.addEventListener("input", function () {
+      state.fade = parseFloat(fadeIn.value);
+      fadeVal.textContent = Math.round(state.fade * 100) + "%";
+      clearTimeout(fadeTimer);
+      fadeTimer = setTimeout(function () { map.setStyle(styleFor(mapBox.clientWidth || 512)); }, 120);
+    });
+    var fadeTimer;
 
     function readCoords() {
       var lat = parseFloat(latIn.value), lon = parseFloat(lonIn.value);
@@ -232,7 +293,7 @@
       document.body.appendChild(holder);
       var big = new maplibregl.Map({
         container: holder,
-        style: buildStyle(theme(), size),
+        style: styleFor(size),
         center: [c.lng, c.lat],
         zoom: map.getZoom() + Math.log2(size / preview),
         interactive: false,
@@ -287,6 +348,7 @@
     syncInputs();
     applyMarker();
     applyTheme();
+    applyBuildings();
   }
 
   function init() {

@@ -239,3 +239,13 @@
 }
 
 .nakshe-app .nk-credit a { color: inherit; }
+
+/* ------------------ BUILDINGS ------------------ */
+.nakshe-app .nk-seg-sm button { padding: 8px 6px; font-size: 14px; }
+.nakshe-app .nk-fadefield[hidden] { display: none; }
+
+/* keep controls readable on very narrow screens */
+.nakshe-app .nk-seg { flex-wrap: wrap; }
+.nakshe-app .nk-seg button { flex: 1 1 64px; white-space: nowrap; }
+.nakshe-app .nk-actions { flex-wrap: wrap; }
+.nakshe-app button.nk-download { flex: 1 1 150px; white-space: nowrap; }
