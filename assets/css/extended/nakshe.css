@@ -249,3 +249,5 @@
 .nakshe-app .nk-seg button { flex: 1 1 64px; white-space: nowrap; }
 .nakshe-app .nk-actions { flex-wrap: wrap; }
 .nakshe-app button.nk-download { flex: 1 1 150px; white-space: nowrap; }
+
+.nakshe-app .nk-row[hidden] { display: none; }

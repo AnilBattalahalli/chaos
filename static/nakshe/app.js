@@ -118,6 +118,29 @@
     return e;
   }
 
+  // Pull a lat/lon out of a pasted Google Maps URL (or plain "lat, lon" text).
+  // Short links (maps.app.goo.gl) hide the coordinates behind a redirect, so they can't be read here.
+  function parseMapsInput(text) {
+    var t = String(text || "").trim();
+    if (!t) return { empty: true };
+    try { t = decodeURIComponent(t); } catch (e) {}
+    var num = "(-?\\d+(?:\\.\\d+)?)";
+    var m =
+      t.match(new RegExp("!3d" + num + "!4d" + num)) ||                           // exact place pin
+      t.match(new RegExp("@" + num + "," + num)) ||                               // map center
+      t.match(new RegExp("[?&](?:q|ll|query|center|destination)=\\+?" + num + ",\\s*\\+?" + num)) ||
+      t.match(new RegExp("^\\s*" + num + "\\s*,\\s*" + num + "\\s*$"));           // bare "lat, lon"
+    if (m) {
+      var lat = parseFloat(m[1]), lon = parseFloat(m[2]);
+      if (Math.abs(lat) <= 85 && Math.abs(lon) <= 180) return { lat: lat, lon: lon };
+      return { error: "Those coordinates are out of range." };
+    }
+    if (/(?:goo\.gl|maps\.app\.goo\.gl)/i.test(t)) {
+      return { error: "Short links can't be read here. Open it, then paste the full link from the address bar." };
+    }
+    return { error: "No coordinates found in that link." };
+  }
+
   function mount(root) {
     var themes = window.NAKSHE_THEMES;
     var state = {
@@ -126,11 +149,18 @@
       marker: root.dataset.marker === "dot" ? "dot" : "heart",
       buildings: ["tint", "lines", "shadow"].indexOf(root.dataset.buildings) >= 0 ? root.dataset.buildings : "off",
       fade: parseFloat(root.dataset.fade) || 0.4,
+      input: root.dataset.input === "latlon" ? "latlon" : "link",
     };
     if (!themes[state.theme]) state.theme = Object.keys(themes)[0];
 
     root.innerHTML =
-      '<div class="nk-card"><div class="nk-row">' +
+      '<div class="nk-card">' +
+      '<div class="nk-row"><div class="nk-field"><label>Location</label>' +
+        '<div class="nk-seg"><button type="button" data-in="link">Google Maps link</button><button type="button" data-in="latlon">Lat / Lon</button></div>' +
+      '</div></div>' +
+      '<div class="nk-row nk-in-link"><div class="nk-field"><label>Google Maps link</label>' +
+        '<input type="text" class="nk-link" placeholder="Paste a Google Maps link" autocomplete="off" spellcheck="false"></div></div>' +
+      '<div class="nk-row nk-in-latlon">' +
         '<div class="nk-field"><label>Latitude</label><input type="text" inputmode="decimal" class="nk-lat"></div>' +
         '<div class="nk-field"><label>Longitude</label><input type="text" inputmode="decimal" class="nk-lon"></div>' +
       '</div>' +
@@ -163,6 +193,8 @@
     var dlBtn = $(".nk-download"), sizeSel = $(".nk-size");
     var segBtns = root.querySelectorAll(".nk-seg button[data-m]");
     var bldBtns = root.querySelectorAll(".nk-seg button[data-b]");
+    var linkIn = $(".nk-link"), linkRow = $(".nk-in-link"), latlonRow = $(".nk-in-latlon");
+    var inBtns = root.querySelectorAll(".nk-seg button[data-in]");
     var fadeIn = $(".nk-fade"), fadeVal = $(".nk-fadeval"), fadeField = $(".nk-fadefield");
 
     var map = new maplibregl.Map({
@@ -245,6 +277,28 @@
       fadeTimer = setTimeout(function () { map.setStyle(styleFor(mapBox.clientWidth || 512)); }, 120);
     });
     var fadeTimer;
+
+    function applyInputMode() {
+      inBtns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.in === state.input); });
+      linkRow.hidden = state.input !== "link";
+      latlonRow.hidden = state.input !== "latlon";
+    }
+    inBtns.forEach(function (b) {
+      b.addEventListener("click", function () { state.input = b.dataset.in; applyInputMode(); });
+    });
+
+    function readLink() {
+      var r = parseMapsInput(linkIn.value);
+      linkIn.classList.toggle("nk-bad", !!r.error);
+      if (r.empty) { status.textContent = ""; return; }
+      if (r.error) { status.textContent = r.error; return; }
+      state.lat = r.lat; state.lon = r.lon;
+      map.jumpTo({ center: [r.lon, r.lat] });
+      syncInputs();
+      status.textContent = "Found " + r.lat.toFixed(5) + ", " + r.lon.toFixed(5);
+    }
+    linkIn.addEventListener("change", readLink);
+    linkIn.addEventListener("paste", function () { setTimeout(readLink, 0); });
 
     function readCoords() {
       var lat = parseFloat(latIn.value), lon = parseFloat(lonIn.value);
@@ -346,6 +400,7 @@
 
     root.__nakshe = { map: map, state: state, exportPng: exportPng };
     syncInputs();
+    applyInputMode();
     applyMarker();
     applyTheme();
     applyBuildings();
