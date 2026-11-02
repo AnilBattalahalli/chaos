@@ -1,7 +1,13 @@
 baseURL = "https://anil.battalahalli.me"
 languageCode = "en-us"
 title = "Chaos"
-theme = [ "PaperMod" ]
+# --- Active theme: change this one line to restyle the whole site ---------------
+#   Neobrutalism  : theme = [ "NeoBrutal" ]
+#   Bauhaus       : theme = [ "Bauhaus" ]
+#   PaperMod      : theme = [ "PaperModCustom", "PaperMod" ]   (PaperModCustom = this site's header/skin tweaks)
+theme = [ "Bauhaus" ]
+# theme = [ "NeoBrutal" ]
+# theme = [ "PaperModCustom", "PaperMod" ]
 ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$"]
 disableKinds = ["RSS"]
 
@@ -17,7 +23,15 @@ unsafe = true
 #   unset/empty -> stock PaperMod look
 # Comment out (or remove) the line below to go back to plain PaperMod.
 [params]
-skin = "manifest"
+skin = "manifest"          # PaperModCustom only (ignored by NeoBrutal)
+
+# NeoBrutal only (ignored by PaperMod): page colour. green | sky | yellow | pink | lilac | orange | white
+[params.neobrutal]
+palette = "green"
+
+# Bauhaus only: which primary leads. classic (red) | blue | yellow
+[params.bauhaus]
+palette = "classic"
 
 [params.profileMode]
 enabled = true
