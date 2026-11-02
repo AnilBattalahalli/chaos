@@ -21,8 +21,6 @@ body {
     word-break: break-word;
     color: var(--primary);
     background-color: var(--nb-page);
-    background-image: var(--nb-noise);
-    background-repeat: repeat;
 }
 
 a,
@@ -57,9 +55,8 @@ h4,
 h5,
 h6 {
     font-family: var(--font-display);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 h1,
@@ -127,15 +124,15 @@ img {
 }
 
 ::selection {
-    background: var(--nb-accent);
-    color: var(--nb-ink);
+    background: var(--nb-main);
+    color: var(--nb-on-main);
 }
 
 :focus-visible {
-    outline: 4px solid var(--nb-accent-2);
-    outline-offset: 3px;
+    outline: 2px solid var(--nb-line);
+    outline-offset: 2px;
 }
 
 body.dark :focus-visible {
-    outline-color: var(--nb-accent);
+    outline-color: var(--primary);
 }

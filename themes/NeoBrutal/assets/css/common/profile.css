@@ -1,4 +1,4 @@
-/* ---------- Home: profile mode ---------- */
+/* ---------- Home: profile mode — one calm white card ---------- */
 .main .profile {
     display: flex;
     align-items: center;
@@ -8,103 +8,49 @@
 }
 
 .profile .profile_inner {
-    position: relative;
-    isolation: isolate;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     width: 100%;
-    padding: 44px 34px 40px;
+    padding: 40px 32px 36px;
     background: var(--entry);
     border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
-    box-shadow: var(--nb-shadow-lg);
-}
-
-/* grainy red→yellow shape peeking out behind the card (see the reference look) */
-.profile .profile_inner::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -34px;
-    left: -42px;
-    width: 190px;
-    height: 220px;
-    background:
-        var(--nb-noise-strong),
-        linear-gradient(160deg, #f4361e 0%, #ff8a1f 48%, #ffe14d 100%);
-    background-blend-mode: multiply, normal;
-    clip-path: polygon(0 0, 78% 0, 14% 50%, 84% 100%, 0 100%);
-}
-
-/* a purple sticker on the opposite corner */
-.profile .profile_inner::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    right: -22px;
-    bottom: -26px;
-    width: 96px;
-    height: 96px;
-    background: var(--nb-accent-2);
-    border: var(--nb-bw) solid var(--nb-line);
-    border-radius: 50%;
-    box-shadow: var(--nb-shadow-sm);
+    box-shadow: var(--nb-shadow);
 }
 
 .profile img {
+    background: var(--nb-main);
     border: var(--nb-bw) solid var(--nb-line);
     border-radius: 50%;
-    background: var(--nb-accent);
-    box-shadow: 7px 7px 0 var(--nb-shadow-c);
+    box-shadow: var(--nb-shadow);
 }
 
 .profile h1 {
-    margin-top: 10px;
-    font-size: clamp(36px, 8.5vw, 68px);
-    font-weight: 900;
-    line-height: 1.02;
-    letter-spacing: -0.035em;
-    text-transform: uppercase;
-    color: var(--nb-ink);
-}
-
-/* inline span so the highlighter band hugs every line of a wrapped title */
-.profile h1 .hl {
-    background: linear-gradient(transparent 56%, var(--nb-accent) 56%, var(--nb-accent) 92%, transparent 92%);
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-}
-
-body.dark .profile h1 {
-    color: var(--primary);
-}
-
-body.dark .profile h1 .hl {
-    background: linear-gradient(transparent 56%, var(--nb-accent-2) 56%, var(--nb-accent-2) 92%, transparent 92%);
+    margin-top: 6px;
+    font-size: clamp(32px, 7vw, 46px);
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .profile .profile_inner > span {
     max-width: 52ch;
-    font-size: 19px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--secondary);
 }
 
 .profile .profile_inner > span a {
     color: var(--primary);
-    text-decoration: underline;
-    text-decoration-color: var(--nb-accent-2);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 3px;
     font-weight: 700;
-}
-
-body.dark .profile .profile_inner > span a {
-    text-decoration-color: var(--nb-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 .profile .profile_inner > span a:hover {
-    color: var(--nb-ink);
-    background: var(--nb-accent);
+    color: var(--nb-on-main);
+    background: var(--nb-main);
+    text-decoration-color: transparent;
 }

@@ -1,21 +1,15 @@
 # NeoBrutal
 
-A **neobrutalist** theme for Hugo — thick black borders, hard offset shadows, flat saturated
-colour fields, heavy grotesque type, arrow-ended list rows, grainy gradient accents.
+A calm **neobrutalist** theme for Hugo, modelled on the neobrutalism component kit: 2px black borders,
+5px corner radius, a crisp 4px hard shadow that collapses when you hover/press, a soft tinted page,
+white cards, one "main" accent colour, DM Sans.
 
-It is a sibling of [PaperMod](https://github.com/adityatelange/hugo-PaperMod): it understands the same
-site config (`menu.main`, `params.profileMode`, `params.socialIcons`, `params.label`, `ShowToc`, search,
-tags, archives, dark-mode toggle, cover images …), so you can switch between them by changing one line.
-
-## Switching themes
-
-In `config.toml`:
+It understands the same site config as PaperMod (`menu.main`, `params.profileMode`, `params.socialIcons`,
+`ShowToc`, search, tags, archives, dark-mode toggle, cover images …), so switching is one line:
 
 ```toml
-# Neobrutalism
 theme = ["NeoBrutal"]
-
-# Back to PaperMod (+ this site's PaperMod customisations)
+# theme = ["Bauhaus"]
 # theme = ["PaperModCustom", "PaperMod"]
 ```
 
@@ -23,28 +17,29 @@ theme = ["NeoBrutal"]
 
 ```toml
 [params.neobrutal]
-palette = "green"   # green | sky | yellow | pink | lilac | orange | white
+palette = "blue"   # blue | green | yellow | pink | lilac | orange | white
 ```
 
-A single page can override it in front matter: `palette: sky`.
+The palette sets the page tint and the accent ("main") colour. Override per page with front matter:
+`palette: yellow`. Dark mode follows `params.defaultTheme` exactly like PaperMod; `disableThemeToggle = true`
+removes the toggle.
 
-Dark mode follows `params.defaultTheme` exactly like PaperMod (`light`, `dark`, or auto) and
-the toggle in the header; set `disableThemeToggle = true` to remove it.
+## Site applets
+
+`assets/css/extended/applets.css` re-skins the site's full-page apps (Kali, Nakshe, Learn German — pages
+with `layout: blank`, which get `body.applet`) with the theme's tokens so they look like the rest of the site.
+It is bundled only with this theme; the apps' own CSS in the site's `assets/css/extended/` is untouched.
 
 ## Customising
 
-* All colours, borders and shadows are CSS variables in `assets/css/core/tokens.css`.
-* Put your own CSS in `assets/css/extended/*.css` of your site — it is bundled last, so it wins.
-* The variable names `--theme --entry --primary --secondary --tertiary --content --code-bg
-  --code-block-bg --border` match PaperMod's, so CSS written for PaperMod keeps working.
-* Utility classes for Markdown/HTML: `nb-mark` (highlighter), `nb-card` (any block as a card),
-  `button` (purple action button).
-
-## Hooks
-
-Same as PaperMod: override `layouts/partials/extend_head.html` and `extend_footer.html` in your site.
+* Everything visual is a CSS variable in `assets/css/core/tokens.css`.
+* Your own CSS in `assets/css/extended/*.css` is bundled last and wins.
+* PaperMod-compatible variable names (`--theme --entry --primary --secondary --tertiary --content --code-bg
+  --code-block-bg --border`) keep PaperMod-era site CSS working. `--theme` is the *surface* colour; the page
+  colour is `--nb-page`.
+* Markdown/HTML utilities: `nb-mark` (highlighter), `nb-card` (any block as a card), `button`.
 
 ## Credits
 
-Template structure (partials, shortcodes, fuse.js search) derived from PaperMod (MIT) by
-Aditya Telange and nanxiaobei. Visual design by Anil Battalahalli.
+Template structure (partials, shortcodes, fuse.js search) derived from PaperMod (MIT) by Aditya Telange and
+nanxiaobei. Visual language follows the neobrutalism component kit. Theme by Anil Battalahalli.

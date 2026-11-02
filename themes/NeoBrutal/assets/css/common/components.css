@@ -1,6 +1,6 @@
 /* ---------- Reusable pieces ---------- */
 
-/* Primary action button (profile-mode `buttons`, and a handy utility: class="button") */
+/* Primary button (the kit's default variant). Use anywhere: <a class="button" href="…">Label</a> */
 .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -10,35 +10,32 @@
 }
 
 .button {
-    display: inline-block;
-    padding: 8px 16px;
-    font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: var(--nb-on-accent-2) !important;
-    background: var(--nb-accent-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--nb-on-main) !important;
+    background: var(--nb-main);
     border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
-    box-shadow: var(--nb-shadow-sm);
-    transition: transform 0.08s, box-shadow 0.08s;
+    box-shadow: var(--nb-shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0 var(--nb-shadow-c);
-}
-
-.button:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 var(--nb-shadow-c);
+    transform: translate(var(--nb-sx), var(--nb-sy));
+    box-shadow: none;
 }
 
 .button-inner {
-    padding: 0 4px;
+    padding: 0 2px;
 }
 
-/* Social icons: little coloured tiles */
+/* Social icons: neutral square buttons */
 .social-icons {
     display: flex;
     flex-wrap: wrap;
@@ -50,33 +47,26 @@
 .social-icons a {
     display: inline-grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
-    color: var(--nb-ink);
-    background: var(--nb-accent);
-    border: var(--nb-bw-sm) solid var(--nb-line);
+    width: 44px;
+    height: 44px;
+    color: var(--primary);
+    background: var(--nb-paper);
+    border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
-    box-shadow: var(--nb-shadow-sm);
-    transition: transform 0.08s, box-shadow 0.08s;
+    box-shadow: var(--nb-shadow);
+    transition: transform 0.1s, box-shadow 0.1s, background 0.1s;
 }
 
-.social-icons a:nth-child(4n + 2) { background: var(--nb-mark); }
-.social-icons a:nth-child(4n + 3) { background: #8fd3fb; }
-.social-icons a:nth-child(4n + 4) { background: #ff8ad8; }
-
 .social-icons a svg {
-    height: 24px;
-    width: 24px;
+    height: 22px;
+    width: 22px;
 }
 
 .social-icons a:hover {
-    transform: translate(-2px, -2px) rotate(-3deg);
-    box-shadow: 5px 5px 0 var(--nb-shadow-c);
-}
-
-.social-icons a:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 var(--nb-shadow-c);
+    color: var(--nb-on-main);
+    background: var(--nb-main);
+    transform: translate(var(--nb-sx), var(--nb-sy));
+    box-shadow: none;
 }
 
 /* Pagination (list pages) */
@@ -88,22 +78,19 @@
 
 .pagination a {
     padding: 8px 18px;
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--nb-ink);
-    background: var(--nb-accent);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--nb-on-main);
+    background: var(--nb-main);
     border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
-    box-shadow: var(--nb-shadow-sm);
-    transition: transform 0.08s, box-shadow 0.08s;
+    box-shadow: var(--nb-shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .pagination a:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+    transform: translate(var(--nb-sx), var(--nb-sy));
+    box-shadow: none;
 }
 
 .pagination .next {
@@ -117,12 +104,11 @@
     top: 8px;
     right: 8px;
     padding: 1px 10px;
-    font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 700;
-    color: var(--nb-ink);
-    background: var(--nb-accent);
-    border: var(--nb-bw-sm) solid #f4f4ef;
+    font-weight: 500;
+    color: var(--nb-on-main);
+    background: var(--nb-main);
+    border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
     user-select: none;
 }
