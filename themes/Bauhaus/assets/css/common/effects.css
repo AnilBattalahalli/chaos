@@ -1,0 +1,89 @@
+/* ---------- Scrollbar: thin, ruled ---------- */
+html {
+    scrollbar-color: var(--bh-c1) var(--bh-page);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bh-page);
+    border-inline-start: 2px solid var(--bh-line);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bh-c1);
+    border: 2px solid var(--bh-line);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bh-c2);
+}
+
+/* Code blocks have their own, quieter scrollbars */
+.post-content pre ::-webkit-scrollbar-track,
+.post-content pre::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0;
+}
+
+.post-content pre ::-webkit-scrollbar-thumb,
+.post-content pre::-webkit-scrollbar-thumb {
+    background: #555555;
+    border: 2px solid var(--code-block-bg);
+}
+
+.post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------- Utilities you can use in Markdown/HTML ---------- */
+
+/* <span class="bh-mark">highlighted</span> */
+.bh-mark {
+    padding: 0 0.2em;
+    color: #111111;
+    background: var(--bh-yellow);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* <div class="bh-block">…</div> — any block as a flat coloured panel (add bh-blue / bh-red / bh-yellow) */
+.bh-block {
+    margin: 0 0 var(--content-gap);
+    padding: 20px 26px;
+    color: var(--bh-on-2);
+    background: var(--bh-c2);
+    border: var(--bh-bw) solid var(--bh-line);
+}
+
+.bh-block.bh-red    { color: #f1ece0; background: var(--bh-red); }
+.bh-block.bh-blue   { color: #f1ece0; background: var(--bh-blue); }
+.bh-block.bh-yellow { color: #111111; background: var(--bh-yellow); }
+
+.bh-block a,
+.bh-block strong {
+    color: inherit;
+}
+
+/* <a class="button" href="…">label →</a> is defined in components.css */
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .logo:hover .logo-mark,
+    .social-icons a:hover,
+    .terms-tags a:hover,
+    .post-tags a:hover,
+    .share-buttons a:hover svg {
+        transform: none;
+    }
+}

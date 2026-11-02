@@ -1,0 +1,262 @@
+/* ---------- Header / navigation ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--nb-page);
+    background-image: var(--nb-noise);
+    border-bottom: var(--nb-bw) solid var(--nb-line);
+}
+
+/* Full-page "applet" pages (layout: blank — kali, nakshe, learngerman) bring their own
+   fixed UI (splash, sidebar, controls). A static header keeps those layers on top of it. */
+body.applet .header {
+    position: static;
+}
+
+body.applet {
+    --applet-controls-top: calc(var(--header-height) + 14px);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    min-height: var(--header-height);
+    margin-inline: auto;
+    padding: 10px var(--gap);
+}
+
+.nav a {
+    display: block;
+}
+
+.logo {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 14px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--nb-ink) !important;
+    background: var(--nb-accent);
+    border: var(--nb-bw) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transform: rotate(-2deg);
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.logo:hover {
+    transform: rotate(0deg) translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.logo img,
+.logo svg {
+    display: inline;
+    height: 28px;
+    width: auto;
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--primary);
+    background: var(--nb-paper);
+    border: var(--nb-bw-sm) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: transform 0.08s, box-shadow 0.08s, background 0.08s;
+}
+
+.menu a:hover {
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.menu a:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-shadow-c);
+}
+
+.menu a.active {
+    color: var(--nb-on-accent-2);
+    background: var(--nb-accent-2);
+}
+
+.menu-ext {
+    flex: none;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 2;
+}
+
+.icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--primary);
+    background: var(--nb-paper);
+    border: var(--nb-bw-sm) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: transform 0.08s, box-shadow 0.08s, background 0.08s;
+}
+
+.icon-btn:hover {
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.icon-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-shadow-c);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+body.dark #moon,
+body:not(.dark) #sun {
+    display: none;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lang-switch a {
+    padding: 2px 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border: var(--nb-bw-sm) solid var(--nb-line);
+    border-radius: var(--radius);
+    background: var(--nb-paper);
+}
+
+/* ---------- Main column ---------- */
+.main {
+    position: relative;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: calc(var(--gap) + 16px) var(--gap) calc(var(--gap) * 2);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    margin-top: 40px;
+    color: #f4f4ef;
+    background: var(--nb-footer-bg);
+    border-top: var(--nb-bw) solid var(--nb-line);
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 16px;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin: auto;
+    padding: 26px var(--gap);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--nb-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.footer a:hover {
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    text-decoration: none;
+}
+
+.footer-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--nb-accent);
+    border: 2px solid #f4f4ef;
+    transform: rotate(45deg);
+}
+
+/* ---------- Back to top ---------- */
+.top-link {
+    visibility: hidden;
+    position: fixed;
+    right: 24px;
+    bottom: 28px;
+    z-index: 99;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    border: var(--nb-bw) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: visibility 0.4s, opacity 0.4s linear, transform 0.08s, box-shadow 0.08s;
+}
+
+.top-link svg {
+    width: 20px;
+    height: 14px;
+}
+
+.top-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.top-link:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-shadow-c);
+}
