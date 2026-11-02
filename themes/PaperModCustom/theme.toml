@@ -1,0 +1,6 @@
+name = "PaperModCustom"
+description = "This site's customisations of PaperMod (hamburger header, 'manifest' skin, shared fonts). Use together with PaperMod: theme = [\"PaperModCustom\", \"PaperMod\"]"
+min_version = "0.146.0"
+
+[author]
+  name = "Anil Battalahalli"
