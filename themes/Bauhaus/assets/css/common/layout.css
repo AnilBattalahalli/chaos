@@ -1,0 +1,252 @@
+/* ---------- Header / navigation ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bh-page);
+    border-bottom: var(--bh-bw-lg) solid var(--bh-line);
+}
+
+/* applet pages (layout: blank — kali, nakshe, learngerman) bring their own fixed UI; a static
+   header keeps those layers on top of it */
+body.applet .header {
+    position: static;
+}
+
+body.applet {
+    --applet-controls-top: calc(var(--header-height) + 14px);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 22px;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    min-height: var(--header-height);
+    margin-inline: auto;
+    padding: 10px var(--gap);
+}
+
+.nav a {
+    display: block;
+}
+
+/* logo = geometric mark + lowercase wordmark */
+.logo {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    line-height: 1;
+    color: var(--primary) !important;
+}
+
+.logo-mark {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    background: var(--bh-mark) center / contain no-repeat;
+    transition: transform 0.25s;
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(90deg);
+}
+
+.logo img,
+.logo svg {
+    display: inline;
+    height: 28px;
+    width: auto;
+    pointer-events: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--primary);
+    border-bottom: 5px solid transparent;
+    transition: background 0.12s, color 0.12s;
+}
+
+.menu a::before {
+    content: none;
+}
+
+.menu a:hover {
+    color: var(--bh-page);
+    background: var(--bh-ink);
+}
+
+.menu a.active {
+    font-weight: 700;
+    border-bottom-color: var(--bh-c1);
+}
+
+.menu-ext {
+    flex: none;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 2;
+}
+
+.icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--primary);
+    background: var(--bh-paper);
+    border: var(--bh-bw) solid var(--bh-line);
+    transition: background 0.12s, color 0.12s;
+}
+
+.icon-btn:hover {
+    color: var(--bh-on-1);
+    background: var(--bh-c1);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+body.dark #moon,
+body:not(.dark) #sun {
+    display: none;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lang-switch a {
+    padding: 2px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: var(--bh-bw) solid var(--bh-line);
+}
+
+/* ---------- Main column ---------- */
+.main {
+    position: relative;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: calc(var(--gap) + 20px) var(--gap) calc(var(--gap) * 2);
+    counter-reset: entry;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    margin-top: 48px;
+    color: #f1ece0;
+    background: #111111;
+    border-top: var(--bh-bw-lg) solid var(--bh-line);
+}
+
+/* the circle · square · triangle frieze closes every page */
+.footer::before {
+    content: "";
+    display: block;
+    height: 36px;
+    background: var(--bh-frieze) repeat-x left top / auto 100%;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 16px;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin: auto;
+    padding: 28px var(--gap) 32px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--bh-yellow);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.footer a:hover {
+    color: #111111;
+    background: var(--bh-yellow);
+    text-decoration: none;
+}
+
+.footer-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--bh-red);
+    border-radius: 50%;
+}
+
+/* ---------- Back to top ---------- */
+.top-link {
+    visibility: hidden;
+    position: fixed;
+    right: 24px;
+    bottom: 28px;
+    z-index: 99;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--bh-ink);
+    background: var(--bh-yellow);
+    border: var(--bh-bw) solid var(--bh-line);
+    transition: visibility 0.4s, opacity 0.4s linear, background 0.12s;
+}
+
+body.dark .top-link {
+    color: #111111;
+}
+
+.top-link svg {
+    width: 20px;
+    height: 14px;
+}
+
+.top-link:hover {
+    background: var(--bh-red);
+    color: #f1ece0;
+}

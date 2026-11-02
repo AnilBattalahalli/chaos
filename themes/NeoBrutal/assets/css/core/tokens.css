@@ -1,0 +1,93 @@
+/* ==========================================================================
+   NeoBrutal — design tokens
+   Everything visual is driven from here. To re-skin the theme, change
+   values in this file (or override them from assets/css/extended/*.css).
+
+   Palette (page background) is chosen with:
+     [params.neobrutal]  palette = "green"
+   or per page with front matter `palette: sky`.
+   Available: green, sky, yellow, pink, lilac, orange, white.
+
+   The variable names --theme / --entry / --primary / --secondary /
+   --tertiary / --content / --code-bg / --code-block-bg / --border mirror
+   PaperMod's, so site CSS written against PaperMod (applets etc.) keeps working.
+   ========================================================================== */
+
+:root {
+    --gap: 24px;
+    --content-gap: 22px;
+    --nav-width: 1080px;
+    --main-width: 800px;
+    --header-height: 76px;
+    --footer-height: 84px;
+    --radius: 6px;
+
+    --nb-bw: 3px;          /* border width of cards / big controls */
+    --nb-bw-sm: 2px;       /* border width of small controls */
+
+    --font-display: "Archivo", "Noto Sans Kannada", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Space Grotesk", "Noto Sans Kannada", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ---------- Palettes (page background colour) ---------- */
+body                        { --nb-pop: #0dba43; }   /* default = green */
+body[data-palette="green"]  { --nb-pop: #0dba43; }
+body[data-palette="sky"]    { --nb-pop: #8fd3fb; }
+body[data-palette="yellow"] { --nb-pop: #ffe14d; }
+body[data-palette="pink"]   { --nb-pop: #ff8ad8; }
+body[data-palette="lilac"]  { --nb-pop: #b9a1ff; }
+body[data-palette="orange"] { --nb-pop: #ff9f45; }
+body[data-palette="white"]  { --nb-pop: #f4f1e8; }
+
+/* ---------- Light mode (default) ---------- */
+body {
+    --nb-ink: #0a0a0a;            /* text that always sits on bright fills */
+    --nb-line: #0a0a0a;           /* borders */
+    --nb-shadow-c: #0a0a0a;       /* hard offset shadows */
+    --nb-page: var(--nb-pop);
+    --nb-paper: #ffffff;          /* cards */
+    --nb-accent: #c6f84f;         /* lime  — highlights, logo, hover */
+    --nb-accent-2: #6d3df5;       /* purple — active, primary buttons */
+    --nb-on-accent-2: #ffffff;
+    --nb-mark: #ffe14d;           /* highlighter yellow */
+    --nb-footer-bg: #0a0a0a;
+    --nb-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+    /* coarse stipple used by the red→yellow "grain" shape on the home hero */
+    --nb-noise-strong: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 0 0 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+
+    --nb-shadow: 6px 6px 0 var(--nb-shadow-c);
+    --nb-shadow-sm: 3px 3px 0 var(--nb-shadow-c);
+    --nb-shadow-lg: 10px 10px 0 var(--nb-shadow-c);
+
+    /* PaperMod-compatible names */
+    --theme: var(--nb-paper);       /* PaperMod meaning: "surface" (inputs, panels). The *page* colour is --nb-page. */
+    --entry: var(--nb-paper);
+    --primary: #0a0a0a;
+    --secondary: #333333;
+    --tertiary: #ecebe4;
+    --content: #141414;
+    --code-block-bg: #0a0a0a;
+    --code-bg: #fff0a8;
+    --border: var(--nb-line);
+}
+
+/* ---------- Dark mode ---------- */
+body.dark {
+    --nb-line: #f4f4ef;
+    --nb-shadow-c: var(--nb-pop);
+    --nb-page: #111111;
+    --nb-paper: #1b1b1b;
+    --nb-accent-2: #8c6bff;
+    --nb-footer-bg: #000000;
+    --nb-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+    --primary: #f4f4ef;
+    --secondary: #bdbdb5;
+    --tertiary: #2b2b2b;
+    --content: #e8e8e2;
+    --code-block-bg: #000000;
+    --code-bg: #2d2d2d;
+}

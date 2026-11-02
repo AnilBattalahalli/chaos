@@ -1,0 +1,159 @@
+/* ---------- Tablet & phone ---------- */
+@media screen and (max-width: 768px) {
+    :root {
+        --gap: 16px;
+        --header-height: 64px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    /* header: logo + actions on one row, menu becomes a drop-down list of big rows */
+    .nav {
+        gap: 12px;
+    }
+
+    .nav-actions {
+        margin-inline-start: auto;
+    }
+
+    .nav-toggle {
+        display: inline-grid;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0;
+        order: 3;
+        width: 100%;
+        margin: 4px 0 6px;
+        background: var(--nb-paper);
+        border: var(--nb-bw) solid var(--nb-line);
+        border-radius: var(--radius);
+        box-shadow: var(--nb-shadow);
+        overflow: hidden;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu li + li {
+        border-top: var(--nb-bw) solid var(--nb-line);
+    }
+
+    .menu a {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 16px;
+        font-size: 20px;
+        font-weight: 800;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* "Branding →" rows from the reference */
+    .menu a:not([rel])::after {
+        content: "\2192";
+        font-weight: 900;
+    }
+
+    .menu a:hover,
+    .menu a:active {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .main {
+        padding-top: calc(var(--gap) + 8px);
+    }
+
+    .page-header h1 {
+        padding: 2px 12px 4px;
+    }
+
+    .post-entry {
+        padding: 18px;
+        margin-bottom: 26px;
+    }
+
+    .entry-header h2 {
+        font-size: 22px;
+    }
+
+    .first-entry {
+        min-height: 260px;
+        padding: 22px;
+    }
+
+    .post-content {
+        padding: 22px 18px;
+    }
+
+    .post-content h2 {
+        font-size: 24px;
+    }
+
+    .profile .profile_inner {
+        padding: 36px 20px 32px;
+    }
+
+    .profile .profile_inner::before {
+        left: -22px;
+        top: -24px;
+        width: 140px;
+        height: 170px;
+    }
+
+    .profile .profile_inner::after {
+        right: -10px;
+        bottom: -24px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .profile img {
+        transform: scale(0.88);
+    }
+
+    .archive-month {
+        flex-direction: column;
+    }
+
+    .archive-month-header {
+        margin: 10px 0 4px;
+    }
+
+    .archive-year {
+        margin-top: 24px;
+    }
+
+    .paginav {
+        flex-direction: column;
+    }
+
+    .paginav .prev,
+    .paginav .next {
+        width: 100%;
+    }
+
+    .top-link {
+        right: 14px;
+        bottom: 16px;
+    }
+
+    .list .top-link {
+        transform: translateY(-4rem);
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .share-buttons {
+        justify-content: unset;
+    }
+}

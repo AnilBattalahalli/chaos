@@ -1,0 +1,18 @@
+name = "NeoBrutal"
+license = "MIT"
+licenselink = "https://github.com/AnilBattalahalli/chaos/blob/production/themes/NeoBrutal/LICENSE"
+description = "A neobrutalist Hugo theme: thick borders, hard offset shadows, flat saturated colour fields, heavy type. Drop-in compatible with PaperMod's site config (menu, profileMode, socialIcons, search, tags, archives, dark mode)."
+tags = ["neobrutalism", "brutalist", "bold", "colourful", "blog", "portfolio", "dark mode", "search", "responsive"]
+features = ["responsive", "blog", "cover-image", "table-of-contents", "opengraph", "favicon", "archive", "share-icons", "social-icons", "theme-toggle", "search", "multiple-palettes", "dark-mode"]
+min_version = "0.146.0"
+
+[author]
+  name = "Anil Battalahalli"
+
+# Template structure (layouts/partials/shortcodes/search) is derived from PaperMod by
+# Aditya Telange & nanxiaobei (MIT). All visual design (CSS, header, footer, hero) is new.
+[original]
+  name = "PaperMod"
+  author = "adityatelange"
+  homepage = "https://github.com/adityatelange/hugo-PaperMod/"
+  repo = "https://github.com/adityatelange/hugo-PaperMod/"

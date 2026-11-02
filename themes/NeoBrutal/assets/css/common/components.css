@@ -1,0 +1,151 @@
+/* ---------- Reusable pieces ---------- */
+
+/* Primary action button (profile-mode `buttons`, and a handy utility: class="button") */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 460px;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--nb-on-accent-2) !important;
+    background: var(--nb-accent-2);
+    border: var(--nb-bw) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-shadow-c);
+}
+
+.button-inner {
+    padding: 0 4px;
+}
+
+/* Social icons: little coloured tiles */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.social-icons a {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    border: var(--nb-bw-sm) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.social-icons a:nth-child(4n + 2) { background: var(--nb-mark); }
+.social-icons a:nth-child(4n + 3) { background: #8fd3fb; }
+.social-icons a:nth-child(4n + 4) { background: #ff8ad8; }
+
+.social-icons a svg {
+    height: 24px;
+    width: 24px;
+}
+
+.social-icons a:hover {
+    transform: translate(-2px, -2px) rotate(-3deg);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.social-icons a:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--nb-shadow-c);
+}
+
+/* Pagination (list pages) */
+.pagination {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.pagination a {
+    padding: 8px 18px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    border: var(--nb-bw) solid var(--nb-line);
+    border-radius: var(--radius);
+    box-shadow: var(--nb-shadow-sm);
+    transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.pagination a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--nb-shadow-c);
+}
+
+.pagination .next {
+    margin-inline-start: auto;
+}
+
+/* Code copy button */
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 1px 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--nb-ink);
+    background: var(--nb-accent);
+    border: var(--nb-bw-sm) solid #f4f4ef;
+    border-radius: var(--radius);
+    user-select: none;
+}
+
+div.highlight,
+pre {
+    position: relative;
+}
+
+div.highlight:hover .copy-code,
+pre:hover .copy-code {
+    display: block;
+}
+
+code {
+    direction: ltr;
+}
+
+img.in-text {
+    display: inline;
+    margin: auto;
+}
+
+h1 > a > svg {
+    display: inline;
+}
