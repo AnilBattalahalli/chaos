@@ -1,51 +1,11 @@
-/* ---------- Scrollbar: chunky, to match ---------- */
-html {
-    scrollbar-color: var(--nb-line) var(--nb-page);
-}
-
-::-webkit-scrollbar {
-    width: 16px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--nb-page);
-    border-inline-start: var(--nb-bw-sm) solid var(--nb-line);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--nb-accent);
-    border: var(--nb-bw-sm) solid var(--nb-line);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--nb-accent-2);
-}
-
-/* Code blocks have their own, quieter scrollbars */
-.post-content pre ::-webkit-scrollbar-track,
-.post-content pre::-webkit-scrollbar-track {
-    background: transparent;
-    border: 0;
-}
-
-.post-content pre ::-webkit-scrollbar-thumb,
-.post-content pre::-webkit-scrollbar-thumb {
-    background: #555;
-    border: 2px solid var(--code-block-bg);
-}
-
-.post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
-    display: none;
-}
-
 /* ---------- Utilities you can use in Markdown/HTML ---------- */
 
 /* <span class="nb-mark">highlighted</span> */
 .nb-mark {
     padding: 0 0.2em;
-    color: var(--nb-ink);
-    background: var(--nb-mark);
+    color: var(--nb-on-main);
+    background: var(--nb-main);
+    border-radius: 3px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
@@ -53,14 +13,14 @@ html {
 /* <div class="nb-card">…</div> — any block as a card */
 .nb-card {
     margin: 0 0 var(--content-gap);
-    padding: 20px 24px;
+    padding: 18px 22px;
     background: var(--nb-paper);
     border: var(--nb-bw) solid var(--nb-line);
     border-radius: var(--radius);
     box-shadow: var(--nb-shadow);
 }
 
-/* <a class="button" href="…">Label →</a> is defined in components.css */
+/* <a class="button" href="…">Label</a> is defined in components.css */
 
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -72,15 +32,13 @@ html {
     }
 
     .post-entry:hover,
-    .post-entry:active,
-    .menu a:hover,
+    .subcategory:hover,
     .icon-btn:hover,
-    .logo:hover,
     .button:hover,
     .social-icons a:hover,
     .terms-tags a:hover,
-    .post-tags a:hover,
     .paginav a:hover,
+    .pagination a:hover,
     .top-link:hover,
     #searchResults .focus {
         transform: none;

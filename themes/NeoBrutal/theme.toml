@@ -1,9 +1,9 @@
 name = "NeoBrutal"
 license = "MIT"
 licenselink = "https://github.com/AnilBattalahalli/chaos/blob/production/themes/NeoBrutal/LICENSE"
-description = "A neobrutalist Hugo theme: thick borders, hard offset shadows, flat saturated colour fields, heavy type. Drop-in compatible with PaperMod's site config (menu, profileMode, socialIcons, search, tags, archives, dark mode)."
+description = "A calm neobrutalist Hugo theme: 2px black borders, 5px radius, a crisp 4px hard shadow that collapses on hover, tinted page with white cards and one accent colour, DM Sans. Drop-in compatible with PaperMod's site config and restyles the site's applets to match."
 tags = ["neobrutalism", "brutalist", "bold", "colourful", "blog", "portfolio", "dark mode", "search", "responsive"]
-features = ["responsive", "blog", "cover-image", "table-of-contents", "opengraph", "favicon", "archive", "share-icons", "social-icons", "theme-toggle", "search", "multiple-palettes", "dark-mode"]
+features = ["responsive", "blog", "cover-image", "table-of-contents", "opengraph", "favicon", "archive", "share-icons", "social-icons", "theme-toggle", "search", "palettes", "dark-mode"]
 min_version = "0.146.0"
 
 [author]
